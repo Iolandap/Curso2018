@@ -1,0 +1,8 @@
+
+body{background-color:#5858FA; }
+
+img.imatge_fixa{
+	position:fixed;
+	left: 50px;
+	top: 25px;
+}

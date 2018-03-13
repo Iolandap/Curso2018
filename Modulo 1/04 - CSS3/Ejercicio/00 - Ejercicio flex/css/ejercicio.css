@@ -1,0 +1,85 @@
+/* ==================================================================================================================================== */
+html, body{
+  height: 98%;
+}
+/* Padre pagina */
+.flex-container {
+  display: flex;
+  background-color: DodgerBlue;
+  flex-direction: column;
+  height: 98%;
+}
+    /* Hijos de pagina */
+    nav, footer, header, article{
+      background-color: #f1f1f1;
+      margin: 10px;
+      padding:2px;
+      font-size: 30px;
+      text-align: center;
+    }
+/* Bloque cabecera */
+  header{
+    flex: 1;             /* Le damos proporcion altura. En este caso 8 contra 1 */
+  }
+
+/* Bloque Menu */
+  /* Padre Menu */
+  nav {
+    display: flex;
+    flex-direction: row;    /* Para posicionamiento horizontal */
+    justify-content: flex-start;
+    flex: 1;           /* Le damos proporcion altura. En este caso 10 contra 1 */
+  }
+      /* Hijos Menu - Afecta a todas las a del NAV*/
+      nav>a {
+        background-color: #eb8585;
+        border: 1px solid black;
+        margin: 10px;
+        padding:5px;
+        font-size: 10px;
+        text-align: left;
+      }
+
+/* Bloque cuerpo */
+/* Padre Contenido */
+  .cuerpo {
+    display: flex;
+    flex-direction: row;  /* Para posicionamiento horizontal */
+    flex: 10;        /* Le damos proporcion altura. En este caso 10 contra 1 */
+  }
+      /* Hijos contenido - Afecta a ARTICLE y ASIDE*/
+      .cuerpo>article, .cuerpo>aside {
+        background-color: #eb8585;
+        align-items: flex-start;
+        margin: 10px;
+        padding:20px;
+        font-size: 30px;
+        text-align: justify; 
+      }
+
+      /* Proporciones horizontales de los elementos del cuerpo */
+          article{
+            flex: 10;  
+          }
+          aside {
+            flex: 1;  
+          }
+          
+      img{
+        float: left;
+        padding: 1em;
+      }
+      p::first-letter {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: green;
+      }  
+      p {
+        text-indent: 50px;
+      }
+
+
+/* Bloque pie */
+    footer{
+      flex: 1;         /* Le damos proporcion altura. En este caso 10 contra 1 */
+    }

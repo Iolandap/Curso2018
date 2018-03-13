@@ -1,0 +1,82 @@
+html,body{
+    height:98%;
+    width:100%;
+    Font-size: 1.5rem; /* Define el tamaño de la letra para todo el documento */
+}
+
+div#cabecera {
+    background-color:yellow;
+    border: 1px solid;
+    text-align: center;
+    height:10%;
+}
+
+/* menu */
+    div#Menu {
+        background-color:orange;
+        border: 1px solid;
+        float:left;
+        width: 20%;
+        height:100%;
+        text-align: center;
+        display:table; /* convierte el bloque en una tabla para poder centrar el texo */
+    }
+    div#menucontainer{
+        display:table-cell;vertical-align:middle;
+    }
+    div#Menu p{
+        text-align:center;
+    }
+
+/* container */
+    div#container {
+        float:left;
+        width: 79%;
+        height:100%;
+    }
+        /* contenido1 */
+            div#Contenido1 {
+                background-color:green;
+                border: 1px solid;
+                float:left;
+                width: 49.7%;
+                height:100%;
+                text-align: center;
+                display:table;  /* convierte el bloque en una tabla para poder centrar el texo */
+            }
+            div#contcontainer1{
+                display:table-cell;vertical-align:middle;
+            }
+            div#Contenido1 p{
+                text-align:center;
+            }
+
+        /* contenido1 */
+            div#Contenido2 {
+                background-color:red;
+                border: 1px solid;
+                float:left;
+                width: 49.7%;
+                height:100%;
+                text-align: center;
+                display:table;  /* convierte el bloque en una tabla para poder centrar el texo */
+            }
+            div#contcontainer2{
+                display:table-cell;vertical-align:middle;
+            }
+            div#Contenido2 p{
+                text-align:center;
+            }
+
+/* pie */
+    div#Pie {
+        background-color:blue;
+        border: 1px solid;
+        clear: left;
+        text-align: center;
+        width: 99%;
+        height:10%;
+        /* fija el bloque en la base, para que no se mueva al hacer scroll */
+        position: fixed;    
+        bottom: 0px;
+    }

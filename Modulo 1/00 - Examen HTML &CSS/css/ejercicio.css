@@ -1,0 +1,165 @@
+html {
+  background-image: url("../imatges/fondo.gif");
+  background-color: #f2f5fe;
+  background-size: contain;
+  height: 100%;
+  font-family: Verdana, sans-serif;
+  color: #192666;
+}
+body{
+  width: 770px;
+  margin: 0 auto;
+}
+    /* Cabecera */
+    header{
+      height: 100px;
+      background-color: #233c9b;
+      background-image: url("../imatges/gat.png"),url("../imatges/dau.png");
+      background-repeat: no-repeat;
+      background-position: left, right;
+      background-size: contain;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    header h1{
+      font-size: 2em;
+      color: white;
+      text-align:center;
+      padding-top: 1em;
+    }
+  
+  /* Menu */
+      nav{
+        height: 5%;
+        background: #253575;
+        flex-direction: row;
+      }
+      /* Formato menu */
+        nav ul {                                     /* Formato bloque donde esta el menu */
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+        }
+        nav li {                                      /* Posicionamiento menu horizontal */
+          float: left;
+          background-color: #6666ff;
+          border-radius: 15px;
+          margin-top: 10px;
+          margin-left: 10px;
+        }
+        nav li a {                                    /* Formato botones menu */
+          display: block;
+          width: 80px;
+          padding: 0.5em;
+          color: #b5c4e6;
+          text-align: center;
+        }
+        nav li a:hover {
+          background: #fff;                               
+          color: #ff9000;
+          border-radius: 15px;
+        }
+
+  /* Cuerpo */
+      .cuerpo{
+        margin: 0;
+        padding: 0;
+        height: 475px;
+        background-color: #fff;
+      }
+        article{
+          float: left;
+          padding-top: 1em;
+          width: 530px;
+          height: 450px;
+          background-color: #fff;
+        }
+        /* section */
+          section h2{
+            background-color: #dee5fd;
+            color:#192666;
+            border-top-left-radius: 15px;
+            padding-left: 1em;
+            padding-top: 0.6em;
+            padding-bottom: 0.5em;
+            font-size: 1.2em;
+          }
+          /* menu seccion */
+            section li {                                      /* Posicionamiento menu horizontal */
+              float: left;
+              list-style:none;
+              color: #6685cc;
+              font-size: 0.7em;
+              padding-left: 0.5em;
+              padding-right: 2.5em;
+              padding-bottom: 0.5em;
+              border-bottom: 1px solid #dee5fd;
+            }
+            section li a:hover {
+              color: #192666;
+            }
+            section p{
+              padding-top: 2em;
+              padding-bottom: 0.5em;
+              padding-left: 2em;
+              font-size: 0.8em;
+            }
+
+          /* End menu seccion */
+        /* End seccion */
+        /* Lateral */
+          aside{
+            float: left;
+            margin-top: 1em;
+            width: 200px;
+            height: 400px;
+            background: #cedbf9;
+            border-radius: 15px;
+            box-shadow: 10px 10px 8px 2px rgba(0,0,0,1);
+          }
+          aside ul {                                     /* Formato bloque donde esta el menu */
+            list-style-type: none;
+            font-size: 0.8em;
+            padding-left: 0em;
+            color: #192666;
+          }
+          aside h4{
+            background-color: #a0b9f3;
+            padding-bottom: 1em;
+            padding-top: 1em;
+            padding-left: 1em;
+          }
+          aside img{
+            float: left;
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+          }
+          aside .categoria{
+            padding-left: 2em;
+          }
+          aside .categoria li{
+            padding-top: 0.3em;
+            padding-bottom: 0.3em;
+            border-bottom: 1px solid #e0e8fa;
+          }
+          aside .categoria li:hover{
+            color: black;
+            font-weight: bold;
+            background-color: #e0e8fa;
+            list-style-image: url('../imatges/icono_elemento_seleccionado.gif')
+          }
+ /* Pie */
+    footer{
+      clear: both;
+      float: left;
+      width: 100%;
+      background-color: #cedbf9;
+      color: #6685cc;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+      footer p{
+      padding-left: 2em;
+      padding-bottom: 1em;
+    }

@@ -1,0 +1,95 @@
+/* ==================================================================
+   ================================================================== */
+
+   /* margin: 4% auto   ---> centra el bloque. 4% arrib/abajo y el auto para los lados  */
+   /* label[for=municipio]{clear:none; float:left;width: 30%}  ---> solo afectaria al label de municipio, lo posicionaria y le daria ancho*/
+     
+
+   /* Primer gran bloque */
+      .bloque1{
+        width: 60%;
+        float: left;
+      }
+      .bloque2{
+        width: 90%;
+        clear: left;
+      }
+        /* Subbloque */
+          .bloque6, .bloque7{
+            width: 47%;
+            float: left;
+            margin-left: 15%;
+            height: 105px;
+            border: 0.5px dotted green;       /* Lineas discontinuas de los bloques */
+          }
+          .bloque7 select{
+            width: 200px;
+          }
+  
+  /* Segundo gran bloque */
+    .bloque3{
+      width: 100%;
+      clear: left;
+    }
+    /* Subloque */
+        .bloque4{
+          width: 60%;
+          float: left;
+        }
+        .bloque5{
+          width: 60%;
+          clear: left;
+        }
+          /* Subloque */
+            .bloque8, .bloque9{
+              width: 47%;
+              margin-left: 15%;
+              float: left;
+              height: 35px;
+              border: 0.5px dotted green;         /* Lineas discontinuas de los bloques */
+            }
+
+/* Definiciones de hovers */
+
+    .bloque1:hover, .bloque2:hover, .bloque4:hover, .bloque5:hover{
+      background-color: yellow;
+    }
+    input:hover, select:hover{    
+      border: 2px solid orange;
+    }
+
+/* Definiciones de textos, etc... */
+    label, select{
+      font-size: 0.7em;
+      margin-left: 30%;
+    }
+    input{
+      margin-left: 30%;
+    }
+
+    legend{
+      font-weight: bold;
+      position: relative;
+      top: 30px;
+    }
+    h5{
+      font-size: 0.7em;
+    }
+    hr{                                         /* Para que busque el primer espacio sin bloques */ 
+      clear: both;
+    }
+    fieldset{           
+      border: 0.5px dotted green;             /* Lineas discontinuas de los bloques */
+
+    }
+
+    /* focus, span, hidden */
+    .primero{
+      display: none;
+    }
+    .bloque2:hover .primero {
+      display:block;
+    }
+    span{
+      float: right;
+    }

@@ -1,0 +1,19 @@
+
+body{background-color:#5858FA; }
+
+div {
+	border: 2px solid #CCC;
+}
+div img{
+	float:left;
+}
+
+p, a{
+	border: 2px solid #CCC;
+}
+
+p.ex_clear{
+	clear:left;
+}
+
+

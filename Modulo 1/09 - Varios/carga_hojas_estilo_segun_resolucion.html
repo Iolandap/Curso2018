@@ -1,0 +1,27 @@
+<html>  
+<head>  
+<title>Carga diferentes hojas de estilos segun el tamaño de pantalla.</title>  
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no" /> 
+
+<!-- Carga hoja de estilos cuando las demas conciones no se cumplen ROJO --> 
+<link rel="stylesheet" media="screen" href="estilo1.css" /> 
+
+<!-- Carga hoja de estilos entre una resolucion maxima y minima AZUL 
+<link rel="stylesheet" media="screen and (min-width: 600px) and (max-width: 800px)" href="estilo2.css" /> --> 
+
+<!-- Carga hoja de estilos por debajo de una resolucion maxima VERDE --> 
+<link rel="stylesheet" media="screen and (max-width: 1000px)" href="estilo3.css" /> 
+
+<!-- Carga hoja de estilos por encima de una resolucion minima MARRON --> 
+<link rel="stylesheet" media="screen and (min-width: 1200px)" href="estilo4.css" /> 
+
+</head>  
+   
+<body>  
+
+<p>Cambia el color de fondo y tamaño del texto cuando cambia el tamaño de la pantalla cargando una hoja de estilos diferente.</p>  
+
+</body>  
+
+</html>

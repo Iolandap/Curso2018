@@ -1,0 +1,13 @@
+
+URL 	---> https://bxslider.com/
+
+Demos 	---> http://demos.jquerymobile.com/1.4.5/
+
+libreria -->  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+
+
+Otra libreria de Slider gratuita para Jquery
+
+
+URL --> https://www.jqueryscript.net/slider/Professional-jQuery-Content-Slider-Plugin-Slider-Pro.html

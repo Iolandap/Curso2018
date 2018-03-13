@@ -1,0 +1,53 @@
+/* ==================================================================================================================================== */
+.box_0{
+  overflow: hidden;
+  width: 100%;
+}
+p{
+  color: white;
+}
+.box_1, .box_2, .box_3, .box_4, .box_5, .box_6, .box_7, .box_8, .box_9, .box_10, .box_11, .box_12 {
+  background-color: rgb(196, 194, 194);
+  padding: 1em;
+  margin: 2em;
+  width: 25%;
+  float: left;
+  box-sizing:border-box;
+  border: 0px solid #000000;
+}
+.box_1{
+  box-shadow: -10px -10px 0px 0px rgba(0,0,0,1);
+}
+.box_2{
+  box-shadow: -10px -10px 5px 0px rgba(0,0,0,1);/* 3ra posicion blur */
+}
+.box_3{
+  box-shadow: -10px -10px 0px 10px rgba(0,0,0,1);
+}
+.box_4{
+  box-shadow: -10px -10px 5px 10px rgba(0,0,0,1);  /* 3ra posicion blur */
+}
+.box_5{
+  box-shadow: 0px 0px 5px 5px rgba(0,0,0,1);  /* 3ra posicion blur */
+}
+.box_6{
+  box-shadow: 0px 0px 5px 10px rgba(0,0,0,1);  /* 3ra posicion blur */
+}
+.box_7{
+  box-shadow: inset -10px -10px 0px 5px rgba(0,0,0,1);
+}
+.box_8{
+  box-shadow: inset -10px -10px 10px 5px rgba(0,0,0,1); /* blur dentro */
+}
+.box_9{
+  box-shadow: inset -10px -10px 0px 10px rgba(0,0,0,1);
+}
+.box_10{
+  box-shadow: inset -10px -10px 5px 10px rgba(0,0,0,1);
+}
+.box_11{
+  box-shadow: inset 0px 0px 30px 0px rgba(0,0,0,1);
+}
+.box_12{
+  box-shadow: inset 0px 0px 80px 0px rgba(0,0,0,1);
+}

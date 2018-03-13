@@ -1,0 +1,71 @@
+
+<!-- ***************************************************************************************** -->
+<!-- ********************************** 20 Ejercicio ***************************************** -->
+<!-- ***************************************************************************************** -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="iconshock-tiny-bugs-ladybug.ico" type="image/x-icon"/>
+    <title>Rellena tu CV</title>
+</head>
+<body>
+
+    <h1>Rellena tu CV</h1>
+
+
+    <form method="post" action=http://daw.iesjoaquimmir.cat/sarti.php>
+
+        <fieldset> 
+            <legend>Datos personales</legend> 
+            <!-- provincia -->
+                <label>Provincia</label><br /> 
+                <select name="entradalista"> 
+                    <optgroup label="Provincias"> 
+                        <option>Barcelona</option> 
+                        <option>Tarragona</option> 
+                        <option>Lleida</option> 
+                        <option>Girona</option>                    
+                    </optgroup> 
+                </select> 
+                <br /><br />
+            <!-- fecha nacimiento -->
+                <label>Fecha Nacimiento</label><br />
+                    <input type="number" name="dia" min="1" max="31"/> de
+                    <select name="mes"> 
+                            <optgroup label="Entradas textuales"> 
+                                <option value="-1" selected></option> 
+                                <option>Enero</option> 
+                                <option>Febrero</option> 
+                                <option>Marzo</option> 
+                                <option>Abril</option>
+                                <option>...</option>                   
+                            </optgroup> 
+                        </select> de 
+                    <input type="number" name="año" min="1900" max="2100"/>
+                    <br /><br />
+            <!-- Temas de interes -->
+                <label>Temas interes</label><br /> 
+                <select name="temas_interes" size="5"> 
+                    <optgroup> 
+                        <option>Administracion de base de datos</option> 
+                        <option>Análisis y programacion</option> 
+                        <option>Arquitectura</option> 
+                        <option>Calidad</option> 
+                        <option>ERP, CRM, Business Intelligence</option>
+                        <option>Otros</option>                     
+                    </optgroup> 
+                </select> 
+                <br /><br />
+            <!-- Boton envio y reset -->
+                <input type="submit" value="Guardar cambios" />
+                <input type="reset" value="Borrar los datos introducidos" />
+
+        </fieldset> 
+    </form>
+
+</body>
+</html>

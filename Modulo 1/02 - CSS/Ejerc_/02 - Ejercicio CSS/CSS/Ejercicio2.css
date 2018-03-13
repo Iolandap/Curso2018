@@ -1,0 +1,67 @@
+
+/* Adjuste primer parragrafo */
+
+    h1  {
+        color:green;
+    }
+    strong {
+        color:red;
+    }
+    span.destacado {
+        color: orange;
+    }
+
+/* Adjuste segundo parragrafo */
+
+    h2, span.subtitulo  {
+        color:blue;
+    }
+    P a {
+        color: red;
+    }
+    p em {
+        color:blue;
+    }
+    p span.especial {
+        color: rgb(136, 76, 136);
+    }
+
+/* Adjuste tabla */
+
+    table {
+        border-collapse: collapse;
+    }
+    table, td, th {
+        border: 1px solid black; 
+        padding: 10px;
+    }
+    caption {
+        color: blue;
+    }
+    thead {
+        color: orange;
+    }
+    tbody {
+        color: green;
+    }
+    tbody strong, tbody .especial {
+        color: orange;
+    }
+    tfoot,tbody th {
+        color: red;
+    }
+    table {
+        padding: 2px;
+    }
+
+/* Adjuste tercer parragrafo */
+
+    div#adicional {
+        color:olive;
+    }
+    div#adicional span#especial {
+        color:rgb(243, 142, 159);
+    }
+    div#adicional a {
+        color:green;
+    }

@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+    <!-- FAVICON -->
+    <link rel="icon" href="iconshock-tiny-bugs-ladybug.ico" type="image/x-icon"/>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <!-- Iconos Fontqwesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <!-- Fichero externo CSS -->
+    <link rel="stylesheet" href="css/ejercicio.css" title="style">
+
+        <!-- Fichero externo JS -->
+    <script src="js/codigo.js"></script>
+
+    <title>Ejercicio 3 - Bootstrap  </title>
+</head>
+
+<body>
+
+    <!-- Menu cabecera -->
+        <!-- fixed-top:     Deja fijo menu arriba  -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Ejercicio 1 </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Menu izquierda -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- mr-auto:  fuerza a que todo lo que venga despues vaya a la derecha automaticamente -->
+            <ul class="navbar-nav mr-auto">
+                <!-- Item 1 -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Ítem 1 <span class="sr-only">(current)</span></a>
+                </li>
+                <!-- Item 2 despegable -->
+                <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ítem 2</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                </li>
+            </ul>
+            <!-- Menu derecha -->
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                <!-- btn-default - Fondo color blanco -->
+                <!-- btn-lg - Tamaño boton grande -->
+                <button class="btn-default btn-light btn-lg my-2 my-sm-0" type="submit">
+                    <span class="fas fa-search"></span> <!-- Icono de fontawesome  -->
+                </button>
+            </form>
+            <ul class="navbar-nav ">
+                <li class="nav-item active">
+                    <!-- data-toggle : Llamada a MODAL -->
+                    <!-- data-target : Nombre del MODAL a usar -->
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#inicio_sesion">
+                        <span class="fas fa-lock"></span><!-- Icono de fontawesome  -->
+                    Iniciar Sesion</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Menu cuerpo -->
+    <div class="container">
+        <!-- Cabecera -->
+        <div class="jumbotron">
+            <h1>Plantilla Web</h1>
+        </div>
+        <table id="tabla" class="table table-striped table-light">
+            <thead>
+                <tr>
+                    <th scope="col">Identificador</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Contenido</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th id="row_1" class="align-middle" scope="row">1</th>
+                    <td id="art_1" class="align-middle" width="100 px">Articulo 1</td>
+                    <td id="txt_1" class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eaque natus ea, quidem quibusdam excepturi quos possimus dolorum saepe, earum id accusamus dicta recusandae odit ab soluta quasi est dignissimos.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eaque natus ea, quidem quibusdam excepturi quos possimus dolorum saepe, earum id accusamus dicta recusandae odit ab soluta quasi est dignissimos.
+                    </td>
+                    <td class="align-middle" width="100 px">
+                        <button id="boton_1" class="btn-default btn-success btn-sm my-2 my-sm-0" type="submit"
+                        data-toggle="modal" data-target="#editar">
+                            <span class="far fa-edit"></span> <!-- Icono de fontawesome  -->
+                        Editar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th id="row_2" class="align-middle" scope="row">2</th>
+                    <td id="art_2" class="align-middle" >Articulo 2</td>
+                    <td id="txt_2" class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eaque natus ea, quidem quibusdam excepturi quos possimus dolorum saepe, earum id accusamus dicta recusandae odit ab soluta quasi est dignissimos.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eaque natus ea, quidem quibusdam excepturi quos possimus dolorum saepe, earum id accusamus dicta recusandae odit ab soluta quasi est dignissimos.
+                    </td>
+                    <td class="align-middle" >
+                        <button id="boton_2" class="btn-default btn-success btn-sm my-2 my-sm-0" type="submit"
+                        data-toggle="modal" data-target="#editar">
+                            <span class="far fa-edit"></span> <!-- Icono de fontawesome  -->
+                        Editar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th id="row_3" class="align-middle"scope="row">3</th>
+                    <td id="art_3" class="align-middle">Articulo 3</td>
+                    <td id="txt_3" class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eaque natus ea, quidem quibusdam excepturi quos possimus dolorum saepe, earum id accusamus dicta recusandae odit ab soluta quasi est dignissimos.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eaque natus ea, quidem quibusdam excepturi quos possimus dolorum saepe, earum id accusamus dicta recusandae odit ab soluta quasi est dignissimos.
+                    </td>
+                    <td class="align-middle">
+                        <button id="boton_3" class="btn-default btn-success btn-sm my-2 my-sm-0" type="submit"
+                        data-toggle="modal" data-target="#editar">
+                            <span class="far fa-edit"></span> <!-- Icono de fontawesome  -->
+                        Editar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    
+    <!-- Modal iniciar sesion-->
+    <!-- id: tiene el nombre del MODAL -->
+    <div class="modal fade" id="inicio_sesion" tabindex="-1" role="dialog"          aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!-- Cabecera -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesión</h5>
+                    <!-- Definicion "X" esquina derecha -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- Body -->
+                <div class="modal-body">
+                    <!-- Mensaje alerta -->
+                    <div class="alert alert-warning" role="alert">
+                        Introduzca su nombre de usuario y contraseña
+                        <!-- Definicion "X" esquina derecha -->
+                        <button type="button" class="close" aria-label="Close">
+                            <span aria-hidden="true" >&times;</span>
+                        </button>
+                    </div>
+                    <!-- Formulario -->
+                    <form>
+                    <div class="form-group">
+                        <label for="username" class="col-form-label">Username</label>
+                        <input type="text" class="form-control" id="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="pasword" class="col-form-label">Pasword:</label>
+                        <input type="text" class="form-control" id="pasword">
+                    </div>
+                    </form>
+                    <!-- Boton envio -->
+                    <button type="button" id="envio" class="btn pull-left btn-outline-dark">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal EDITAR-->
+    <!-- id: tiene el nombre del MODAL -->
+    <div class="modal fade" id="editar" tabindex="-1" role="dialog"          aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!-- Cabecera -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modificar contenido</h5>
+                    <!-- Definicion "X" esquina derecha -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- Body -->
+                <div class="modal-body">
+                    <!-- Mensaje alerta -->
+                    <div class="alert alert-warning" role="alert">
+                        Campo en blanco!!! Modifique los campos
+                        <!-- Definicion "X" esquina derecha -->
+                        <button type="button" class="close" aria-label="Close">
+                            <span aria-hidden="true" >&times;</span>
+                        </button>
+                    </div>
+                    <!-- Formulario -->
+                    <form>
+                    <div class="form-group">
+                        <label for="art_num" class="col-form-label">Articulo numero:</label>
+                        <input type="text" class="form-control" id="art_num">
+                    </div>
+                    <div class="form-group">
+                        <label for="contenido" class="col-form-label">Contenido:</label>
+                        <textarea class="form-control" id="contenido" rows="3"></textarea>
+                    </div>
+                    </form>
+                    <!-- Boton envio -->
+                    <button type="button" id="edit_guardar" class="btn pull-left btn-outline-dark">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>  
+    
+</body>
+</html>

@@ -1,0 +1,162 @@
+/* **********************************************************
+   ******************** DEFINICONES GENERALES ***************
+   ******************************************************* */
+    html,
+    body {
+      font-family: 'Open Sans', helvetica, calibri, arial;
+      height: 100%;
+    }
+    a {
+      color: white;
+    }
+    a:hover {
+      color: #ababab;
+    }
+    ul li {
+      list-style: none;
+    }
+    .contenedor--div {
+      padding: 0px !important;
+      margin: 0px;
+    }
+
+    .navbar-dark .navbar-nav .active > .nav-link, 
+    .navbar-dark .navbar-nav .nav-link.active, 
+    .navbar-dark .navbar-nav .nav-link.show, 
+    .navbar-dark .navbar-nav .show > .nav-link{
+      color:orange;
+    }
+
+/* **********************************************************
+   ********************** MENU LATERAL  *********************
+   ******************************************************* */
+    /* Formato menu lateral */
+      .contenedor--menu {
+        margin-top: -40px;
+        background-color: #00775A;
+        z-index: 300;
+        height: 100%;
+        width: 250px;
+        box-shadow: 6px 5px 10px 0px rgba(50, 50, 50, 0.22);
+        overflow-y: auto;
+        position: fixed;
+      }
+      .menu {
+        font-size: 1.1em;
+        z-index: 500;
+        padding: 80px 10px 50px 10px;
+      }
+      .menu li,
+      .menu a {
+        padding: 15px 5px;
+        color: white;
+        width: 200px;
+      }
+      .menu a {
+        text-decoration: none;
+      }
+      .menu a:hover {
+        color: #ababab;
+      }
+      .menu li {
+        border-bottom: 1px solid #606060;
+        display: block;
+      }
+
+    /* Formatos submenu lateral */
+      .submenu {
+        padding-left: 15px;
+        font-size: 0.9em;
+      }
+      .submenu li,
+      .submenu a {
+        padding: 8px 5px;
+      }
+      .submenu li {
+        border-bottom: 0px;
+      }
+
+    /* Formatos Icono rayas lateral*/
+      .icono {
+        display: inline-block;
+        background-color: #212529;
+        color: orange;
+        font-size: 1.5em;
+        transition: all 0.5s ease;
+      }
+      .icono:hover {
+        color: #00775A;
+        transition: all 0.5s ease;
+      }
+      
+/* **********************************************************
+   ************************** BODY  *************************
+   ******************************************************* */
+      /* Formatos contenido */
+        .contenido__div {
+          margin-top: 70px;
+          box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
+        }
+        .contenido__div p {
+          padding: 10px 5px 30px 5px;
+        }
+        .contenido__div .contenido {
+          padding-top: 30px;
+          max-width: 800px;
+          padding-bottom: 30px;
+        }
+        .contenido__div .contenido .tag__usando,
+        .contenido__div .contenido .tag {
+          display: inline-block;
+          padding: 5px;
+          margin: 5px;
+        }
+        .contenido__div .contenido .tag {
+          display: inline-block;
+          background-color: #0f0f0f;
+          color: white;
+        }
+        .contenido__div .contenido .contenido__info {
+          display: block;
+          padding: 30px 0px;
+        }
+        .marca_submenu::before {
+          content: -final de cnitedo;
+        }
+
+/* **********************************************************
+   ************************* FOOTER  ************************
+   ******************************************************* */
+    footer{
+      background-color: black;
+      height: 130px;
+      color:white;
+      font-size: 0.7em;
+    }
+    .row p{
+      font-size: 2em;
+    }
+    footer h4 {
+      font-size: 1.2em;
+      color: orange;
+    }
+    .menu_botton{
+      border-top: 1px dotted orange;
+      color: orange;
+    }
+    .menu_botton a{
+      color: orange;
+    }
+
+/* **********************************************************
+   *********************** CONTAINER  ***********************
+   ******************************************************* */
+    .container{
+      margin-top: 100px;
+    }
+    .row p, .row h2{
+      font-size: 1em;
+    }
+    img{
+      margin-left: 20%
+    }

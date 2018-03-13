@@ -1,0 +1,21 @@
+/* ==================================================================
+   ================================================================== */
+body{
+  background-color: rgb(218, 214, 214);
+}
+
+/* Cabecera */
+.jumbotron{
+  margin-top: 70px;   /* para que haya margen respecto el menu. sino quedaria oculto detras */
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: forestgreen;
+  color: white;
+}
+
+/* Tags */
+.btn{
+  background-color: rgb(215, 245, 171);
+  color: green;
+  border-color: rgb(215, 245, 171);
+}

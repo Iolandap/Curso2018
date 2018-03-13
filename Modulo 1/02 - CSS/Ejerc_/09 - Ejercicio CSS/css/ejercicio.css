@@ -1,0 +1,70 @@
+/* ==================================================================
+   ================================================================== */
+
+   /* Primer gran bloque */
+      .bloque1{
+        width: 47%;
+        float: left;
+      }
+      .bloque2{
+        width: 47%;
+        float: left;
+      }
+        /* Subbloque */
+          .bloque6, .bloque7{
+            width: 47%;
+            float: left;
+            height: 105px;
+            border: 0.5px dotted green;       /* Lineas discontinuas de los bloques */
+          }
+          .bloque7 select{
+            width: 200px;
+          }
+  
+  /* Segundo gran bloque */
+    .bloque3{
+      width: 100%;
+      clear: left;
+    }
+    /* Subloque */
+        .bloque4{
+          width: 47%;
+          float: left;
+        }
+        .bloque5{
+          width: 47%;
+          float: left;
+        }
+          /* Subloque */
+            .bloque8, .bloque9{
+              width: 47%;
+              float: left;
+              height: 35px;
+              border: 0.5px dotted green;         /* Lineas discontinuas de los bloques */
+            }
+
+/* Definiciones de hovers */
+
+    .bloque1:hover, .bloque2:hover, .bloque4:hover, .bloque5:hover{
+      background-color: yellow;
+    }
+    input:hover, select:hover{    
+      border: 2px solid orange;
+    }
+
+/* Definiciones de textos, etc... */
+    label{
+      font-size: 0.7em;
+    }
+    legend{
+      font-weight: bold;
+    }
+    h5{
+      font-size: 0.7em;
+    }
+    hr{                                         /* Para que busque el primer espacio sin bloques */ 
+      clear: both;
+    }
+    fieldset{                           
+      border: 0.5px dotted green;             /* Lineas discontinuas de los bloques */
+    }

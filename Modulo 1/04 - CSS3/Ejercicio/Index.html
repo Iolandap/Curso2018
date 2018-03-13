@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="icon" href="../iconshock-tiny-bugs-ladybug.ico" type="image/x-icon"/>
+   		<link rel="stylesheet" href="css/ejercicio.css" title="style">
+		<title>Formulario de alta</title>
+	</head>
+
+	<body>
+		<h1>Formulario de alta</h1>
+
+		<form method="post" action=http://daw.iesjoaquimmir.cat/sarti.php>
+
+			<!-- Input lista -->
+				<div class="recuadro">
+					<label for="txt1">Lista</label>
+					<input id="txt1" type="text" list="lst1">
+					<datalist id="lst1">
+						<option label="Mr." 	value="Opción 1">
+						<option label="Ms." 	value="Opción 2">
+						<option label="Mrs." 	value="Opción 3">
+						<option label="Don" 	value="Opción 4">
+					</datalist>
+				</div>
+			<!-- Input text autofocus -->
+				<div class="recuadro">
+					<label for="txt2">Texto Autofocus</label>
+					<input id="txt2" type="text" autofocus>
+				</div>
+			<!-- Input text placeholder required autocomplete -->
+				<div class="recuadro">
+					<label for="txt2">Texto placeholder - Texto dentro input / Required / autocomplete</label><br>
+					<!-- Required: Campo obligatorio
+						 autocomplete: autocompleta con el historico si o no -->
+					<input type="text" name="fname" placeholder="First name" required autocomplete="off"><br>
+					<input type="text" name="lname" placeholder="Last name"  required autocomplete="off"><br>
+				</div>
+			<!-- Input number -->
+				<div class="recuadro">
+					<label for="number1">Numeros (rango 0 a 10 )</label>
+					<input id="number1" type="number"  min="0" max="10">
+				</div>
+			<!-- Input file -->
+				<div class="recuadro">
+					<label for="file1">File</label>
+					<input id="file1" type="file" multiple>
+				</div>
+			<!-- Input pasword -->
+				<div class="recuadro">
+					<label for="pasword">Password con patern (8 longitud 1ro numero + ultimo letra mayuscula)</label><br>
+					<input type="password" name="psw" pattern="[1-9]{1}[0-9a-zA-Z]{6}[A-Z]{1}">
+					<!-- pattern. 
+							si se pone * seria cantidad indefinida. 
+							si se pone + seria de uno a indefinido -->
+				</div>
+			<!-- Input progress -->
+				<div class="recuadro">
+					<label for="pasword">progress</label>
+					<progress max="100" value="30"></progress>
+				</div>
+			<!-- Boton envio y reset -->
+				<br>
+				<hr>
+				<br>
+				<input type="submit" value="Guardar cambios" /><br>
+				<input type="reset" value="Borrar los datos introducidos" />
+		</form>
+	</body>
+</html>

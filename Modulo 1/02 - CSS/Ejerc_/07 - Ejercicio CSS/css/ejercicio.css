@@ -1,0 +1,21 @@
+/* ==================================================================
+   ================================================================== */
+  ul {
+    list-style: none;
+    font-size: 20px;
+  }
+  img{
+    margin-bottom: 0%;
+  }
+  li{
+    border: 1px solid black;
+    width: 20%;
+  }
+  li:hover{
+    border: 1px solid black;
+    width: 20%;
+  }
+
+  li span{
+    padding-bottom: 20px;
+  }

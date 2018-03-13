@@ -1,0 +1,125 @@
+/* Definiciones generales */
+    html,body{
+        height:98%;
+        width:100%;
+        Font-size: 1.5rem; /* Define el tamaño de la letra para todo el documento */
+    }
+
+/* cabecera */
+    div#cabecera {
+        position: fixed;
+        width: 100%;
+        overflow: hidden;
+        top: 0;
+    }
+        /* cabecera 1 */
+            div#cabecera1 {
+                background-color:yellow;
+                border: 1px solid;
+                text-align: center;
+                width: 99%;
+            }
+        /* cabecera 2 */
+            div#cabecera2 {
+                background-color:rgb(0, 247, 255);
+                border: 1px solid;
+                text-align: center;
+                font-size: 0.75rem;
+                width: 99%;
+            }
+
+    /* Formato menu */
+        ul {                                            /* Formato bloque donde esta el menu */
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgb(0, 195, 255);
+        }
+
+        li {                                            /* Posicionamiento menu horizontal */
+            float: left;
+        }
+
+        li a {                                          /* Formato botones menu */
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        li a:hover {                                    /* Formato al estar encima */
+            background-color: rgb(0, 119, 255);
+            color: white;
+        }
+
+/* menu */
+    div#Menu {
+        margin-top:120px;
+        background-color:orange;
+        border: 1px solid;
+        float:left;
+        width: 20%;
+        height:110%;
+        text-align: center;
+        display:table;                              /* convierte el bloque en una tabla para poder centrar el texo */
+    }
+    div#menucontainer{
+        display:table-cell;vertical-align:middle;
+    }
+    div#Menu p{
+        text-align:center;
+    }
+
+/* container */
+    div#container {
+        margin-top:120px;
+        float:left;
+        width: 79.1%;
+        height:110%;
+    }
+        /* contenido1 */
+            div#Contenido1 {
+                background-color:green;
+                border: 1px solid;
+                float:left;
+                width: 49.7%;
+                height:100%;
+                text-align: center;
+                display:table;                      /* convierte el bloque en una tabla para poder centrar el texo */
+            }
+            div#contcontainer1{
+                display:table-cell;vertical-align:middle;
+            }
+            div#Contenido1 p{
+                text-align:center;
+            }
+
+        /* contenido1 */
+            div#Contenido2 {
+                background-color:red;
+                border: 1px solid;
+                float:left;
+                width: 49.7%;
+                height:100%;
+                text-align: center;
+                display:table;                      /* convierte el bloque en una tabla para poder centrar el texo */
+            }
+            div#contcontainer2{
+                display:table-cell;vertical-align:middle;
+            }
+            div#Contenido2 p{
+                text-align:center;
+            }
+
+/* pie */
+    div#Pie {
+        background-color:blue;
+        border: 1px solid;
+        clear: left;
+        text-align: center;
+        width: 99%;
+        height:10%;
+        position: fixed;                        /* fija el bloque en la base, para que no se mueva al hacer scroll */
+        bottom: 0px;
+    }

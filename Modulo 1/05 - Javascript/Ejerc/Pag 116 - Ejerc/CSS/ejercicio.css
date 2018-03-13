@@ -1,0 +1,27 @@
+fieldset{
+    width: 60%;
+}
+
+legend{
+    color: blue;
+    font-size: 1.5em;
+}
+
+#imagen_secundaria{
+    margin-left: 5%;
+    padding: 20px;
+}
+
+#imagen_principal{
+    margin-left: 20%;
+    border: 2px solid solid;
+    height:400px;
+    width:400px;
+    background:url("../img/door_1.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+img{
+    padding: 10px;
+}

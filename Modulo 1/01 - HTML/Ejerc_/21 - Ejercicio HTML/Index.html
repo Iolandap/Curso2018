@@ -1,0 +1,64 @@
+
+<!-- ***************************************************************************************** -->
+<!-- ********************************** 21 Ejercicio ***************************************** -->
+<!-- ***************************************************************************************** -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="../iconshock-tiny-bugs-ladybug.ico" type="image/x-icon"/>
+    <title>Información sobre el producto</title>
+</head>
+
+<body>
+    <h1>Información sobre el producto</h1>
+    <form method="post" action=http://daw.iesjoaquimmir.cat/sarti.php enctype="multipart/form-data">
+        <!-- Primer bloque -->
+            <fieldset> 
+                <legend><b>Datos básicos</b></legend> 
+                <!-- nombre -->
+                    <label for="lnombre">Nombre</label><br /> 
+                    <input id="lnombre" type="text" name="nombre" />
+                    <br /><br />
+                <!-- textarea -->
+                    <label for="ltextarea">Descripcion</label><br /> 
+                    <textarea name="textarea" rows="3" cols="40"></textarea> <br /> <br />
+                <!-- foto -->
+                    <label for="lfoto">Foto</label>
+                    <input id="lfoto" type="file" name="foto" /><br /> <br />  
+                <!-- checkbox -->
+                    <input type="checkbox" name="Novedades" value="novedades"/>Añadir contador de visitas<br />
+            </fieldset><br /> 
+        <!-- Segundo bloque -->
+            <fieldset> 
+                <legend><b>Datos económicos</b></legend> 
+                <!-- precio -->
+                    <label for="lprecio">Precio</label>
+                    <input id="lprecio" type="number" name="precio" />Eur &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                <!-- impuestos -->
+                    <label>Impuestos</label>
+                    <select name="impuestos" size="1"> 
+                        <optgroup> 
+                            <option>0%</option> 
+                            <option>3%</option> 
+                            <option>6%</option> 
+                            <option>12%</option> 
+                            <option>21%</option>          
+                        </optgroup> 
+                    </select> 
+                    <br /> <br /> 
+                <!-- promocion -->
+                    <label for="lpromocion">Promoción</label><br /> 
+                    <input type="radio" name="promocion" value="" checked="checked"/>Ninguno<br />
+                    <input type="radio" name="promocion" value="tr_free" />Transporte gratuito<br />
+                    <input type="radio" name="promocion" value="descuento" />Descuento 5%<br />
+            </fieldset> <br /> 
+        <!-- Boton envio y reset -->
+            <input type="submit" value="Guardar cambios" />
+            <input type="reset" value="Borrar los datos introducidos" />
+    </form>
+</body>
+</html>

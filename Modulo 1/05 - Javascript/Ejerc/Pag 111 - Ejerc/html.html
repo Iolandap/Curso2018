@@ -1,0 +1,40 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<link rel="icon" href="iconshock-tiny-bugs-ladybug.ico" type="image/x-icon"/>
+	<link rel="stylesheet" href="css/ejercicio.css" title="style">
+	<script src="js/codigo.js">
+
+	</script>
+	<title>Ejercicio</title>
+</head>
+	
+	<body>
+
+	<!-- Primer bloque de inputs -->
+
+		<h1>Limitar el numero de caracteres en un textarea a 10 elementos - Primer metodo</h1>
+
+		<textarea cols="40" rows="5" id="limite"></textarea>
+	
+	<!-- Segundo bloque de inputs -->
+
+		<h1>Limitar el numero de caracteres en un textarea y input - Segundo metodo</h1>
+		<p>
+			Limitamos la entrada a 20 caracteres
+			<br><textarea cols="40" rows="5" name="texto"
+				onKeyUp="return limitar(event,this.value,20)" 
+				onKeyDown="return limitar(event,this.value,20)"></textarea></td>
+		</p>
+	 
+		<p>
+			Limitamos la entrada a 10 caracteres
+			<br><input name="input" type="text" 
+				onKeyUp="return limitar(event,this.value,10)" 
+				onKeyDown="return limitar(event,this.value,10)">
+		</p>
+
+	</body>
+</html>

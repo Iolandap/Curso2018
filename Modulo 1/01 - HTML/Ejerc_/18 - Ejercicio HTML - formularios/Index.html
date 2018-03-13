@@ -1,0 +1,48 @@
+
+<!-- ***************************************************************************************** -->
+<!-- ********************************** 18 Ejercicio ***************************************** -->
+<!-- ***************************************************************************************** -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="iconshock-tiny-bugs-ladybug.ico" type="image/x-icon"/>
+    <title>Rellena tu CV</title>
+</head>
+<body>
+
+    <h1>Rellena tu CV</h1>
+
+    <form method="post" action=http://daw.iesjoaquimmir.cat/sarti.php>
+
+        <!-- nombre -->
+            <label for="lnombre">Nombre</label><br /> 
+            <input id="lnombre" type="text" name="nombre" maxlength="30" /><br />
+        <!-- apellidos -->
+            <label for="lapellidos">Apellidos</label><br /> 
+            <input id="lapellidos" type="text" name="apellidos" maxlength="80"/><br />
+        <!-- contraseña -->
+            <label for="lcontraseña">Contraseña</label><br /> 
+            <input id="lcontraseña" type="password" name="contraseña" maxlength="10"/><br /> 
+        <!-- DNI -->
+            <label for="ldni">DNI</label><br /> 
+            <input id="ldni" type="text" name="dni" /><br /> 
+        <!-- sexo -->
+           <label for="lsexo">Sexo</label><br /> 
+           <input type="radio" name="sexo" value="hombre" checked="checked"/>Hombre<br />
+           <input type="radio" name="sexo" value="mujer" />Mujer<br /> <br /> 
+        <!-- foto -->
+            <label for="lfoto">Incluir mi foto</label>
+            <input id="lfoto" type="file" name="foto" /><br /> <br />  
+        <!-- checkbox -->
+            <input type="checkbox" name="Novedades" value="novedades" checked="checked"/>Subscribirme al boletin de novedades<br /> <br /> 
+        <!-- Boton envio y reset -->
+            <input type="submit" value="Guardar cambios" />
+            <input type="reset" value="Borrar los datos introducidos" />
+    </form>
+
+</body>
+</html>

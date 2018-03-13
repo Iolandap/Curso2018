@@ -1,0 +1,21 @@
+/* ==================================================================
+   ================================================================== */
+li{
+  font-size: 1em;
+}
+
+li:first-child{color:green;}            /* Primer hijo */
+
+li:first-of-type{background: red;}      /* primero de su tipo */
+
+li:nth-last-of-type(3){                   /* numero indicado */
+  color:blue;
+  font-size: 1.5em;
+}     
+
+li:last-of-type{background: green;}     /* primero de su tipo */
+
+li:last-child{                            /* Ultimo elemento */
+  color:red;
+  font-size: 3em;
+}               

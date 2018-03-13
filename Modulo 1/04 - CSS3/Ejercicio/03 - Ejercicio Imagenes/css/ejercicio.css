@@ -1,0 +1,14 @@
+/* ==================================================================================================================================== */
+html,body{
+  width: 99%;
+  height: 98%;
+}
+body {
+  background-image: url("../img/decoration.png"), url("../img/ribbon.png"), url("../img/old_paper.jpg");
+  background-repeat: no-repeat;
+  background-position: left top, right bottom, top;
+  background-size: 30% 30%, 20% 60%, 100% 100%;
+}
+h1{
+  float: right;
+}

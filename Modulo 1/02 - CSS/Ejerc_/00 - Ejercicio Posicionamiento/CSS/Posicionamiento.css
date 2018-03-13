@@ -1,0 +1,116 @@
+/* CSS del HTML de posicionamiento */
+
+    body {
+        background-color: pink;
+    }
+
+    /* Menu 1 */
+        #banner{
+            margin: 5px;
+        }
+
+        #link{      
+            border: 2px solid black;
+            background-color: yellow;
+            float: left;
+            width: 15%;
+            margin: 5px;
+        }
+        #link a{
+            Color: black;
+            text-decoration: none;
+            margin: 5px;
+            font-size: 20px;
+        }
+    
+    /* Menu 2 */
+        #menu2 {
+            border: 5px dotted black;
+            background-color: rgb(204, 243, 204);
+            float: left;
+            margin: 5px;
+        }
+        #menu2 h1{
+            margin: 5px;
+            margin-top: 20px;
+            color: blue;
+        }
+        #menu2 p {
+            margin: 5px;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+    /* Container noticias */
+        #noticias{
+            clear: both;
+        }
+
+        .Container{
+            border: 2px solid black;
+            background-color: white;
+            width: 32%;
+            float:left;
+            margin: 5px;
+            text-align: justify;
+        }
+        .container .left{
+            float: left;
+            margin: 5px;
+            margin-right: 20px
+        }
+        .container .right{
+            float: right;
+            margin: 5px;
+            margin-left: 20px
+        }
+        .container p{
+            margin: 20px;
+            text-indent: 40px;
+        }
+        .container h2{
+            color: blue;
+            margin: 5px;
+            margin-left: 20px;
+        }
+        .container .offered{
+            Color: red;
+        }
+           
+    /* Pie */
+        #pie{
+            border: 5px dotted black;
+            background-color: salmon;
+            clear:left;
+            float:right;
+            margin: 5px;
+            width: 65%;
+            text-align: justify;
+        }
+        #pie p{
+            margin: 10px;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        #pie strong{
+            color: blue;
+        }
+
+    /* Banner 2 */
+        #banner2{
+            background-color: blue;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 50%;
+        }
+        #icon{
+            float: right;
+            margin-top: 15px
+        }
+        #banner2 p{
+            float:left;
+            color:white;
+            margin-left: 5px;
+            font-size: 20px;
+        }

@@ -1,0 +1,35 @@
+fieldset{
+    width: 60%;
+}
+
+legend, label{
+    color: blue;
+    font-size: 1.5em;
+}
+
+/* Definiciones para las etiquetas */
+    label{
+        display: inline-block;
+        width: 150px;           /*  Da volumen al texto para que quede alineado el siguiente campo */
+    }
+
+/* Definiciones campo entrada numeros */
+    input[type=text]{
+        font-size: 1.5em;
+        background: blue;
+        color: white;
+        border: 3px solid rgb(212, 210, 210);
+        display: inline-block;
+        width: 180px;           /*  Da volumen al texto para que quede alineado el siguiente campo */
+    }
+
+/* Definiciones boton */
+    input[type=button]{
+        font-size: 1.5em;
+        background: #66ccff;
+        border: solid;          /* Fuerza que el borde boton tenga el mismo formato en las 4 caras */
+        border-color: blue;
+        color: white;
+        width: 190px;           /*  Da volumen al boton para que quede alineado el siguiente campo */
+        text-align: left
+    }

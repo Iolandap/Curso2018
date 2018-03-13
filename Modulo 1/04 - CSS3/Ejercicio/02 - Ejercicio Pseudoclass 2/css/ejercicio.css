@@ -1,0 +1,59 @@
+/* ==================================================================
+   ================================================================== */
+    li{
+      font-size: 1em;
+    }
+
+    li:first-child{color:green;}            /* Primer hijo */
+
+    li:first-of-type{font-weight: bold;}      /* primero de su tipo */
+
+    li:nth-last-of-type(3){                   /* numero indicado */
+      color:blue;
+      font-size: 1.5em;
+    }     
+
+    li:last-of-type{font-style: italic;}     /* primero de su tipo */
+
+    li:last-child{                            /* Ultimo elemento */
+      color:red;
+      font-size: 3em;
+    }     
+
+/* ==================================================================
+                              Ejercicio 2
+   ================================================================== */
+
+  /* Ajuestes en links segun texto */
+    a[href*="net"]{
+      background-color: yellow;
+    }
+    a[href$="com"]{
+      background-color: green;
+    }
+
+  /* Ajustes en P */
+    .bloque_p{
+      background-color: antiquewhite;
+      margin: 2em;
+      padding: 1em;
+      border: 0.5px dotted rebeccapurple;
+    }
+    p{
+      text-indent: 2em;
+    }
+    p:hover::first-letter {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: green;
+    }    
+    p::first-line{
+      background-color: yellow;
+    }
+    /* Color letras par y impar */
+    P:nth-child(odd){
+      color:blue;
+    }
+    P:nth-child(even){
+      color:red;
+    }

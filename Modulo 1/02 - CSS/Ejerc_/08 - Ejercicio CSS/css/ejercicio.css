@@ -1,0 +1,26 @@
+/* ==================================================================
+   ================================================================== */
+
+   table{
+     border-collapse: collapse;
+     text-align: center;
+     font-size: 1.5em;
+   }
+
+   th, td{
+    border: 1px solid black;
+    padding: 1.5em;
+   }
+   th{
+     background-color: #e6e6e6;
+   }
+   .Euro, .Dolar, .Libra, .Yen{
+     background-color: #ccffff;
+   }
+
+   tr:nth-child(even) {
+    background-color: #ffffcc;
+}
+  .red:hover, .red:hover .Euro, .red:hover .Dolar, .red:hover .Libra, .red:hover .Yen{
+    background-color: #ffc2b3;
+  }

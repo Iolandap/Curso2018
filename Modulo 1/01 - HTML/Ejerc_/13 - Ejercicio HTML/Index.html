@@ -1,0 +1,109 @@
+
+<!-- ***************************************************************************************** -->
+<!-- ********************************** 13 Ejercicio ***************************************** -->
+<!-- ***************************************************************************************** -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="iconshock-tiny-bugs-ladybug.ico" type="image/x-icon"/>
+    <title>Ejemplo de tablas fusionadas</title>
+</head>
+<body>
+
+<!-- Fusion de columnas -->
+    <h1>Fusión de columnas</h1>
+
+        <table border="1">
+
+            <!-- Fila 1 -->
+                <tr>
+                    <td colspan="2" align="center">A</td>
+                </tr>
+
+            <!-- Fila 2 -->
+                <tr>
+                    <td>B</td>
+                    <td>C</td>
+                </tr>
+
+        </table>
+
+<!-- Fusion de filas -->
+    <h1>Fusión de filas</h1>
+
+        <table border="1">
+
+            <!-- Fila 1 -->
+                <tr>
+                    <td>A</td>
+                    <td rowspan="2" align="center">B</td>
+                </tr>
+
+            <!-- Fila 2 -->
+                <tr>
+                    <td>C</td>
+                </tr>
+
+        </table>
+
+<!-- Fusion de columnas -->
+    <h1>Fusión de columnas</h1>
+        <table border="1">
+        <!-- Fila 1 -->
+            <tr>
+                <td colspan="3" align="center">A</td>
+                <td>B</td>
+            </tr>
+        <!-- Fila 2 -->
+            <tr>
+                <td>C</td>
+                <td colspan="2" align="center">D</td>
+                <td>E</td>
+            </tr>
+        <!-- Fila 3 -->
+            <tr>
+                <td colspan="4" align="center">F</td>
+            </tr>
+        <!-- Fila 2 -->
+        <tr>
+            <td>G</td>
+            <td>H</td>
+            <td>I</td>
+            <td>J</td>
+        </tr>
+    </table>
+
+<!-- Fusion de filas -->
+    <h1>Fusión de filas</h1>
+    <table border="1">
+        <!-- Fila 1 -->
+            <tr>
+                <td>A</td>
+                <td>B</td>
+                <td rowspan="3" align="center">C</td>
+                <td>D</td>
+            </tr>
+        <!-- Fila 2 -->
+            <tr>
+                <td rowspan="2" align="center">E</td>
+                <td>E</td>
+                <td rowspan="3" align="center">G</td>
+            </tr>
+        <!-- Fila 3 -->
+            <tr>
+                <td>H</td>
+            </tr>
+        <!-- Fila 4 -->
+        <tr>
+            <td>I</td>
+            <td>J</td>
+            <td>K</td>
+        </tr>
+    </table>
+    
+</body>
+</html>

@@ -1,0 +1,201 @@
+/* === IMPORTANTE ===================================================
+   No modificar estos estilos, ya que son imprescindibles para
+   que la página se vea correctamente.
+   ================================================================== */
+
+/*-- Básico ----------------------------------------------------------*/
+ul, ul li { margin: 0; padding: 0; list-style: none; }
+h1, h2, h3, p, form { margin: 0; padding: 0; }
+.clear { clear: both; }
+img { border: none; }
+
+/*-- Layout ----------------------------------------------------------*/
+#contenedor {
+  width: 90%;
+  max-width: 900px;
+  width: expression(document.body.clientWidth > 901? "900px": "auto");
+  margin: 0 auto;
+}
+
+#cabecera, #menu, #lateral, #contenido, #contenido #principal, #contenido #secundario, #pie {
+  border: 2px solid #777;
+}
+
+#cabecera { clear: both; }
+#menu { clear: both; }
+#lateral { float: left; width: 20%; }
+#contenido { float: right; width: 75%; }
+#contenido #principal { float: left; width: 73%; }
+#contenido #secundario { float: right; width: 20%; }
+#pie { clear: both; }
+
+/*-- Cabecera --------------------------------------------------------*/
+#cabecera #logo { float: left; }
+#cabecera #buscador { float: right; }
+
+/*-- Menu ------------------------------------------------------------*/
+#menu ul#menu_principal li { display: inline; float: left; }
+
+/*-- Sección Principal -----------------------------------------------*/
+#contenido #principal .articulo img { width: 100px; float: left; }
+
+/*-- Pie de página ---------------------------------------------------*/
+#pie .enlaces   { float: left; }
+#pie .copyright { float: right; }
+
+/* === IMPORTANTE ===================================================
+   A partir de aquí, se pueden añadir todos los estilos propios que 
+   sean necesarios.
+   ================================================================== */
+
+   /* ================================================================
+   =========================ejercicio 3===============================
+   ================================================================== */
+    /* 1.  El elemento #cabecera debe tener un relleno de 1em en todos los lados */
+      #cabecera{
+        padding: 1em 1em 1em 1em;
+      }
+      /* 2.  El elemento #menu debe tener un relleno de 0.5em en todos los lados y un 
+      margen inferior de0.5em. */
+      #menu{
+        padding: 0.5em 0.5em 0.5em 0.5em;
+        margin-bottom: 0.5em;
+      }
+      /* 3.  El resto de elementos (#noticias, #publicidad, #principal, #secundario) deben tener 0.5emde relleno en todos sus lados, salvo el elemento #pie, que sólo debe tener relleno en la zona superior e inferior. */
+
+      #noticias, #publicidad, #principal, #secundario{
+        padding: 0.5em 0.5em 0.5em 0.5em;
+      }
+      #pie{
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+      }
+
+      /* 4.  Los elementos .articulo deben mostrar una separación entre ellos de 1em.  */
+      .articulo{
+        margin-bottom: 1em;
+      }
+      /* 5.  Las imágenes de los artículos muestran un margen de 0.5em en todos sus lados.  */
+      img{
+        margin: 0.5em 0.5em 0.5em 0.5em;
+      }
+      /* 6.  El elemento #publicidad está separado 1em de su elemento superior.  */
+      #publicidad{
+        margin-top: 1em;
+      }
+      /* 7.  El elemento #pie debe tener un margen superior de 1em. */ 
+      #pie{
+        margin-top: 1em;
+      }
+
+   /* ================================================================
+   =========================ejercicio 4===============================
+   ================================================================== */
+    /* 1.  Eliminar el borde gris que muestran por defecto todos los elementos.  */
+    #cabecera, #menu, #lateral, #contenido, #contenido #principal, #contenido #secundario, #pie {
+        border: none;
+      }
+      /* 2.  El elemento #menu debe tener un borde inferior de 1 píxel y azul (#004C99).  */
+      #menu {
+        border-bottom: 1px solid #004C99;
+      }
+      /* 3.  El elemento #noticias muestra un borde de 1 píxel y gris claro (#C5C5C5). */
+      #noticias {
+        border: 1px solid #C5C5C5;
+      }
+      /*  4.  El elemento #publicidad debe mostrar un borde discontinuo de 1 píxel y de color #CC6600. */ 
+      #publicidad {
+        border: 1px dotted #CC6600;
+      }
+      /* 5.  El lateral formado por el elemento #secundario muestra un borde de 1 píxel y de color #CC6600.  */
+      #contenido #secundario {
+        border: 1px solid #CC6600;
+      } 
+      /* 6.  El elemento #pie debe mostrar un borde superior y otro inferior de 1 píxel y color gris laro#C5C5C5. */
+      #pie{
+        border-top: 1px solid #C5C5C5;
+        border-bottom: 1px solid #C5C5C5;
+      }
+   /* ================================================================
+   =========================ejercicio 5===============================
+   ================================================================== */
+    /* 1.  Los elementos #noticias y #pie tiene un color de fondo gris claro (#F8F8F8).  */
+      #noticias, #pie {
+        background-color: #F8F8F8;
+      }
+      /* 2.  El elemento #publicidad muestra un color de fondo amarillo claro (#FFF6CD).  */
+      #publicidad {
+        background-color: #FFF6CD;
+      }
+      /* 3.  Los elementos <h2> del lateral #secundario muestran un color de fondo #DB905C y un pequeño padding de .2em.  */
+      #secundario h2  {
+        background-color: #DB905C;
+        padding: .2em .2em .2em .2em;
+      }
+      /* 4.  El fondo del elemento #menu se construye mediante una pequeña imagen llamadafondo_menu.gif.  */
+      #menu {
+        background-image: url("../imagenes/fondo_menu.gif");
+      }
+      /* 5.  El logotipo del sitio se muestra mediante una imagen de fondo del elemento <h1> contenido en el elemento #cabecera (la imagen se llama logo.gif).  */
+      #cabecera h1 {
+        background-image: url("../imagenes/logo.gif"); /* Añadido un espacion en blanco para poder pintar el logo en CSS */
+      }
+   /* ================================================================
+   =========================ejercicio 6===============================
+   ================================================================== */
+      /* 1.  La fuente base de la página debe ser: color negro, tipo Arial, tamaño 0.9em, interlineado 1.4.  */
+      body {
+        color: black;
+        font-style: arial;
+        font-size: 0.9em;
+        line-height: 1.4;
+      }
+      /* 2.  Los elementos <h2> de .articulo se muestran en color #CC6600, con un tamaño de letra de1.6em, un interlineado de 1.2 y un margen inferior de 0.3em.  */
+      .articulo h2 {
+        color:#CC6600;
+        font-size: 1.6em;
+        line-height: 1.2;
+        margin-bottom: 0.3em;
+      }
+        /*    3.  Los elementos del #menu deben mostrar un margen a su derecha de 1em y los enlaces deben ser de color blanco y tamaño de letra 1.3em.  */
+        #menu a{
+          margin-right: 1em;
+          font-size: 1.3em;
+          color:white;
+      }
+      /*     4.  El tamaño del texto de todos los contenidos de #lateral debe ser de 0.9em. La fecha de cada noticia debe ocupar el espacio de toda su línea y mostrarse en color gris claro #999. El elemento<h3> de #noticias debe mostrarse de color #003366.  */
+      #lateral{
+        font-size: 0.9em;
+      }
+      #lateral .fecha{
+        display: block; /* Hace que el texto genere un bloque que ocupa toda la linea */
+        color: #999;
+      }
+      #noticias h3{
+        color: #003366;
+      }
+      /* 5.  El texto del elemento #publicidad es de color gris oscuro #555 y todos los enlaces de color#CC6600. */ 
+      #publicidad {
+        color: #555;
+      }
+      #publicidad a{
+        color: #CC6600;
+      }
+      /* 6.  Los enlaces contenidos dentro de .articulo son de color #CC6600 y todos los párrafos muestran un margen superior e inferior de 0.3em.  */
+      .articulo a{
+        color: #CC6600;
+      }
+      .articulo p{
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+      }
+      /* 7.  Añadir las reglas necesarias para que el contenido de #secundario se vea como en la imagen que se muestra. */ 
+      #secundario h2{
+        font-size: 1em;
+        color:white;
+      }
+      #secundario p{
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+      }
+      /* 8.  Añadir las reglas necesarias para que el contenido de #pie se vea como en la imagen que se muestra. */ 

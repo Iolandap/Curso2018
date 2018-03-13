@@ -1,0 +1,17 @@
+
+body{background-color:#5858FA; }
+
+div {
+	border: 2px solid #CCC;
+}
+
+p, a{
+	border: 2px solid #CCC;
+}
+
+img.desplaçada{position:relative;
+          
+            top:100px; 
+            left:100px;
+}
+

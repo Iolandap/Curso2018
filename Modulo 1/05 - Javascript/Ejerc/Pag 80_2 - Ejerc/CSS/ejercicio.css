@@ -1,0 +1,18 @@
+img {
+    width: 580px;
+    height: 390px;
+    margin-top: -195px;
+    margin-left: -290px;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    }
+
+.oculto { 
+    visibility: hidden;
+    }
+
+.visible { 
+    visibility: visible;
+    font-size: 4em;
+    }

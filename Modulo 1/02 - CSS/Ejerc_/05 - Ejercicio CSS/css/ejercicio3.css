@@ -1,0 +1,142 @@
+/* === IMPORTANTE ===================================================
+   No modificar estos estilos, ya que son imprescindibles para
+   que la página se vea correctamente.
+   ================================================================== */
+
+/*-- Básico ----------------------------------------------------------*/
+ul, ul li { margin: 0; padding: 0; list-style: none; }
+h1, h2, h3, p, form { margin: 0; padding: 0; }
+.clear { clear: both; }
+img { border: none; }
+
+/*-- Layout ----------------------------------------------------------*/
+#contenedor {
+  width: 90%;
+  max-width: 900px;
+  width: expression(document.body.clientWidth > 901? "900px": "auto");
+  margin: 0 auto;
+}
+
+#cabecera, #menu, #lateral, #contenido, #contenido #principal, #contenido #secundario, #pie {
+  border: 2px solid #777;
+}
+
+#cabecera { clear: both; }
+#menu { clear: both; }
+#lateral { float: left; width: 20%; }
+#contenido { float: right; width: 75%; }
+#contenido #principal { float: left; width: 73%; }
+#contenido #secundario { float: right; width: 20%; }
+#pie { clear: both; }
+
+/*-- Cabecera --------------------------------------------------------*/
+#cabecera #logo { float: left; }
+#cabecera #buscador { float: right; }
+
+/*-- Menu ------------------------------------------------------------*/
+#menu ul#menu_principal li { display: inline; float: left; }
+
+/*-- Sección Principal -----------------------------------------------*/
+#contenido #principal .articulo img { width: 100px; float: left; }
+
+/*-- Pie de página ---------------------------------------------------*/
+#pie .enlaces   { float: left; }
+#pie .copyright { float: right; }
+
+/* === IMPORTANTE ===================================================
+   A partir de aquí, se pueden añadir todos los estilos propios que 
+   sean necesarios.
+   ================================================================== */
+
+   /* ================================================================
+   =========================ejercicio 3===============================
+   ================================================================== */
+   /* 1.  El elemento #cabecera debe tener un relleno de 1em en todos los lados */
+    #cabecera{
+      padding: 1em 1em 1em 1em;
+    }
+    /* 2.  El elemento #menu debe tener un relleno de 0.5em en todos los lados y un 
+    margen inferior de0.5em. */
+    #menu{
+      padding: 0.5em 0.5em 0.5em 0.5em;
+      margin-bottom: 0.5em;
+    }
+    /* 3.  El resto de elementos (#noticias, #publicidad, #principal, #secundario) deben tener 0.5emde relleno en todos sus lados, salvo el elemento #pie, que sólo debe tener relleno en la zona superior e inferior. */
+
+    #noticias, #publicidad, #principal, #secundario{
+      padding: 0.5em 0.5em 0.5em 0.5em;
+    }
+    #pie{
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+    }
+
+    /* 4.  Los elementos .articulo deben mostrar una separación entre ellos de 1em.  */
+    .articulo{
+      margin-bottom: 1em;
+    }
+    /* 5.  Las imágenes de los artículos muestran un margen de 0.5em en todos sus lados.  */
+    img{
+      margin: 0.5em 0.5em 0.5em 0.5em;
+    }
+    /* 6.  El elemento #publicidad está separado 1em de su elemento superior.  */
+    #publicidad{
+      margin-top: 1em;
+    }
+    /* 7.  El elemento #pie debe tener un margen superior de 1em. */ 
+    #pie{
+      margin-top: 1em;
+    }
+
+   /* ================================================================
+   =========================ejercicio 4===============================
+   ================================================================== */
+   /* 1.  Eliminar el borde gris que muestran por defecto todos los elementos.  */
+   #cabecera, #menu, #lateral, #contenido, #contenido #principal, #contenido #secundario, #pie {
+      border: none;
+    }
+    /* 2.  El elemento #menu debe tener un borde inferior de 1 píxel y azul (#004C99).  */
+    #menu {
+      border-bottom: 1px solid #004C99;
+    }
+    /* 3.  El elemento #noticias muestra un borde de 1 píxel y gris claro (#C5C5C5). */
+    #noticias {
+      border: 1px solid #C5C5C5;
+    }
+   /*  4.  El elemento #publicidad debe mostrar un borde discontinuo de 1 píxel y de color #CC6600. */ 
+    #publicidad {
+      border: 1px dotted #CC6600;
+    }
+    /* 5.  El lateral formado por el elemento #secundario muestra un borde de 1 píxel y de color #CC6600.  */
+    #contenido #secundario {
+      border: 1px solid #CC6600;
+    } 
+    /* 6.  El elemento #pie debe mostrar un borde superior y otro inferior de 1 píxel y color gris laro#C5C5C5. */
+    #pie{
+      border-top: 1px solid #C5C5C5;
+      border-bottom: 1px solid #C5C5C5;
+    }
+   /* ================================================================
+   =========================ejercicio 5===============================
+   ================================================================== */
+   /* 1.  Los elementos #noticias y #pie tiene un color de fondo gris claro (#F8F8F8).  */
+   #noticias, #pie {
+     background-color: #F8F8F8;
+   }
+   /* 2.  El elemento #publicidad muestra un color de fondo amarillo claro (#FFF6CD).  */
+   #publicidad {
+    background-color: #FFF6CD;
+   }
+   /* 3.  Los elementos <h2> del lateral #secundario muestran un color de fondo #DB905C y un pequeño padding de .2em.  */
+   #secundario h2  {
+    background-color: #DB905C;
+    padding: .2em .2em .2em .2em;
+   }
+   /* 4.  El fondo del elemento #menu se construye mediante una pequeña imagen llamadafondo_menu.gif.  */
+   #menu {
+     background-image: url("../imagenes/fondo_menu.gif");
+   }
+   /* 5.  El logotipo del sitio se muestra mediante una imagen de fondo del elemento <h1> contenido en el elemento #cabecera (la imagen se llama logo.gif).  */
+   #cabecera h1 {
+    background-image: url("../imagenes/logo.gif");
+  }

@@ -1,0 +1,416 @@
+<!DOCTYPE html PUBLIC>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+    <!-- FAVICON -->
+    <link rel="icon" href="img/PC_box_favi.ico" type="image/x-icon"/>
+
+    <!-- CSS de libreriaBxSlider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <!-- Iconos Fontqwesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <!-- Llamada a libreriaBxSlider -->
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+    <!-- Fichero externo CSS -->
+    <link rel="stylesheet" href="css/ejercicio.css" title="style">
+
+    <!-- Fichero externo JS -->
+    <script src="js/codigo.js"></script>
+
+    <title>Web PC BOX  </title>
+</head>
+
+<body>
+    <div class="container-fluid contenedor--div">
+
+        <!-- Menu cabecera -->
+        <!-- fixed-top:     Deja fijo menu arriba  -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo_PC_BOX.png" alt="Logo PC Box" height="42" width="42">     
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Menu izquierda -->
+                <!-- mr-auto:  fuerza a que todo lo que venga despues vaya a la derecha automaticamente -->
+                <ul class="navbar-nav mr-auto">
+                    <!-- Icono despliegue menu -->
+                    <div class="icono--div">
+                        <div class="icono">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                    </div> <!-- FIN ICONOS DESPLIEGUE menu lateral -->
+                </ul>
+            <!-- Menu derecha -->
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" style="width: 300px; font-size: 0.8em" type="search" placeholder="Buscar productos, categorías y tiendas" aria-label="Search">
+                    <!-- btn-default - Fondo color blanco -->
+                    <!-- btn-lg - Tamaño boton grande -->
+                    <button class="btn-default btn-light btn-lg my-2 my-sm-0" type="submit">
+                        <span class="fas fa-search"></span> <!-- Icono de fontawesome  -->
+                    </button>
+                </form>
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <!-- data-toggle : Llamada a MODAL -->
+                        <!-- data-target : Nombre del MODAL a usar -->
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#iniciar_sesion">
+                            <span class="fas fa-lock"></span><!-- Icono de fontawesome  -->
+                        Iniciar Sesion</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- MENU LATERAL -->
+        <div class=" contenedor--menu">   
+            <ul class="menu">
+                <li><i class="fas fa-laptop"></i>
+                    <a class="menu__enlace" href="#">Pc y Portatiles</a></li>
+                <li><i class="far fa-square"></i>
+                    <a class="menu__enlace" href="#">Componentes</a>
+                    <ul class="submenu">
+                        <li><a class="submenu__enlace" href="#">Placas Base</a></li>
+                        <li><a class="submenu__enlace" href="#">Componentes de Portatiles</a></li>
+                    </ul>
+                </li>
+                <li><i class="fas fa-calculator"></i>
+                    <a class="menu__enlace" href="#">Perifericos</a></li>
+                <li><i class="fas fa-hdd"></i>
+                    <a class="menu__enlace" href="#">Discos Externos y Memorias</a>
+                    <ul class="submenu">
+                        <li><a class="submenu__enlace" href="#">submenu 1</a></li>
+                        <li><a class="submenu__enlace" href="#">submenu 2</a></li>
+                    </ul>
+                </li>
+                <li><i class="fas fa-mobile"></i>
+                    <a class="menu__enlace" href="#">Smartphones</a></li>
+                <li><i class="fas fa-tablet-alt"></i>
+                    <a class="menu__enlace" href="#">Tablets y Ebooks</a></li>
+            </ul>
+        </div> <!-- FIN menu lateral -->
+        
+        <div class="container">
+            <!-- Primera columna -->
+            <div class="row">
+                <!-- primer articulo -->
+                <div class="col-md-4" style="padding:15px;">
+                    <div style="display:inline-block; border:solid 1px #808080; padding:15px">
+                        <div>
+                            <img class="img-fluid" alt="Producto 1" src="img/art/product_001.jpg" height="200" width="200" />
+                            <br />
+                            <h2 class="float-xs-right">100 Eur</h2>
+                            <h2><a href="#">Cargador</a></h2>
+                            <br />
+                            <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        </div>
+                        <div class="ratings text-xs-center">
+                            <p>
+                                <div id="rating1"></div>
+                                (10 reviews)
+                            </p>
+                        </div>
+                        <br />
+                        <!-- Botonera compra -->
+                        <div class="btn-ground text-xs-center" style="padding-bottom: 30px">
+                            <button type="button" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Añadir</button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#productmodal1"><i class="fa fa-info"></i> Info</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Segundo articulo -->
+                <div class="col-md-4" style="padding:15px;">
+                    <div style="display:inline-block; border:solid 1px #808080; padding:15px">
+                        <div>
+                            <img class="img-fluid" alt="Producto 2" src="img/art/product_002.jpg" height="200" width="200" />
+                            <br />
+                            <h2 class="float-xs-right">50 Eur</h2>
+                            <h2><a href="#">Cargador</a></h2>
+                            <br />
+                            <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        </div>
+                        <div class="ratings text-xs-center">
+                            <p>
+                                <div id="rating1"></div>
+                                (10 reviews)
+                            </p>
+                        </div>
+                        <br />
+                        <!-- Botonera compra -->
+                        <div class="btn-ground text-xs-center" style="padding-bottom: 30px">
+                            <button type="button" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Añadir</button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#productmodal1"><i class="fa fa-info"></i> Info</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tercer articulo -->
+                <div class="col-md-4" style="padding:15px;">
+                    <div style="display:inline-block; border:solid 1px #808080; padding:15px">
+                        <div>
+                            <img class="img-fluid" alt="Producto 3" src="img/art/product_003.jpg" height="200" width="200" />
+                            <br />
+                            <h2 class="float-xs-right">60 Eur</h2>
+                            <h2><a href="#">Cargador</a></h2>
+                            <br />
+                            <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        </div>
+                        <div class="ratings text-xs-center">
+                            <p>
+                                <div id="rating1"></div>
+                                (10 reviews)
+                            </p>
+                        </div>
+                        <br />
+                        <!-- Botonera compra -->
+                        <div class="btn-ground text-xs-center" style="padding-bottom: 30px">
+                            <button type="button" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Añadir</button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#productmodal1"><i class="fa fa-info"></i> Info</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Segunda columna -->
+            <div class="row">
+                    <!-- primer articulo -->
+                    <div class="col-md-4" style="padding:15px;">
+                        <div style="display:inline-block; border:solid 1px #808080; padding:15px">
+                            <div>
+                                <img class="img-fluid" alt="Producto 1" src="img/art/product_001.jpg" height="200" width="200" />
+                                <br />
+                                <h2 class="float-xs-right">100 Eur</h2>
+                                <h2><a href="#">Cargador</a></h2>
+                                <br />
+                                <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                            </div>
+                            <div class="ratings text-xs-center">
+                                <p>
+                                    <div id="rating1"></div>
+                                    (10 reviews)
+                                </p>
+                            </div>
+                            <br />
+                            <!-- Botonera compra -->
+                            <div class="btn-ground text-xs-center" style="padding-bottom: 30px">
+                                <button type="button" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Añadir</button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#productmodal1"><i class="fa fa-info"></i> Info</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Segundo articulo -->
+                    <div class="col-md-4" style="padding:15px;">
+                        <div style="display:inline-block; border:solid 1px #808080; padding:15px">
+                            <div>
+                                <img class="img-fluid" alt="Producto 2" src="img/art/product_002.jpg" height="200" width="200" />
+                                <br />
+                                <h2 class="float-xs-right">50 Eur</h2>
+                                <h2><a href="#">Cargador</a></h2>
+                                <br />
+                                <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                            </div>
+                            <div class="ratings text-xs-center">
+                                <p>
+                                    <div id="rating1"></div>
+                                    (10 reviews)
+                                </p>
+                            </div>
+                            <br />
+                            <!-- Botonera compra -->
+                            <div class="btn-ground text-xs-center" style="padding-bottom: 30px">
+                                <button type="button" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Añadir</button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#productmodal1"><i class="fa fa-info"></i> Info</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tercer articulo -->
+                    <div class="col-md-4" style="padding:15px;">
+                        <div style="display:inline-block; border:solid 1px #808080; padding:15px">
+                            <div>
+                                <img class="img-fluid" alt="Producto 3" src="img/art/product_003.jpg" height="200" width="200" />
+                                <br />
+                                <h2 class="float-xs-right">60 Eur</h2>
+                                <h2><a href="#">Cargador</a></h2>
+                                <br />
+                                <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                            </div>
+                            <div class="ratings text-xs-center">
+                                <p>
+                                    <div id="rating1"></div>
+                                    (10 reviews)
+                                </p>
+                            </div>
+                            <br />
+                            <!-- Botonera compra -->
+                            <div class="btn-ground text-xs-center" style="padding-bottom: 30px">
+                                <button type="button" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Añadir</button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#productmodal1"><i class="fa fa-info"></i> Info</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+            
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <p>&#169;2018 PC Box</p> 
+                </div>
+                <div class="col-sm">
+                    <h4>Mi cuenta</h4>
+                    <ul class="menu_botton">
+                        <li><i class="fas fa-laptop"></i>
+                            <a class="menu__enlace" href="#">Pc y Portatiles</a></li>
+                        <li><i class="fas fa-mobile"></i>
+                            <a class="menu__enlace" href="#">Smartphones</a></li>
+                        <li><i class="fas fa-tablet-alt"></i>
+                            <a class="menu__enlace" href="#">Tablets y Ebooks</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm">
+                    <h4>Otros</h4>
+                    <ul class="menu_botton">
+                        <li><a class="menu__enlace" href="html/mapa.html">Contactenos</a></li>
+                        <li><a class="menu__enlace" href="#">Opcion 2</a></li>
+                        <li><a class="menu__enlace" href="#">Opcion 3</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p>Este sitio web puede utilizar algunas <em>'cookies'</em> para mejorar su experiencia de navegación. Por favor, antes de continuar con su navegación por nuestro sitio web, le recomendamos que lea la 
+                <a href="#" style="color:orange" data-toggle="modal" data-target="#politica_cookies">
+                    política de cookies
+                </a>
+            </p>
+        </div>
+	</footer>
+
+    <!-- Modal emergente INICIAR SESION-->
+    <!-- id: tiene el nombre del MODAL -->
+    <div class="modal fade" id="iniciar_sesion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!-- Cabecera -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Iniciar Sesión</h5>
+                    <!-- Definicion "X" esquina derecha -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- Body -->
+                <div class="modal-body">
+                    <!-- Mensaje alerta -->
+                    <div class="alert alert-warning" role="alert">
+                        Introduzca su nombre de usuario y contraseña
+                        <!-- Definicion "X" esquina derecha -->
+                        <button type="button" class="close" aria-label="Close">
+                            <span aria-hidden="true" >&times;</span>
+                        </button>
+                    </div>
+                    <!-- Formulario -->
+                    <form>
+                    <div class="form-group">
+                        <label for="username" class="col-form-label">Username</label>
+                        <input type="text" class="form-control" id="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="pasword" class="col-form-label">Pasword:</label>
+                        <input type="text" class="form-control" id="pasword">
+                    </div>
+                    </form>
+                    <!-- Boton envio -->
+                    <button type="button" id="envio" class="btn pull-left btn-outline-dark">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div> <!-- FIN Modal Iniciar Sesion -->
+
+    <!-- MODAL Politica cookies -->
+    <!-- Modal -->
+      <div class="modal fade" id="politica_cookies" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            <div>
+                <h2>1.1 Aviso legal (LSSI)</h2>
+            </div>
+                <p>De conformidad con el artículo 10 de la Ley 34/2002, de 11 de julio, de “Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI)”, ponemos en su conocimiento la siguiente información:</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, commodi. Fuga ab vero itaque iste, dolore pariatur nam esse rerum autem maiores commodi tempora vel modi voluptatum. Ad, ut exercitationem.</p>
+                <div>
+                    <p>
+                        <strong>
+                            CONCEPTO DE USUARIO&nbsp;<br>
+                        </strong>
+                    </p>
+                    <p>La utilización del portal Web atribuye la condición de Usuario, e implica la aceptación total y sin reservas de todas y cada una de las disposiciones incluidas en este Aviso Legal, en la versión publicada para PCBOX en el mismo momento en que el Usuario acceda a la Web. En consecuencia, el Usuario tiene que leer atentamente el presente Aviso Legal en cada una de las ocasiones en que se proponga utilizar la Web, puesto que puede sufrir modificaciones.</p>
+                    <p><strong>INFORMACIÓN SOBRE LOS VÍNCULOS “LINKS”&nbsp;</strong></p>
+                    <p>PCBOX no se hace responsable de las webs no propias o de terceros, a las cuales se puede acceder mediante vínculos “links” o de cualquier contenido puesto a disposición por terceros.</p>
+                    <p>Cualquier uso de un vínculo o acceso a una Web no propia es realizado por voluntad y riesgo exclusivo del usuario y PCBOX no recomienda ni garantiza ninguna información obtenida a través de un vínculo ajeno a la Web de pcbox.com ni se responsabiliza de ninguna pérdida, reclamación o perjuicio derivada del uso o mal uso de un vínculo, o de la información obtenida a través de él, incluyendo otros vínculos o webs, de la interrupción en el servicio o en el acceso, o del uso o mal uso de un vínculo, tanto al conectar al portal Web pcbox.com cómo al acceder a la información de otros webs desde el mismo portal Web.</p>
+                    <p><strong>RENÚNCIA Y LIMITACIÓN DE LA RESPONSABILIDAD</strong></p>
+                    <p>La información y servicios incluidos o disponibles a través de las páginas Web pueden incluir incorrecciones o errores tipográficos. De forma periódica se incorporan cambios a la información contenida. PCBOX puede introducir en cualquier momento mejoras y/o cambios en los servicios o contenidos.</p>
+                    <p>También se advierte que los contenidos de esta Web, tienen la finalidad informativa en cuanto a la oferta de servicios y tarifas. Según lo previsto en el presente aviso legal y el resto de textos legales del presente portal Web. </p>
+                    <p><strong>INFORMACIÓN SOBRE LA EXENCIÓN DE TODA RESPONSABILIDAD DERIVADA DE UN FALLO TÉCNICO Y DE CONTENIDO</strong></p>
+                    <p>PCBOX declina cualquier responsabilidad en caso de que existan interrupciones o un mal funcionamiento de los servicios o contenidos ofrecidos en Internet, cualquier que sea su causa. Así mismo, PCBOX no se hace responsable por caídas de la red, pérdidas de negocio a consecuencia de estas caídas, suspensiones temporales del fluido eléctrico o cualquiera otro tipo.</p>
+                    <p>PCBOX no declara ni garantiza que los servicios o contenidos no sean interrumpidos o que estén libres de errores, que los defectos sean corregidos, o que el servicio o el servidor que lo pone a disposición estén libres de virus u otros componentes nocivos, sin perjuicio que PCBOX realiza sus mejores esfuerzos a evitar este tipo de incidentes. En caso de que el Usuario tomara determinadas decisiones o realizara acciones en base a la información incluida en cualquier de los “websites”, se recomienda la comprobación de la información recibida con otras fuentes.</p>
+                    <p><strong>INFORMACIÓN RELATIVA A LA PROPIEDAD INTELECTUAL Y INDUSTRIAL</strong></p>
+                    <p>1. La estructura, diseño y forma de presentación de los elementos (gráficos, imágenes, ficheros logotipos, combinaciones de colores y cualquier elemento susceptible de protección) están protegidos por derechos de propiedad intelectual, titularidad de PCBOX.</p>
+                    <p>2. Están prohibidas la reproducción, la transformación, distribución, comunicación pública, puesta a disposición del público y, en general cualquier otra forma de explotación, parcial o total de los elementos referidos en el apartado anterior. Estos actos de explotación sólo podrán ser realizados en virtud de autorización expresa de PCBOX y que, en todo caso, tendrán que hacer referencia explícita a la titularidad de los citados derechos de propiedad intelectual de PCBOX.</p>
+                    <p>3. Sólo está autorizado para el uso privado del material documental elaborado para la PCBOX. En ningún caso, podrá suprimir, alterar, eludir o manipular cualesquier dispositivo de protección o sistemas de seguridad que puedan estar instalados.</p>
+                    <p>4. Excepto autorización expresa de PCBOX No se permite el enlace a “páginas finales”, el “frame” y cualquier otra manipulación similar. Los enlaces tienen que ser siempre en la página principal o “home page” pcbox.com.</p>
+                    <p>5. Los signos distintivos (marcas, nombres comerciales) de PCBOX. Están protegidos por derechos de propiedad industrial, quedando prohibida la utilización o manipulación de cualquier de estos, excepto autorización expresa y por escrito de PCBOX.</p>
+                    <p><strong>COMPRA ON-LINE SEGURA</strong></p>
+                    <p>La seguridad es una prioridad para PCBOX por lo que realizamos el máximo esfuerzo para asegurarnos de que nuestro proceso de transacciones sea seguro y de que su información personal esté a buen resguardo:</p>
+                    <p>No Comparta su Información Personal.</p>
+                    <p>Identifique los Correos Electrónicos Falsos (intentos de 'spoofing' o 'phishing').</p>
+                    <p>Comunique los Intentos de 'phishing'.</p>
+                    <p>Siempre efectúe sus pagos mediante los medios de pago de PCBOX.</p>
+                    <p><strong>NO COMPARTA SU INFORMACIÓN PERSONAL</strong></p>
+                    <p>PCBOX nunca le enviará un correo electrónico ni le llamará por teléfono para pedirle que revele o verifique la contraseña de su cuenta en PCBOX ni sus números de cuenta bancaria o tarjeta de crédito, ni ningún otro tipo de información personal. En caso de que alguien se ponga en contacto con usted o de recibir un correo electrónico no solicitado que le pida alguno de los datos anteriores, no responda y comuníquelo inmediatamente a PCBOX para que procedan a la investigación del incidente.</p>
+                    <p><strong>IDENTIFIQUE LOS CORREOS ELECTRÓNICOS FALSOS (intentos de 'spoofing' o 'phishing')</strong></p>
+                    <p>Ignore todo correo electrónico que reciba en el que se le solicite información personal o que le redirija a otra página web que no sea propiedad de PCBOX o de sociedades de su grupo, o en el que se le pida que pague fuera de los medios de pago descritos en las condiciones generales, ya que podría ser un intento de suplantación de personalidad ('spoofing' o 'phishing'), y deberá considerarlo fraudulento.</p>
+                    <p>PCBOX utiliza el dominio "pcbox.com" para sus correos electrónicos. Si usted recibe un correo electrónico con un formato distinto, como por ejemplo: pcbox.security@hotmail.com, puede estar seguro de que es un correo falso.</p>
+                    <p>Algunos correos electrónicos que practican phishing contienen enlaces a sitios web que utilizan la palabra "pcbox.com" en su URL, pero que le dirigirán a un sitio web completamente distinto. Si desplaza el ratón por encima del enlace, podrá ver la URL asociada, que probablemente tendrá un formato diferente a las enlazadas en los sitios web auténticos de PCBOX.</p>
+                    <p>Si aun así usted hace clic en un correo electrónico que practica phishing y es redirigido a una página que se asemeje a "Su Cuenta" o a cualquiera que le pida verificar o modificar su información personal, ignórela y considérela como fraudulenta.</p>
+                    <p><strong>COMUNIQUE LOS INTENTOS DE 'phishing'&nbsp;</strong></p>
+                    <p>Envíe un correo electrónico a la dirección lopd@pcbox.es y adjunte el correo electrónico que considera falso. Al adjuntarnos dicho correo electrónico fraudulento, nos está ayudando a localizar su origen.</p>
+                    <p>Si no puede adjuntar el correo electrónico falso, reenvíelo a lopd@pcbox.es e incluya la mayor cantidad de información posible sobre el mismo.</p>
+                    <p><strong>SIEMPRE EFECTÚE SUS PAGOS MEDIANTE LOS MEDIOS DE PAGO DE PCBOX.'</strong></p>
+                    <p>Los pagos realizados a través de los medios de pago de PCBOX son seguros, están garantizados, y son los únicos métodos de pago autorizados y reconocidos en PCBOX.</p>
+                    <p><strong>INFORMACIÓN AL COMPRADOR SOBRE LA PLATAFORMA DE RESOLUCIÓN DE CONFLICTOS E-commerce.</strong></p>
+                    <p>Se informa al comprador de productos de este sitio web, de la existencia de una plataforma de resolución de litigios online. Conforme al Artículo 14.1 del Reglamento (UE) 524/2013:</p>
+                    <p id="politicaprivacidad">“La Comisión Europea facilita una plataforma de resolución de litigios en línea que se encuentra disponible en el siguiente enlace: http://ec.europa.eu/consumers/odr/. Los consumidores podrán someter sus reclamaciones a través de la plataforma de resolución de litigios en línea”.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div> <!-- FIN Modal Politica Cookies -->
+
+  </body>
+</html>

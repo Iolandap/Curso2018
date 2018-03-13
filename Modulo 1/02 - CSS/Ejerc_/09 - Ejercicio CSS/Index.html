@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC " − //W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="icon" href="../iconshock-tiny-bugs-ladybug.ico" type="image/x-icon"/>
+   		<link rel="stylesheet" type="text/css" href="css/ejercicio.css" title="style">
+		<title>Formulario de alta</title>
+	</head>
+
+	<body>
+		<h1>Formulario de alta</h1>
+
+		<form method="post" action=http://daw.iesjoaquimmir.cat/sarti.php>
+
+			<!-- Primer gran bloque -->
+				<div id="bloque0">
+				<!-- Bloque 1 -->
+					<fieldset class="bloque1">
+						<legend>Nombre y apellidos:  <img src="imagenes/asterisco.png" alt="Smiley face" height="8" width="8" align="top"> </legend>
+							<!-- nombre -->
+								<input id="lnombre" type="text" name="nombre" maxlength="30" /><br />
+								<label for="lnombre">Nombre</label><br /> <br /> 
+							<!-- apellido1 -->
+								<input id="lapellido1" type="text" name="apellidos" size= "80" maxlength="80"/><br />
+								<label for="lapellido1">Primer apellido</label><br /> <br /> 
+							<!-- apellido2 -->
+								<input id="lapellido2" type="text" name="apellidos" size= "80" maxlength="80"/><br />
+								<label for="lapellido2">Segundo apellido</label><br /><br /> 
+					</fieldset>
+				<!-- Bloque 2 -->
+					<fieldset class="bloque2">
+						<legend>Direccion <img src="imagenes/asterisco.png" alt="Smiley face" height="8" width="8" align="top"> </legend>
+							<!-- nombre -->
+								<input id="lcalle" type="text" name="calle" size= "80" maxlength="30" /><br />
+								<label for="lcalle">Calle, número, piso, puerta</label><br /><br />
+							<!-- SubBloque 6 -->
+								<div class="bloque6">
+									<!-- Codigo Postal -->
+										<input id="lcodpost" type="text" name="codpost" size= "13" maxlength="4" /><br>
+										<label for="lcodpost">Código postal</label><br><br>
+									<!-- provincia -->
+										<select name="entradalista1" > 
+											<optgroup> 
+												<option>Barcelona</option> 
+												<option>Tarragona</option> 
+												<option>Lleida</option> 
+												<option>Girona</option>                    
+											</optgroup> 
+										</select><br>
+										<label>Provincia</label><br />
+								</div>
+							<!-- SubBloque 7 -->
+							<div class="bloque7">
+								<!-- Municipo -->
+									<input id="lmunicipio" type="text" name="municipio" size= "30" maxlength="30" /><br />
+									<label for="lmunicipio">Municipio</label><br /><br />
+								<!-- pais -->
+									<select name="entradalista2"> 
+										<optgroup> 
+											<option>Guatemala</option> 
+											<option>Guantepeor</option> 
+											<option>Guantanamo</option> 
+											<option>Guayaba</option>                    
+										</optgroup> 
+									</select> <br>
+									<label>Pais</label><br /> 
+							</div>	
+					</fieldset>
+				</div>
+
+			<!-- Segundo gran bloque -->
+				<div class="bloque3">
+				<!-- Bloque 4 -->
+					<fieldset class="bloque4">
+						<legend>Email:</legend>
+						<!-- Email -->
+							<input id="lemail" type="text" name="email" size= "80"maxlength="30" /><br />
+					</fieldset>
+				<!-- Bloque 5 -->
+					<fieldset class="bloque5">
+						<legend>Telefono <img src="imagenes/asterisco.png" alt="Smiley face" height="8" width="8" align="top"> </legend>
+						<!-- Telefono Fijo -->
+							<div class="bloque8">
+								<input id="ltfijo" type="text" name="t_fijo" maxlength="30" /><br />
+								<label for="ltfijo">Fijo</label>
+							</div>
+						<!-- Telefono movil -->
+							<div class="bloque9">
+								<input id="lmovil" type="text" name="movil" maxlength="30" /><br />
+								<label for="lmovil">movil</label>
+						</div>
+					</fieldset>
+
+
+			<!-- Boton envio y reset -->
+				<br><br><br>
+				<hr>
+				<br>
+				<input type="submit" value="Guardar cambios" />
+				<input type="reset" value="Borrar los datos introducidos" />
+		</form>
+	</body>
+</html>

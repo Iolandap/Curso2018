@@ -1,0 +1,22 @@
+
+body{background-color:#5858FA; }
+
+div {
+	border: 2px solid #CCC;
+}
+div img.ex_left{
+	float:left;
+}
+div img.ex_right{
+	float:right;
+/*Proveu sense clear:both*/
+	clear:both;
+}
+p, a{
+	border: 2px solid #CCC;
+}
+
+p.ex_clear{
+/*Proveu amb clear:both*/
+	clear:left;
+}

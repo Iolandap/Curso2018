@@ -1,0 +1,1069 @@
+﻿
+<!DOCTYPE html>
+
+<!--[if lt IE 7]><html lang="es-ES" prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html lang="es-ES" prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html lang="es-ES" prefix="og: http://ogp.me/ns#" class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--> <html lang="es-ES" prefix="og: http://ogp.me/ns#" class="no-js"><!--<![endif]-->
+
+	<head>
+
+		<meta charset="utf-8">
+
+		<!-- Google Chrome Frame for IE -->
+		<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge" /><![endif]-->
+		<!-- mobile meta -->
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+		<link rel="shortcut icon" href="https://www.anerbarrena.com/favicon.ico" type="image/x-icon" />
+
+		
+		<!-- head functions -->
+		<title>jQuery load(): cargar un html externo en un div</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v6.3.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Script para cargar archivos externos en un div de la página, jQuery load es una función que nos permite cargar html o php en una capa de nuestra web."/>
+<link rel="canonical" href="https://www.anerbarrena.com/jquery-load-html-div-460/" />
+<link rel="publisher" href="https://plus.google.com/100521238980519601840"/>
+<meta property="og:locale" content="es_ES" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="jQuery load(): cargar un html externo en un div" />
+<meta property="og:description" content="Script para cargar archivos externos en un div de la página, jQuery load es una función que nos permite cargar html o php en una capa de nuestra web." />
+<meta property="og:url" content="https://www.anerbarrena.com/jquery-load-html-div-460/" />
+<meta property="og:site_name" content="Aner Barrena" />
+<meta property="article:publisher" content="https://www.facebook.com/Anerbarrenaweb" />
+<meta property="article:section" content="jQuery" />
+<meta property="article:published_time" content="2013-01-02T15:14:24+00:00" />
+<meta property="article:modified_time" content="2015-11-02T22:56:53+00:00" />
+<meta property="og:updated_time" content="2015-11-02T22:56:53+00:00" />
+<meta property="og:image" content="https://www.anerbarrena.com/wp-content/uploads/2012/12/jquery.jpg" />
+<meta property="og:image:secure_url" content="https://www.anerbarrena.com/wp-content/uploads/2012/12/jquery.jpg" />
+<meta property="og:image:width" content="600" />
+<meta property="og:image:height" content="400" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Script para cargar archivos externos en un div de la página, jQuery load es una función que nos permite cargar html o php en una capa de nuestra web." />
+<meta name="twitter:title" content="jQuery load(): cargar un html externo en un div" />
+<meta name="twitter:site" content="@anerbarrena" />
+<meta name="twitter:image" content="https://www.anerbarrena.com/wp-content/uploads/2012/12/jquery.jpg" />
+<meta name="twitter:creator" content="@anerbarrena" />
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.anerbarrena.com\/","name":"Aner Barrena","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.anerbarrena.com\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"Person","url":"https:\/\/www.anerbarrena.com\/jquery-load-html-div-460\/","sameAs":["https:\/\/www.facebook.com\/Anerbarrenaweb","https:\/\/www.linkedin.com\/in\/aner-barrena-valbuena-154ba2150\/","https:\/\/plus.google.com\/100521238980519601840","https:\/\/www.youtube.com\/user\/anerbarrena","https:\/\/twitter.com\/anerbarrena"],"@id":"#person","name":"Aner Barrena"}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel="amphtml" href="https://www.anerbarrena.com/jquery-load-html-div-460/amp/" /><link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Aner Barrena &raquo; Feed" href="https://www.anerbarrena.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Aner Barrena &raquo; RSS de los comentarios" href="https://www.anerbarrena.com/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.anerbarrena.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.4"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='yarppWidgetCss-css'  href='https://www.anerbarrena.com/wp-content/plugins/yet-another-related-posts-plugin/style/widget.css?ver=4.9.4' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-css'  href='https://www.anerbarrena.com/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-theme-classic-css'  href='https://www.anerbarrena.com/wp-content/plugins/crayon-syntax-highlighter/themes/classic/classic.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-font-monaco-css'  href='https://www.anerbarrena.com/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='front-estilos-css'  href='https://www.anerbarrena.com/wp-content/plugins/asesor-cookies-para-la-ley-en-espana/html/front/estilos.css?ver=4.9.4' type='text/css' media='all' />
+<link rel='stylesheet' id='cptch_stylesheet-css'  href='https://www.anerbarrena.com/wp-content/plugins/captcha/css/front_end_style.css?ver=4.4.5' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='https://www.anerbarrena.com/wp-includes/css/dashicons.min.css?ver=4.9.4' type='text/css' media='all' />
+<link rel='stylesheet' id='cptch_desktop_style-css'  href='https://www.anerbarrena.com/wp-content/plugins/captcha/css/desktop_style.css?ver=4.4.5' type='text/css' media='all' />
+<link rel='stylesheet' id='cb-main-stylesheet-css'  href='https://www.anerbarrena.com/wp-content/themes/valenti/library/css/style.css?ver=5.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='cb-font-stylesheet-css'  href='//fonts.googleapis.com/css?family=Oswald%3A400%2C700%2C400italic%7CDroid+Sans%3A400%2C700%2C400italic&#038;subset=greek%2Cgreek-ext&#038;ver=5.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='fontawesome-css'  href='https://www.anerbarrena.com/wp-content/themes/valenti/library/css/fontawesome/css/font-awesome.min.css?ver=4.5.0' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='cb-ie-only-css'  href='https://www.anerbarrena.com/wp-content/themes/valenti/library/css/ie.css?ver=5.2.2' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='cb-child-stylesheet-css'  href='https://www.anerbarrena.com/wp-content/themes/valenti-child/style.css?ver=1.0' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.anerbarrena.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://www.anerbarrena.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/www.anerbarrena.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Presiona %s para copiar y %s para pegar","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.anerbarrena.com/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var cdp_cookies_info = {"url_plugin":"https:\/\/www.anerbarrena.com\/wp-content\/plugins\/asesor-cookies-para-la-ley-en-espana\/plugin.php","url_admin_ajax":"https:\/\/www.anerbarrena.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.anerbarrena.com/wp-content/plugins/asesor-cookies-para-la-ley-en-espana/html/front/principal.js?ver=4.9.4'></script>
+<script type='text/javascript' src='https://www.anerbarrena.com/wp-content/themes/valenti/library/js/modernizr.custom.min.js?ver=2.6.2'></script>
+<link rel='https://api.w.org/' href='https://www.anerbarrena.com/wp-json/' />
+<link rel='shortlink' href='https://www.anerbarrena.com/?p=460' />
+<link rel="alternate" type="application/json+oembed" href="https://www.anerbarrena.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.anerbarrena.com%2Fjquery-load-html-div-460%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.anerbarrena.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.anerbarrena.com%2Fjquery-load-html-div-460%2F&#038;format=xml" />
+<style>.cb-base-color, .cb-overlay-stars .fa-star, #cb-vote .fa-star, .cb-review-box .cb-score-box, .bbp-submit-wrapper button, .bbp-submit-wrapper button:visited, .buddypress .cb-cat-header #cb-cat-title a,  .buddypress .cb-cat-header #cb-cat-title a:visited, .woocommerce .star-rating:before, .woocommerce-page .star-rating:before, .woocommerce .star-rating span, .woocommerce-page .star-rating span, .woocommerce .stars a {
+            color:#3d425a;
+        }#cb-search-modal .cb-header, .cb-join-modal .cb-header, .lwa .cb-header, .cb-review-box .cb-score-box, .bbp-submit-wrapper button, #buddypress button:hover, #buddypress a.button:hover, #buddypress a.button:focus, #buddypress input[type=submit]:hover, #buddypress input[type=button]:hover, #buddypress input[type=reset]:hover, #buddypress ul.button-nav li a:hover, #buddypress ul.button-nav li.current a, #buddypress div.generic-button a:hover, #buddypress .comment-reply-link:hover, #buddypress .activity-list li.load-more:hover, #buddypress #groups-list .generic-button a:hover {
+            border-color: #3d425a;
+        }.cb-sidebar-widget .cb-sidebar-widget-title, .cb-multi-widget .tabbernav .tabberactive, .cb-author-page .cb-author-details .cb-meta .cb-author-page-contact, .cb-about-page .cb-author-line .cb-author-details .cb-meta .cb-author-page-contact, .cb-page-header, .cb-404-header, .cb-cat-header, #cb-footer #cb-widgets .cb-footer-widget-title span, #wp-calendar caption, .cb-tabs ul .current, .cb-tabs ul .ui-state-active, #bbpress-forums li.bbp-header, #buddypress #members-list .cb-member-list-box .item .item-title, #buddypress div.item-list-tabs ul li.selected, #buddypress div.item-list-tabs ul li.current, #buddypress .item-list-tabs ul li:hover, .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+            border-bottom-color: #3d425a ;
+        }#cb-main-menu .current-post-ancestor, #cb-main-menu .current-menu-item, #cb-main-menu .current-menu-ancestor, #cb-main-menu .current-post-parent, #cb-main-menu .current-menu-parent, #cb-main-menu .current_page_item, #cb-main-menu .current-page-ancestor, #cb-main-menu .current-category-ancestor, .cb-review-box .cb-bar .cb-overlay span, #cb-accent-color, .cb-highlight, #buddypress button:hover, #buddypress a.button:hover, #buddypress a.button:focus, #buddypress input[type=submit]:hover, #buddypress input[type=button]:hover, #buddypress input[type=reset]:hover, #buddypress ul.button-nav li a:hover, #buddypress ul.button-nav li.current a, #buddypress div.generic-button a:hover, #buddypress .comment-reply-link:hover, #buddypress .activity-list li.load-more:hover, #buddypress #groups-list .generic-button a:hover {
+            background-color: #3d425a;
+        }</style><!-- Body BG --><style>body { background-image: url(https://www.anerbarrena.com/wp-content/uploads/2015/02/shattered-island.png); background-color: #444444; background-repeat: repeat; }}</style><style type="text/css">
+                                                 body, #respond { font-family: 'Droid Sans', sans-serif; }
+                                                 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, #cb-nav-bar #cb-main-menu ul li > a, .cb-author-posts-count, .cb-author-title, .cb-author-position, .search  .s, .cb-review-box .cb-bar, .cb-review-box .cb-score-box, .cb-review-box .cb-title, #cb-review-title, .cb-title-subtle, #cb-top-menu a, .tabbernav, #cb-next-link a, #cb-previous-link a, .cb-review-ext-box .cb-score, .tipper-positioner, .cb-caption, .cb-button, #wp-calendar caption, .forum-titles, .bbp-submit-wrapper button, #bbpress-forums li.bbp-header, #bbpress-forums fieldset.bbp-form .bbp-the-content-wrapper input, #bbpress-forums .bbp-forum-title, #bbpress-forums .bbp-topic-permalink, .widget_display_stats dl dt, .cb-lwa-profile .cb-block, #buddypress #members-list .cb-member-list-box .item .item-title, #buddypress div.item-list-tabs ul li, #buddypress .activity-list li.load-more, #buddypress a.activity-time-since, #buddypress ul#groups-list li div.meta, .widget.buddypress div.item-options, .cb-activity-stream #buddypress .activity-header .time-since, .cb-font-header, .woocommerce table.shop_table th, .woocommerce-page table.shop_table th, .cb-infinite-scroll a, .cb-no-more-posts { font-family:'Oswald', sans-serif; }
+                     </style><style type="text/css">.entry-content ul, .textwidget ul {
+    margin: 15px 0 15px 40px;
+    list-style-type: square;
+}
+
+.entry-content ul li {
+    margin-bottom: 7px;
+    list-style-type: square;
+}
+
+
+.entry-content ol, .textwidget ol {
+    margin: 15px 0 15px 40px;
+    list-style-type: decimal;
+}
+
+.entry-content ol li {
+    margin-bottom: 7px;
+    list-style-type: decimal;
+}
+
+.widget_categories ul li{
+    margin: 0 0 0 20px;
+    list-style-type: square;
+    font-size: 14px;
+}
+.widget_categories ul li a{
+    color: #dd3a11;
+}
+.textwidget ul {
+    font-size: 14px;
+}
+.textwidget ul li a{
+    color: #dd3a11;
+}
+.entry-content ol {
+    margin: 15px 0 15px 40px;
+}
+
+#wp-calendar td a{
+   color: #dd3a11;
+   text-decoration:underline;
+}
+
+
+@media only screen and (min-width: 1020px) {
+  h1, .h1 {
+    font-size: 2.5rem;
+  }
+
+  .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5 {
+    font-size: 24px;
+    text-decoration:underline;
+    margin-top:25px;
+    margin-bottom:6px;
+  }
+  
+}
+
+.cb-boxed #cb-container {
+  box-shadow: none;
+}
+
+.header {
+    background: none;
+}
+
+.cb-breaking-news h2{
+    font-size: 16px;
+    padding-left: 10px;
+    color:#999;
+    text-decoration: none;
+    font-family: 'Oswald';
+}
+
+
+.entry-content a, .entry-content a:visited {color:#dd3a11; }#cb-top-menu .cb-breaking-news ul li a { color:#666666; }body {color:#474747; }@media only screen and (min-width: 1020px){ body { font-size: 16px; }}</style><!-- end custom css --><style>#cb-nav-bar #cb-main-menu .main-nav .menu-item-41:hover,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-41:focus,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-41 .cb-sub-menu li .cb-grandchild-menu,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-41 .cb-sub-menu { background:#3d425a!important; }
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-41 .cb-mega-menu .cb-sub-menu li a { border-bottom-color:#3d425a!important; }
+#cb-nav-bar #cb-main-menu .main-nav .menu-item-45:hover,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-45:focus,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-45 .cb-sub-menu li .cb-grandchild-menu,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-45 .cb-sub-menu { background:#3d425a!important; }
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-45 .cb-mega-menu .cb-sub-menu li a { border-bottom-color:#3d425a!important; }
+#cb-nav-bar #cb-main-menu .main-nav .menu-item-2250:hover,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-2250:focus,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-2250 .cb-sub-menu li .cb-grandchild-menu,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-2250 .cb-sub-menu { background:#3d425a!important; }
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-2250 .cb-mega-menu .cb-sub-menu li a { border-bottom-color:#3d425a!important; }
+#cb-nav-bar #cb-main-menu .main-nav .menu-item-1093:hover,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-1093:focus,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-1093 .cb-sub-menu li .cb-grandchild-menu,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-1093 .cb-sub-menu { background:#3d425a!important; }
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-1093 .cb-mega-menu .cb-sub-menu li a { border-bottom-color:#3d425a!important; }
+#cb-nav-bar #cb-main-menu .main-nav .menu-item-42:hover,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-42:focus,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-42 .cb-sub-menu li .cb-grandchild-menu,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-42 .cb-sub-menu { background:#3d425a!important; }
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-42 .cb-mega-menu .cb-sub-menu li a { border-bottom-color:#3d425a!important; }
+#cb-nav-bar #cb-main-menu .main-nav .menu-item-1125:hover,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-1125:focus,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-1125 .cb-sub-menu li .cb-grandchild-menu,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-1125 .cb-sub-menu { background:#3d425a!important; }
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-1125 .cb-mega-menu .cb-sub-menu li a { border-bottom-color:#3d425a!important; }
+#cb-nav-bar #cb-main-menu .main-nav .menu-item-5252:hover,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-5252:focus,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-5252 .cb-sub-menu li .cb-grandchild-menu,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-5252 .cb-sub-menu { background:#3d425a!important; }
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-5252 .cb-mega-menu .cb-sub-menu li a { border-bottom-color:#3d425a!important; }
+#cb-nav-bar #cb-main-menu .main-nav .menu-item-1001:hover,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-1001:focus,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-1001 .cb-sub-menu li .cb-grandchild-menu,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-1001 .cb-sub-menu { background:#3d425a!important; }
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-1001 .cb-mega-menu .cb-sub-menu li a { border-bottom-color:#3d425a!important; }
+#cb-nav-bar #cb-main-menu .main-nav .menu-item-5187:hover,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-5187:focus,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-5187 .cb-sub-menu li .cb-grandchild-menu,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-5187 .cb-sub-menu { background:#3d425a!important; }
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-5187 .cb-mega-menu .cb-sub-menu li a { border-bottom-color:#3d425a!important; }
+#cb-nav-bar #cb-main-menu .main-nav .menu-item-2398:hover,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-2398:focus,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-2398 .cb-sub-menu li .cb-grandchild-menu,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-2398 .cb-sub-menu { background:#3d425a!important; }
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-2398 .cb-mega-menu .cb-sub-menu li a { border-bottom-color:#3d425a!important; }
+#cb-nav-bar #cb-main-menu .main-nav .menu-item-44:hover,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-44:focus,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-44 .cb-sub-menu li .cb-grandchild-menu,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-44 .cb-sub-menu { background:#3d425a!important; }
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-44 .cb-mega-menu .cb-sub-menu li a { border-bottom-color:#3d425a!important; }
+#cb-nav-bar #cb-main-menu .main-nav .menu-item-568:hover,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-568:focus,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-568 .cb-sub-menu li .cb-grandchild-menu,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-568 .cb-sub-menu { background:#3d425a!important; }
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-568 .cb-mega-menu .cb-sub-menu li a { border-bottom-color:#3d425a!important; }
+#cb-nav-bar #cb-main-menu .main-nav .menu-item-5458:hover,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-5458:focus,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-5458 .cb-sub-menu li .cb-grandchild-menu,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-5458 .cb-sub-menu { background:#3d425a!important; }
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-5458 .cb-mega-menu .cb-sub-menu li a { border-bottom-color:#3d425a!important; }
+#cb-nav-bar #cb-main-menu .main-nav .menu-item-5472:hover,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-5472:focus,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-5472 .cb-sub-menu li .cb-grandchild-menu,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-5472 .cb-sub-menu { background:#3d425a!important; }
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-5472 .cb-mega-menu .cb-sub-menu li a { border-bottom-color:#3d425a!important; }
+#cb-nav-bar #cb-main-menu .main-nav .menu-item-5496:hover,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-5496:focus,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-5496 .cb-sub-menu li .cb-grandchild-menu,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-5496 .cb-sub-menu { background:#3d425a!important; }
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-5496 .cb-mega-menu .cb-sub-menu li a { border-bottom-color:#3d425a!important; }
+#cb-nav-bar #cb-main-menu .main-nav .menu-item-43:hover,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-43:focus,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-43 .cb-sub-menu li .cb-grandchild-menu,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-43 .cb-sub-menu { background:#3d425a!important; }
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-43 .cb-mega-menu .cb-sub-menu li a { border-bottom-color:#3d425a!important; }
+#cb-nav-bar #cb-main-menu .main-nav .menu-item-46:hover,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-46:focus,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-46 .cb-sub-menu li .cb-grandchild-menu,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-46 .cb-sub-menu { background:#3d425a!important; }
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-46 .cb-mega-menu .cb-sub-menu li a { border-bottom-color:#3d425a!important; }
+#cb-nav-bar #cb-main-menu .main-nav .menu-item-299:hover,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-299:focus,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-299 .cb-sub-menu li .cb-grandchild-menu,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-299 .cb-sub-menu { background:#3d425a!important; }
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-299 .cb-mega-menu .cb-sub-menu li a { border-bottom-color:#3d425a!important; }
+#cb-nav-bar #cb-main-menu .main-nav .menu-item-2054:hover,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-2054:focus,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-2054 .cb-sub-menu li .cb-grandchild-menu,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-2054 .cb-sub-menu { background:#3d425a!important; }
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-2054 .cb-mega-menu .cb-sub-menu li a { border-bottom-color:#3d425a!important; }
+#cb-nav-bar #cb-main-menu .main-nav .menu-item-5612:hover,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-5612:focus,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-5612 .cb-sub-menu li .cb-grandchild-menu,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-5612 .cb-sub-menu { background:#3d425a!important; }
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-5612 .cb-mega-menu .cb-sub-menu li a { border-bottom-color:#3d425a!important; }
+#cb-nav-bar #cb-main-menu .main-nav .menu-item-1252:hover,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-1252:focus,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-1252 .cb-sub-menu li .cb-grandchild-menu,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-1252 .cb-sub-menu { background:#3d425a!important; }
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-1252 .cb-mega-menu .cb-sub-menu li a { border-bottom-color:#3d425a!important; }
+#cb-nav-bar #cb-main-menu .main-nav .menu-item-378:hover,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-378:focus,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-378 .cb-sub-menu li .cb-grandchild-menu,
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-378 .cb-sub-menu { background:#3d425a!important; }
+                                             #cb-nav-bar #cb-main-menu .main-nav .menu-item-378 .cb-mega-menu .cb-sub-menu li a { border-bottom-color:#3d425a!important; }</style>		<!-- end head functions-->
+
+        <!-- semilla GA -->
+        <!-- NO COPIAR ESTE CODIGO, DONT COPY THIS CODE -->
+<!-- NO COPIAR ESTE CODIGO, DONT COPY THIS CODE-->
+<!-- NO COPIAR ESTE CODIGO, DONT COPY THIS CODE -->
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-30749552-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<!-- NO COPIAR ESTE CODIGO, DONT COPY THIS CODE -->
+<!-- NO COPIAR ESTE CODIGO, DONT COPY THIS CODE-->
+<!-- NO COPIAR ESTE CODIGO, DONT COPY THIS CODE -->
+
+<meta property="fb:app_id" content="779906972186650" />
+	</head>
+
+
+    <body class="post-template-default single single-post postid-460 single-format-standard  cb-sticky-mm cb-mod-underlines cb-mod-zoom cb-m-sticky cb-sb-nar-embed-fw cb-cat-t-dark cb-mobm-light cb-gs-style-e cb-modal-light cb-light-blog cb-sidebar-right cb-boxed cb-sm-top cb-fis-type- cb-fis-tl-default">
+
+        
+        <div id="cb-outer-container">
+
+            
+            <!-- Small-Screen Menu -->
+            
+            <div id="cb-mob-menu" class="clearfix cb-dark-menu">
+                <a href="#" id="cb-mob-close" class="cb-link"><i class="fa cb-times"></i></a>
+
+                                    <div class="cb-mob-menu-wrap">
+                        <ul class="cb-small-nav"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children cb-has-children menu-item-41"><a href="https://www.anerbarrena.com/programacion/php/">PHP y MySQL</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-45"><a href="https://www.anerbarrena.com/programacion/php/mysql/">MySQL</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2250"><a href="https://www.anerbarrena.com/programacion/php/cadenas-string/">Funciones de cadenas en PHP</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1093"><a href="https://www.anerbarrena.com/programacion/php/fechas/">Funciones de fechas en PHP</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children cb-has-children menu-item-42"><a href="https://www.anerbarrena.com/programacion/html5/">HTML5</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1125"><a href="https://www.anerbarrena.com/programacion/html5/nuevas-etiquetas-y-atributos/">Nuevos input, etiquetas y atributos HTML5</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5252"><a href="https://www.anerbarrena.com/programacion/html5/video-audio/">Vídeo y audio HTML5</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1001"><a href="https://www.anerbarrena.com/programacion/html5/form-html5/">Formularios HTML5</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5187"><a href="https://www.anerbarrena.com/programacion/html5/graficos-svg/">Gráficos SVG</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2398"><a href="https://www.anerbarrena.com/programacion/html5/device-api-dispositivo/">HTML5 API</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-44"><a href="https://www.anerbarrena.com/programacion/jquery/">jQuery</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children cb-has-children menu-item-568"><a href="https://www.anerbarrena.com/programacion/recursos/wordpress/">WordPress</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5458"><a href="https://www.anerbarrena.com/programacion/recursos/wordpress/plugins/">Mejores plugins WordPress</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5472"><a href="https://www.anerbarrena.com/programacion/amp-js-cache-html/">AMP</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5496"><a href="https://www.anerbarrena.com/programacion/javascript-js/">JavaScript JS</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-43"><a href="https://www.anerbarrena.com/programacion/htaccess-apache/">.htaccess</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children cb-has-children menu-item-46"><a href="https://www.anerbarrena.com/programacion/recursos/">Recursos</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-299"><a href="https://www.anerbarrena.com/programacion/recursos/facebook-recursos/">Facebook</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2054"><a href="https://www.anerbarrena.com/programacion/recursos/twitter/">Twitter</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5612"><a href="https://www.anerbarrena.com/programacion/recursos/streaming/">Streaming</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1252"><a href="https://www.anerbarrena.com/programacion/recursos/google/">Google y Youtube</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-378"><a href="https://www.anerbarrena.com/programacion/recursos/seo/">SEO</a></li>
+</ul>
+</li>
+</ul>                    </div>
+                            </div>
+
+            <!-- /Small-Screen Menu -->
+
+        
+            <div id="cb-container" class="wrap clearfix" >
+
+                <header class="header clearfix wrap cb-logo-center">
+
+
+                    <div id="cb-logo-box" class="wrap clearfix">
+                                        <div id="logo" >
+                    <a href="https://www.anerbarrena.com">
+                        <img src="https://www.anerbarrena.com/wp-content/uploads/2015/02/aner-barrena-blanco-260.png" alt="Aner Barrena logo" data-at2x="https://www.anerbarrena.com/wp-content/uploads/2015/02/aner-barrena-blanco-520.png">
+                    </a>
+                </div>
+                  
+                    </div>
+
+
+                    <div id="cb-search-modal" class="cb-s-modal cb-modal cb-dark-menu">
+                        <div class="cb-search-box">
+                            <div class="cb-header">
+                                <div class="cb-title">Buscar</div>
+                                <div class="cb-close">
+                                    <span class="cb-close-modal cb-close-m"><i class="fa fa-times"></i></span>
+                                </div>
+                            </div><form role="search" method="get" class="cb-search" action="https://www.anerbarrena.com/">
+
+    <input type="text" class="cb-search-field" placeholder="" value="" name="s" title="">
+    <button class="cb-search-submit" type="submit" value=""><i class="fa fa-search"></i></button>
+
+</form></div></div>
+                  
+                         <nav id="cb-nav-bar" class="clearfix cb-dark-menu">
+                            <div id="cb-main-menu" class="cb-nav-bar-wrap clearfix wrap">
+                                <ul class="nav main-nav wrap clearfix"><li id="menu-item-41" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children cb-has-children menu-item-41"><a href="https://www.anerbarrena.com/programacion/php/">PHP y MySQL</a><div class="cb-links-menu"><ul class="cb-sub-menu">	<li id="menu-item-45" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-45"><a href="https://www.anerbarrena.com/programacion/php/mysql/">MySQL</a></li>
+	<li id="menu-item-2250" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2250"><a href="https://www.anerbarrena.com/programacion/php/cadenas-string/">Funciones de cadenas en PHP</a></li>
+	<li id="menu-item-1093" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1093"><a href="https://www.anerbarrena.com/programacion/php/fechas/">Funciones de fechas en PHP</a></li>
+</ul></div></li>
+<li id="menu-item-42" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children cb-has-children menu-item-42"><a href="https://www.anerbarrena.com/programacion/html5/">HTML5</a><div class="cb-links-menu"><ul class="cb-sub-menu">	<li id="menu-item-1125" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1125"><a href="https://www.anerbarrena.com/programacion/html5/nuevas-etiquetas-y-atributos/">Nuevos input, etiquetas y atributos HTML5</a></li>
+	<li id="menu-item-5252" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5252"><a href="https://www.anerbarrena.com/programacion/html5/video-audio/">Vídeo y audio HTML5</a></li>
+	<li id="menu-item-1001" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1001"><a href="https://www.anerbarrena.com/programacion/html5/form-html5/">Formularios HTML5</a></li>
+	<li id="menu-item-5187" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5187"><a href="https://www.anerbarrena.com/programacion/html5/graficos-svg/">Gráficos SVG</a></li>
+	<li id="menu-item-2398" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2398"><a href="https://www.anerbarrena.com/programacion/html5/device-api-dispositivo/">HTML5 API</a></li>
+</ul></div></li>
+<li id="menu-item-44" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-44"><a href="https://www.anerbarrena.com/programacion/jquery/">jQuery</a></li>
+<li id="menu-item-568" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children cb-has-children menu-item-568"><a href="https://www.anerbarrena.com/programacion/recursos/wordpress/">WordPress</a><div class="cb-links-menu"><ul class="cb-sub-menu">	<li id="menu-item-5458" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5458"><a href="https://www.anerbarrena.com/programacion/recursos/wordpress/plugins/">Mejores plugins WordPress</a></li>
+</ul></div></li>
+<li id="menu-item-5472" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5472"><a href="https://www.anerbarrena.com/programacion/amp-js-cache-html/">AMP</a></li>
+<li id="menu-item-5496" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5496"><a href="https://www.anerbarrena.com/programacion/javascript-js/">JavaScript JS</a></li>
+<li id="menu-item-43" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-43"><a href="https://www.anerbarrena.com/programacion/htaccess-apache/">.htaccess</a></li>
+<li id="menu-item-46" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children cb-has-children menu-item-46"><a href="https://www.anerbarrena.com/programacion/recursos/">Recursos</a><div class="cb-links-menu"><ul class="cb-sub-menu">	<li id="menu-item-299" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-299"><a href="https://www.anerbarrena.com/programacion/recursos/facebook-recursos/">Facebook</a></li>
+	<li id="menu-item-2054" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2054"><a href="https://www.anerbarrena.com/programacion/recursos/twitter/">Twitter</a></li>
+	<li id="menu-item-5612" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5612"><a href="https://www.anerbarrena.com/programacion/recursos/streaming/">Streaming</a></li>
+	<li id="menu-item-1252" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1252"><a href="https://www.anerbarrena.com/programacion/recursos/google/">Google y Youtube</a></li>
+	<li id="menu-item-378" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-378"><a href="https://www.anerbarrena.com/programacion/recursos/seo/">SEO</a></li>
+</ul></div></li>
+<li class="cb-icons"><ul id="cb-icons-wrap"><li class="cb-icon-search cb-menu-icon"><a href="#" data-cb-tip="Buscar" class="cb-tip-bot" id="cb-s-trigger"><i class="fa fa-search"></i></a></li></ul></li></ul>                            </div>
+                        </nav>
+
+                   
+                    <div id="cb-top-menu" class="clearfix cb-light-menu">
+                        <div class="wrap cb-top-menu-wrap clearfix">
+                            <div class="cb-left-side cb-mob">
+                                <a href="#" id="cb-mob-open"><i class="fa fa-bars"></i></a>
+                                <div class="cb-breaking-news cb-font-header">
+                                    <h2>Programación y ejemplos de PHP, jQuery, HTML5, WordPress, MySQL, AMP y htaccess</h2>
+                                </div>
+                            </div>
+                            <ul class="cb-top-nav">
+                                 <li id="menu-item-5203" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5203"><a target="_blank" href="https://plus.google.com/+AnerBarrena/posts"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
+<li id="menu-item-5201" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5201"><a target="_blank" href="https://www.anerbarrena.com/feed/"><i class="fa fa-rss-square fa-2x"></i></a></li>
+                                <li id="menu-item-5204" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5204"><a target="_blank" href="https://www.youtube.com/user/anerbarrena"><i class="fa fa-youtube-square fa-2x"></i></a></li>
+
+                               
+<li id="menu-item-5202" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5209"><a target="_blank" href="https://www.linkedin.com/in/aner-barrena-valbuena-154ba2150/"><i class="fa fa-linkedin-square fa-2x"></i></a></li>
+
+
+                                <li id="menu-item-5202" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5202"><a target="_blank" href="https://twitter.com/anerbarrena"><i class="fa fa-twitter-square fa-2x"></i></a></li>
+                                <li id="menu-item-5200" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5200"><a target="_blank" href="https://www.facebook.com/Anerbarrenaweb"><i class="fa fa-facebook-square fa-2x"></i></a></li>
+                                
+                            </ul>
+                            <div class="cb-mob-right">
+                                <a href="#" class="cb-small-menu-icons cb-small-menu-search" id="cb-s-trigger-sm"><i class="fa fa-search"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                   
+
+	 				<a href="#" id="cb-to-top" class="cb-base-color"><i class="fa fa-long-arrow-up"></i></a>
+
+
+                </header> <!-- end header -->            <div id="cb-content" class="wrap clearfix">
+
+                    <meta itemprop="datePublished" content="2013-01-02">
+    <meta itemprop="dateModified" content="2015-11-02">
+    <meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="https://www.anerbarrena.com/jquery-load-html-div-460/">
+    <span class="cb-hide" itemscope itemprop="publisher" itemtype="https://schema.org/Organization">
+        <meta itemprop="name" content="Aner Barrena">
+        <span class="cb-hide" itemscope itemprop="logo" itemtype="https://schema.org/ImageObject">
+            <meta itemprop="url" content="https://www.anerbarrena.com/wp-content/uploads/2015/02/aner-barrena-blanco-260.png">
+        </span>
+    </span>
+
+    <meta itemprop="headline " content="jQuery load(): cargar un html externo en un div">
+
+      <span class="cb-hide" itemscope itemtype="http://schema.org/ImageObject" itemprop="image" >
+        <meta itemprop="url" content="https://www.anerbarrena.com/wp-content/uploads/2012/12/jquery.jpg">
+        <meta itemprop="width" content="600">
+        <meta itemprop="height" content="400">
+    </span>
+
+
+			   
+                <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.10&appId=779906972186650';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+<div style="text-align:center; margin-bottom:0px;">
+	<span style="margin:0 0 0 10px;"><img src="/img/publicidad.png"/></span>
+	<br>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-5475373752870298"
+     data-ad-slot="5935534453"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+				<div id="main" class="cb-main clearfix">
+
+						<article id="post-460" class="clearfix post-460 post type-post status-publish format-standard has-post-thumbnail hentry category-jquery">
+
+                             <div class="cb-breadcrumbs wrap cb-padding-off"><a href="https://www.anerbarrena.com">Inicio</a><i class="fa fa-angle-right"></i><div itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://www.anerbarrena.com/programacion/jquery/" title="Ver todos los artículos de jQuery" itemprop="url"><span itemprop="title">jQuery</span></a></div></div><div id="cb-fis-wrap" class="cb-entry-header cb-fis cb-style-off"><span class="cb-title-fi"><h1 class="entry-title cb-entry-title cb-single-title" itemprop="headline">jQuery load(): cargar un html externo en un div</h1><div class="cb-byline cb-font-header"> <div class="cb-date cb-byline-element"><i class="fa fa-clock-o"></i> <time datetime="2013-01-02">2 enero, 2013</time></div> <div class="cb-category cb-byline-element"><i class="fa fa-folder-o"></i>  <a href="https://www.anerbarrena.com/programacion/jquery/" title="Ver todos los artículos de jQuery">jQuery</a></div> <div class="cb-comments cb-byline-element"><i class="fa fa-comment-o"></i><a href="https://www.anerbarrena.com/jquery-load-html-div-460/#commentariosss">Comentar</a></div></div></span></div>
+							<section class="cb-entry-content entry-content clearfix" itemprop="articleBody">
+
+								
+<div style="display:block;">
+
+
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https://www.anerbarrena.com/jquery-load-html-div-460/" target="_blank"><img src="/img/facebook.png" width="32"></a>
+	<a href="https://twitter.com/intent/tweet?url=https://www.anerbarrena.com/jquery-load-html-div-460/&text=%20vía%20@anerbarrena" target="_blank"><img src="/img/twitter.png" width="32"></a>
+	<a href="https://www.linkedin.com/cws/share?url=https://www.anerbarrena.com/jquery-load-html-div-460/" target="_blank"><img src="/img/linkedin.png" width="32"></a>
+	<a href="whatsapp://send?text= https://www.anerbarrena.com/jquery-load-html-div-460/" target="_blank"><img src="/img/whatsapp.png" width="32"></a>
+	<a href="https://plus.google.com/share?url=https://www.anerbarrena.com/jquery-load-html-div-460/" target="_blank"><img src="/img/gplus.png" width="32"></a>
+	
+</div><p>En ocasiones necesitamos actualizar cierta parte de la página sin tener que refrescarla, una función que suelo utilizar con frecuencia es<strong> jQuery load()</strong>.<span id="more-460"></span></p>
+<h5>Función obsoleta</h5>
+<p><span style="text-decoration: underline;"><strong>Esta función ha quedado obsoleta a partir de la versión 1.8 de jQuery</strong></span>, si necesitáis cargar contenido externo y enviar parámetros podéis usar la funciones <a href="https://www.anerbarrena.com/jquery-get-5049/">get()</a> y <a href="https://www.anerbarrena.com/jquery-post-5064/">post()</a>.</p>
+<h5>Funcionalidad</h5>
+<p>Con <strong>jQuery load()</strong> podemos cargar en un determinado <strong>div </strong>un archivo externo (php, html, asp&#8230;) en el momento que necesitemos o bajo petición del usuario mediante formularios, botones, enlaces&#8230;</p>
+<blockquote><p>Este archivo externo al script deberá estar alojado en el mismo dominio de la web.</p></blockquote>
+<p>Otras funciones de <a title="Programación jQuery" href="https://www.anerbarrena.com/programacion/jquery/">jQuery</a> interesantes son: <a title="jQuery animate(): Animaciones modificando estilos CSS" href="https://www.anerbarrena.com/jquery-animate-3787/">jQuery animate()</a>, <a title="jQuery show() y hide(): mostrar y ocultar divs, ids, clases…" href="https://www.anerbarrena.com/jquery-show-hide-ocultar-divs-ids-2360/">jquery show() y hide()</a>, <a title="jQuery toggle(): Mostrar, ocultar y animar elementos en tu web" href="https://www.anerbarrena.com/jquery-toogle-mostrar-ocultar-divs-1728/">jQuery toggle()</a> y <a title="jQuery html(): Obtener o asignar código html en el DOM" href="https://www.anerbarrena.com/jquery-html-4697/">jQuery html()</a>.</p>
+<h2><span style="text-decoration: underline;"><strong>Sintaxis de jQuery load()</strong></span></h2>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5a8fbe3207b2d168019912" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Mostrar/ocultar números de línea"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Cambiar a texto plano"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Abrir el código en una nueva ventana"><div class="crayon-button-icon"></div></div><span class="crayon-language">JavaScript</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+.load( url [, data] [, callback(responseText, textStatus, XMLHttpRequest)] )</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5a8fbe3207b2d168019912-1">1</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5a8fbe3207b2d168019912-1"><span class="crayon-sy">.</span><span class="crayon-e">load</span><span class="crayon-sy">(</span><span class="crayon-h"> </span><span class="crayon-i">url</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">data</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">callback</span><span class="crayon-sy">(</span><span class="crayon-v">responseText</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">textStatus</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">XMLHttpRequest</span><span class="crayon-sy">)</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-sy">)</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0015 seconds] -->
+<p></p>
+<ol>
+<li><strong>url:</strong> es la cadena que contiene la url a cargar. (obligatoria).</li>
+<li><strong>data:</strong> parametros que podemos pasar para ser tratados por el destino de la url. (opcional).</li>
+<li><strong>callback:</strong> función invocada después de procesarse la url. (opcional).</li>
+</ol>
+<p>Este método es una sencilla manera de obtener datos del servidor desde el mismo HTML, se parece bastante a <strong>$.get(url, data, success)</strong>, <strong>load()</strong> es un método y la <strong>get()</strong> una función global.</p>
+<p>En las demos que os pongo a continuación vamos a forzar dicha carga externa mediante la función <a title="jQuery click(): Controla los clicks en los elementos de tu web" href="https://www.anerbarrena.com/jquery-click-1931/">jQuery Click()</a>, que se ejecutará cuando se pulse el botón.</p>
+<h2><span style="text-decoration: underline;"><strong>Ejemplo 1 de jQuery load() pasando como parámetro la url</strong></span></h2>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5a8fbe3207b4a018060663" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-mixed-highlight" title="Contiene lenguajes combinados"></span><div class="crayon-button crayon-nums-button" title="Mostrar/ocultar números de línea"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Cambiar a texto plano"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Abrir el código en una nueva ventana"><div class="crayon-button-icon"></div></div><span class="crayon-language">XHTML</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;jQuery Load&lt;/title&gt;
+		&lt;!-- Libreria jQuery --&gt;
+		&lt;script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"&gt;&lt;/script&gt;
+
+		&lt;!-- Acción sobre el botón con id=boton y actualizamos el div con id=capa --&gt;
+		&lt;script type="text/javascript"&gt;
+			$(document).ready(function() {
+				$("#boton").click(function(event) {
+					$("#capa").load('/demos/03-jquery-load01.php');
+				});
+			});
+		&lt;/script&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+	&lt;div id="capa"&gt;Pulsa 'Actualizar capa' y este texto se actualizará&lt;/div&gt;
+	&lt;br&gt;
+   	&lt;input name="boton" id="boton" type="button" value="Actualizar capa" /&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5a8fbe3207b4a018060663-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b4a018060663-2">2</div><div class="crayon-num" data-line="crayon-5a8fbe3207b4a018060663-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b4a018060663-4">4</div><div class="crayon-num" data-line="crayon-5a8fbe3207b4a018060663-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b4a018060663-6">6</div><div class="crayon-num" data-line="crayon-5a8fbe3207b4a018060663-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b4a018060663-8">8</div><div class="crayon-num" data-line="crayon-5a8fbe3207b4a018060663-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b4a018060663-10">10</div><div class="crayon-num" data-line="crayon-5a8fbe3207b4a018060663-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b4a018060663-12">12</div><div class="crayon-num" data-line="crayon-5a8fbe3207b4a018060663-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b4a018060663-14">14</div><div class="crayon-num" data-line="crayon-5a8fbe3207b4a018060663-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b4a018060663-16">16</div><div class="crayon-num" data-line="crayon-5a8fbe3207b4a018060663-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b4a018060663-18">18</div><div class="crayon-num" data-line="crayon-5a8fbe3207b4a018060663-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b4a018060663-20">20</div><div class="crayon-num" data-line="crayon-5a8fbe3207b4a018060663-21">21</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5a8fbe3207b4a018060663-1"><span class="crayon-r ">&lt;html&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b4a018060663-2"><span class="crayon-i ">	</span><span class="crayon-r ">&lt;head&gt;</span></div><div class="crayon-line" id="crayon-5a8fbe3207b4a018060663-3"><span class="crayon-i ">		</span><span class="crayon-r ">&lt;title&gt;</span><span class="crayon-i ">jQuery Load</span><span class="crayon-r ">&lt;/title&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b4a018060663-4"><span class="crayon-i ">		</span><span class="crayon-c">&lt;!-- Libreria jQuery --&gt;</span></div><div class="crayon-line" id="crayon-5a8fbe3207b4a018060663-5"><span class="crayon-i ">		<span class="crayon-ta">&lt;script </span><span class="crayon-e ">type</span><span class="crayon-o">=</span><span class="crayon-s">'text/javascript'</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s">"//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"</span><span class="crayon-o">&gt;</span><span class="crayon-ta">&lt;/script&gt;</span></span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b4a018060663-6">&nbsp;</div><div class="crayon-line" id="crayon-5a8fbe3207b4a018060663-7"><span class="crayon-i ">		</span><span class="crayon-c">&lt;!-- Acción sobre el botón con id=boton y actualizamos el div con id=capa --&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b4a018060663-8"><span class="crayon-i ">		<span class="crayon-ta">&lt;script </span><span class="crayon-e ">type</span><span class="crayon-o">=</span><span class="crayon-s">"text/javascript"</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5a8fbe3207b4a018060663-9"><span class="crayon-h">			</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">document</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">ready</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b4a018060663-10"><span class="crayon-h">				</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#boton"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">click</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-v">event</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5a8fbe3207b4a018060663-11"><span class="crayon-h">					</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#capa"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">load</span><span class="crayon-sy">(</span><span class="crayon-s">'/demos/03-jquery-load01.php'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b4a018060663-12"><span class="crayon-h">				</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a8fbe3207b4a018060663-13"><span class="crayon-h">			</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b4a018060663-14"><span class="crayon-h">		</span><span class="crayon-ta">&lt;/script&gt;</span></span></div><div class="crayon-line" id="crayon-5a8fbe3207b4a018060663-15"><span class="crayon-i ">	</span><span class="crayon-r ">&lt;/head&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b4a018060663-16"><span class="crayon-i ">	</span><span class="crayon-r ">&lt;body&gt;</span></div><div class="crayon-line" id="crayon-5a8fbe3207b4a018060663-17"><span class="crayon-i ">	</span><span class="crayon-r ">&lt;div </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s ">"capa"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">Pulsa 'Actualizar capa' y este texto se actualizará</span><span class="crayon-r ">&lt;/div&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b4a018060663-18"><span class="crayon-i ">	</span><span class="crayon-r ">&lt;br&gt;</span></div><div class="crayon-line" id="crayon-5a8fbe3207b4a018060663-19"><span class="crayon-i ">&nbsp;&nbsp; 	</span><span class="crayon-r ">&lt;input </span><span class="crayon-e ">name</span><span class="crayon-o">=</span><span class="crayon-s ">"boton"</span><span class="crayon-h"> </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s ">"boton"</span><span class="crayon-h"> </span><span class="crayon-e ">type</span><span class="crayon-o">=</span><span class="crayon-s ">"button"</span><span class="crayon-h"> </span><span class="crayon-e ">value</span><span class="crayon-o">=</span><span class="crayon-s ">"Actualizar capa"</span><span class="crayon-r "> /&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b4a018060663-20"><span class="crayon-i ">	</span><span class="crayon-r ">&lt;/body&gt;</span></div><div class="crayon-line" id="crayon-5a8fbe3207b4a018060663-21"><span class="crayon-r ">&lt;/html&gt;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0029 seconds] -->
+<p></p>
+<ol>
+<li><span style="color: #d83f28;"><a title="Primer ejemplo de jQuery load()" href="https://www.anerbarrena.com/demos/2013/03-jquery-load.php" target="_blank"><span style="color: #d83f28;">Primera demo de ejemplo</span></a></span> del script.</li>
+<li><strong>Línea 5:</strong> referenciamos la libreria <span style="color: #d83f28;"><a href="https://www.anerbarrena.com/programacion/jquery/"><span style="color: #d83f28;">jQuery</span></a></span>.</li>
+<li><strong>Script línea 8:</strong> Tal y como comento en el código, cuando se clicke el botón con id=boton cargaremos el archivo &#8216;/demos/03-jquery-load01.php&#8217; en el div con id=capa.</li>
+<li><strong>Línea 17:</strong> Div que actualizaremos con el nuevo contenido, cuyo id=capa.</li>
+<li><strong>Línea 19:</strong> Botón con id=boton que será el ejecutor del script.</li>
+<li>El archivo externo &#8216;/demos/03-jquery-load01.php&#8217; contiene el texto &#8216;TEXTO ACTUALIZADO!!!!&#8217;.</li>
+</ol>
+<h2><span style="text-decoration: underline;"><strong>Ejemplo 2 de jQuery load() con parametros y callback<br />
+</strong></span></h2>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5a8fbe3207b59531928168" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-mixed-highlight" title="Contiene lenguajes combinados"></span><div class="crayon-button crayon-nums-button" title="Mostrar/ocultar números de línea"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Cambiar a texto plano"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Abrir el código en una nueva ventana"><div class="crayon-button-icon"></div></div><span class="crayon-language">XHTML</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;jQuery Load&lt;/title&gt;
+		&lt;!-- Libreria jQuery --&gt;
+		&lt;script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"&gt;&lt;/script&gt;
+
+		&lt;!-- Acción sobre el botó con id=boton y actualizamos el div con id=capa --&gt;
+		&lt;script type="text/javascript"&gt;
+			$(document).ready(function() {
+				$("#boton").click(function(event) {
+					$("#capa").load("/demos/2013/03-jquery-load03.php",{valor1:'primer valor', valor2:'segundo valor'}, function(response, status, xhr) {
+						  if (status == "error") {
+						    var msg = "Error!, algo ha sucedido: ";
+						    $("#capa").html(msg + xhr.status + " " + xhr.statusText);
+						  }
+						});
+				});
+			});			
+		&lt;/script&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+	&lt;div id="capa"&gt;Pulsa 'Actualizar capa' y este texto se actualizará&lt;/div&gt;
+	&lt;br&gt;
+   	&lt;input name="boton" id="boton" type="button" value="Actualizar capa" /&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5a8fbe3207b59531928168-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b59531928168-2">2</div><div class="crayon-num" data-line="crayon-5a8fbe3207b59531928168-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b59531928168-4">4</div><div class="crayon-num" data-line="crayon-5a8fbe3207b59531928168-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b59531928168-6">6</div><div class="crayon-num" data-line="crayon-5a8fbe3207b59531928168-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b59531928168-8">8</div><div class="crayon-num" data-line="crayon-5a8fbe3207b59531928168-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b59531928168-10">10</div><div class="crayon-num" data-line="crayon-5a8fbe3207b59531928168-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b59531928168-12">12</div><div class="crayon-num" data-line="crayon-5a8fbe3207b59531928168-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b59531928168-14">14</div><div class="crayon-num" data-line="crayon-5a8fbe3207b59531928168-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b59531928168-16">16</div><div class="crayon-num" data-line="crayon-5a8fbe3207b59531928168-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b59531928168-18">18</div><div class="crayon-num" data-line="crayon-5a8fbe3207b59531928168-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b59531928168-20">20</div><div class="crayon-num" data-line="crayon-5a8fbe3207b59531928168-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b59531928168-22">22</div><div class="crayon-num" data-line="crayon-5a8fbe3207b59531928168-23">23</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b59531928168-24">24</div><div class="crayon-num" data-line="crayon-5a8fbe3207b59531928168-25">25</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b59531928168-26">26</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5a8fbe3207b59531928168-1"><span class="crayon-r ">&lt;html&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b59531928168-2"><span class="crayon-i ">	</span><span class="crayon-r ">&lt;head&gt;</span></div><div class="crayon-line" id="crayon-5a8fbe3207b59531928168-3"><span class="crayon-i ">		</span><span class="crayon-r ">&lt;title&gt;</span><span class="crayon-i ">jQuery Load</span><span class="crayon-r ">&lt;/title&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b59531928168-4"><span class="crayon-i ">		</span><span class="crayon-c">&lt;!-- Libreria jQuery --&gt;</span></div><div class="crayon-line" id="crayon-5a8fbe3207b59531928168-5"><span class="crayon-i ">		<span class="crayon-ta">&lt;script </span><span class="crayon-e ">type</span><span class="crayon-o">=</span><span class="crayon-s">'text/javascript'</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s">"//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"</span><span class="crayon-o">&gt;</span><span class="crayon-ta">&lt;/script&gt;</span></span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b59531928168-6">&nbsp;</div><div class="crayon-line" id="crayon-5a8fbe3207b59531928168-7"><span class="crayon-i ">		</span><span class="crayon-c">&lt;!-- Acción sobre el botó con id=boton y actualizamos el div con id=capa --&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b59531928168-8"><span class="crayon-i ">		<span class="crayon-ta">&lt;script </span><span class="crayon-e ">type</span><span class="crayon-o">=</span><span class="crayon-s">"text/javascript"</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5a8fbe3207b59531928168-9"><span class="crayon-h">			</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">document</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">ready</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b59531928168-10"><span class="crayon-h">				</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#boton"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">click</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-v">event</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5a8fbe3207b59531928168-11"><span class="crayon-h">					</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#capa"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">load</span><span class="crayon-sy">(</span><span class="crayon-s">"/demos/2013/03-jquery-load03.php"</span><span class="crayon-sy">,</span><span class="crayon-sy">{</span><span class="crayon-v">valor1</span><span class="crayon-o">:</span><span class="crayon-s">'primer valor'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">valor2</span><span class="crayon-o">:</span><span class="crayon-s">'segundo valor'</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-v">response</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-r">status</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">xhr</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b59531928168-12"><span class="crayon-h">						&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-r">status</span><span class="crayon-h"> </span><span class="crayon-o">==</span><span class="crayon-h"> </span><span class="crayon-s">"error"</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5a8fbe3207b59531928168-13"><span class="crayon-h">						&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-t">var</span><span class="crayon-h"> </span><span class="crayon-e ">msg</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">"Error!, algo ha sucedido: "</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b59531928168-14"><span class="crayon-h">						&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#capa"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">html</span><span class="crayon-sy">(</span><span class="crayon-v">msg</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-v">xhr</span><span class="crayon-sy">.</span><span class="crayon-v">status</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-s">" "</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-v">xhr</span><span class="crayon-sy">.</span><span class="crayon-v">statusText</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a8fbe3207b59531928168-15"><span class="crayon-h">						&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b59531928168-16"><span class="crayon-h">						</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a8fbe3207b59531928168-17"><span class="crayon-h">				</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b59531928168-18"><span class="crayon-h">			</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">			</span></div><div class="crayon-line" id="crayon-5a8fbe3207b59531928168-19"><span class="crayon-h">		</span><span class="crayon-ta">&lt;/script&gt;</span></span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b59531928168-20"><span class="crayon-i ">	</span><span class="crayon-r ">&lt;/head&gt;</span></div><div class="crayon-line" id="crayon-5a8fbe3207b59531928168-21"><span class="crayon-i ">	</span><span class="crayon-r ">&lt;body&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b59531928168-22"><span class="crayon-i ">	</span><span class="crayon-r ">&lt;div </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s ">"capa"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">Pulsa 'Actualizar capa' y este texto se actualizará</span><span class="crayon-r ">&lt;/div&gt;</span></div><div class="crayon-line" id="crayon-5a8fbe3207b59531928168-23"><span class="crayon-i ">	</span><span class="crayon-r ">&lt;br&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b59531928168-24"><span class="crayon-i ">&nbsp;&nbsp; 	</span><span class="crayon-r ">&lt;input </span><span class="crayon-e ">name</span><span class="crayon-o">=</span><span class="crayon-s ">"boton"</span><span class="crayon-h"> </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s ">"boton"</span><span class="crayon-h"> </span><span class="crayon-e ">type</span><span class="crayon-o">=</span><span class="crayon-s ">"button"</span><span class="crayon-h"> </span><span class="crayon-e ">value</span><span class="crayon-o">=</span><span class="crayon-s ">"Actualizar capa"</span><span class="crayon-r "> /&gt;</span></div><div class="crayon-line" id="crayon-5a8fbe3207b59531928168-25"><span class="crayon-i ">	</span><span class="crayon-r ">&lt;/body&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b59531928168-26"><span class="crayon-r ">&lt;/html&gt;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0047 seconds] -->
+<p></p>
+<ol>
+<li><span style="color: #d83f28;"><a title="ejemplo 2 de jQuery load()" href="https://www.anerbarrena.com/demos/2013/03-jquery-load02.php" target="_blank"><span style="color: #d83f28;">Segunda 2 de ejemplo</span></a></span> del script.</li>
+<li>Me voy a centrar en la diferencia que hay con el script anterior.  A partir de la línea 11 he puesto que se cargue el archivo externo, he pasado 2 variables y pregunto si se ha ejecutado correctamente.</li>
+<li><strong>Envío de variables:</strong> en el ejemplo veréis que paso valor1 y valor2 con su contenido, este envío se hace por POST, si queremos hacer un envío por GET tendriamos que poner las variables seguidas de la url. Ejemplo:<br />
+<span style="color: #3366ff;"> <em>load(&#8220;/demos/2013/03-jquery-load03.php?variable1=primervalor&amp;variable2=segundovalor&#8221;</em></span></li>
+<li><strong>Callback:</strong> En la misma llamada pregunto por el &#8216;<strong>status</strong>&#8216; de la carga del archivo, si hay error cargo en el mismo div el error.<br />
+Importante y a tener en cuenta es que el <strong>callback</strong> nos devuelve el <strong>estatus</strong> e independientemente si el archivo existe o no&#8230; el script se ejecuta.<br />
+Aquí solo sacamos el <strong>error</strong> para que nos demos cuenta del mismo, de lo contrario no se cargaría nada ni se vería el tipo de error.</li>
+<li><strong>Archivo destino</strong>: solamente saco los 2 valores enviados por POST.</li>
+</ol>
+<h2><span style="text-decoration: underline;"><strong>Ejemplo 3 de jQuery load() para obtener cierto contenido del html externo</strong></span></h2>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5a8fbe3207b68663243744" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-mixed-highlight" title="Contiene lenguajes combinados"></span><div class="crayon-button crayon-nums-button" title="Mostrar/ocultar números de línea"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Cambiar a texto plano"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Abrir el código en una nueva ventana"><div class="crayon-button-icon"></div></div><span class="crayon-language">XHTML</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;jQuery Load&lt;/title&gt;
+		&lt;!-- Libreria jQuery --&gt;
+		&lt;script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"&gt;&lt;/script&gt;
+
+		&lt;!-- Acción sobre el botó con id=boton y actualizamos el div con id=capa --&gt;
+		&lt;script type="text/javascript"&gt;
+			$(document).ready(function() {
+				$("#boton").click(function(event) {
+					$("#capa").load('/demos/2013/03-jquery-load05.php #contenido');
+				});
+			});
+		&lt;/script&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+	&lt;div id="capa"&gt;Pulsa 'Actualizar capa' y este texto se actualizará&lt;/div&gt;
+	&lt;br&gt;
+   	&lt;input name="boton" id="boton" type="button" value="Actualizar capa" /&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5a8fbe3207b68663243744-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b68663243744-2">2</div><div class="crayon-num" data-line="crayon-5a8fbe3207b68663243744-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b68663243744-4">4</div><div class="crayon-num" data-line="crayon-5a8fbe3207b68663243744-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b68663243744-6">6</div><div class="crayon-num" data-line="crayon-5a8fbe3207b68663243744-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b68663243744-8">8</div><div class="crayon-num" data-line="crayon-5a8fbe3207b68663243744-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b68663243744-10">10</div><div class="crayon-num" data-line="crayon-5a8fbe3207b68663243744-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b68663243744-12">12</div><div class="crayon-num" data-line="crayon-5a8fbe3207b68663243744-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b68663243744-14">14</div><div class="crayon-num" data-line="crayon-5a8fbe3207b68663243744-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b68663243744-16">16</div><div class="crayon-num" data-line="crayon-5a8fbe3207b68663243744-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b68663243744-18">18</div><div class="crayon-num" data-line="crayon-5a8fbe3207b68663243744-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b68663243744-20">20</div><div class="crayon-num" data-line="crayon-5a8fbe3207b68663243744-21">21</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5a8fbe3207b68663243744-1"><span class="crayon-r ">&lt;html&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b68663243744-2"><span class="crayon-i ">	</span><span class="crayon-r ">&lt;head&gt;</span></div><div class="crayon-line" id="crayon-5a8fbe3207b68663243744-3"><span class="crayon-i ">		</span><span class="crayon-r ">&lt;title&gt;</span><span class="crayon-i ">jQuery Load</span><span class="crayon-r ">&lt;/title&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b68663243744-4"><span class="crayon-i ">		</span><span class="crayon-c">&lt;!-- Libreria jQuery --&gt;</span></div><div class="crayon-line" id="crayon-5a8fbe3207b68663243744-5"><span class="crayon-i ">		<span class="crayon-ta">&lt;script </span><span class="crayon-e ">type</span><span class="crayon-o">=</span><span class="crayon-s">'text/javascript'</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s">"//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"</span><span class="crayon-o">&gt;</span><span class="crayon-ta">&lt;/script&gt;</span></span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b68663243744-6">&nbsp;</div><div class="crayon-line" id="crayon-5a8fbe3207b68663243744-7"><span class="crayon-i ">		</span><span class="crayon-c">&lt;!-- Acción sobre el botó con id=boton y actualizamos el div con id=capa --&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b68663243744-8"><span class="crayon-i ">		<span class="crayon-ta">&lt;script </span><span class="crayon-e ">type</span><span class="crayon-o">=</span><span class="crayon-s">"text/javascript"</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5a8fbe3207b68663243744-9"><span class="crayon-h">			</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">document</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">ready</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b68663243744-10"><span class="crayon-h">				</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#boton"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">click</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-v">event</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5a8fbe3207b68663243744-11"><span class="crayon-h">					</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#capa"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">load</span><span class="crayon-sy">(</span><span class="crayon-s">'/demos/2013/03-jquery-load05.php #contenido'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b68663243744-12"><span class="crayon-h">				</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a8fbe3207b68663243744-13"><span class="crayon-h">			</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b68663243744-14"><span class="crayon-h">		</span><span class="crayon-ta">&lt;/script&gt;</span></span></div><div class="crayon-line" id="crayon-5a8fbe3207b68663243744-15"><span class="crayon-i ">	</span><span class="crayon-r ">&lt;/head&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b68663243744-16"><span class="crayon-i ">	</span><span class="crayon-r ">&lt;body&gt;</span></div><div class="crayon-line" id="crayon-5a8fbe3207b68663243744-17"><span class="crayon-i ">	</span><span class="crayon-r ">&lt;div </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s ">"capa"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">Pulsa 'Actualizar capa' y este texto se actualizará</span><span class="crayon-r ">&lt;/div&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b68663243744-18"><span class="crayon-i ">	</span><span class="crayon-r ">&lt;br&gt;</span></div><div class="crayon-line" id="crayon-5a8fbe3207b68663243744-19"><span class="crayon-i ">&nbsp;&nbsp; 	</span><span class="crayon-r ">&lt;input </span><span class="crayon-e ">name</span><span class="crayon-o">=</span><span class="crayon-s ">"boton"</span><span class="crayon-h"> </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s ">"boton"</span><span class="crayon-h"> </span><span class="crayon-e ">type</span><span class="crayon-o">=</span><span class="crayon-s ">"button"</span><span class="crayon-h"> </span><span class="crayon-e ">value</span><span class="crayon-o">=</span><span class="crayon-s ">"Actualizar capa"</span><span class="crayon-r "> /&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b68663243744-20"><span class="crayon-i ">	</span><span class="crayon-r ">&lt;/body&gt;</span></div><div class="crayon-line" id="crayon-5a8fbe3207b68663243744-21"><span class="crayon-r ">&lt;/html&gt;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0029 seconds] -->
+<p></p>
+<ol>
+<li><span style="color: #d83f28;"><a title="Ejemplo 3 de jquery load" href="https://www.anerbarrena.com/demos/2013/03-jquery-load04.php" target="_blank"><span style="color: #d83f28;">Tercera demo de ejemplo</span></a></span> del script.</li>
+<li>Línea 11: si nos fijamos despues de la url he puesto <strong>#contenido</strong>, ese será el contenido del <strong>id del html externo</strong> que heredaremos para nuestra página actual. El resto se ignora.</li>
+<li>El <span style="color: #d83f28;"><a href="/demos/2013/03-jquery-load05.php" target="_blank"><span style="color: #d83f28;">html externo </span></a></span>tiene la siguiente maquetación:<br />
+<!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5a8fbe3207b76960055735" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Mostrar/ocultar números de línea"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Cambiar a texto plano"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Abrir el código en una nueva ventana"><div class="crayon-button-icon"></div></div><span class="crayon-language">XHTML</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+&lt;div id="contenido"&gt;CONTENIDO QUE TIENE QUE APARECER&lt;/div&gt;
+&lt;div id="no"&gt;ESTO NO DEBE APARECER&lt;/div&gt;</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5a8fbe3207b76960055735-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b76960055735-2">2</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5a8fbe3207b76960055735-1"><span class="crayon-r ">&lt;div </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s ">"contenido"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">CONTENIDO QUE TIENE QUE APARECER</span><span class="crayon-r ">&lt;/div&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b76960055735-2"><span class="crayon-r ">&lt;div </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s ">"no"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">ESTO NO DEBE APARECER</span><span class="crayon-r ">&lt;/div&gt;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0015 seconds] -->
+
+</li>
+<li>Podéis probar la demo y ver que efectivamente solo coge el contenido del id=&#8221;contenido&#8221;.</li>
+</ol>
+<h2>Cargar el HTML externo al hacer click en un enlace de texto</h2>
+<p>Otro ejemplo práctico en esta <a title="Actualizar div con jquery load tras pulsar un enlace de texto" href="https://www.anerbarrena.com/demos/2013/03-jquery-load06.php" target="_blank">nueva cuarta demo</a> para cargar un html externo una vez clickado un enlace de texto, aquí el código:</p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-5a8fbe3207b83627872284" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-mixed-highlight" title="Contiene lenguajes combinados"></span><div class="crayon-button crayon-nums-button" title="Mostrar/ocultar números de línea"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Cambiar a texto plano"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Abrir el código en una nueva ventana"><div class="crayon-button-icon"></div></div><span class="crayon-language">JavaScript</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+&lt;script type="text/javascript"&gt;
+	$(document).ready(function() {
+		$("#boton2").click(function(event) {
+			$("#capa").load('/demos/2013/03-jquery-load01.php');
+		});
+	});
+&lt;/script&gt;</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-5a8fbe3207b83627872284-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b83627872284-2">2</div><div class="crayon-num" data-line="crayon-5a8fbe3207b83627872284-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b83627872284-4">4</div><div class="crayon-num" data-line="crayon-5a8fbe3207b83627872284-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5a8fbe3207b83627872284-6">6</div><div class="crayon-num" data-line="crayon-5a8fbe3207b83627872284-7">7</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5a8fbe3207b83627872284-1"><span class="crayon-ta">&lt;script </span><span class="crayon-e ">type</span><span class="crayon-o">=</span><span class="crayon-s">"text/javascript"</span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b83627872284-2"><span class="crayon-h">	</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-r">document</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">ready</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5a8fbe3207b83627872284-3"><span class="crayon-h">		</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#boton2"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">click</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-v">event</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b83627872284-4"><span class="crayon-h">			</span><span class="crayon-sy">$</span><span class="crayon-sy">(</span><span class="crayon-s">"#capa"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">load</span><span class="crayon-sy">(</span><span class="crayon-s">'/demos/2013/03-jquery-load01.php'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a8fbe3207b83627872284-5"><span class="crayon-h">		</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5a8fbe3207b83627872284-6"><span class="crayon-h">	</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5a8fbe3207b83627872284-7"><span class="crayon-ta">&lt;/script&gt;</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0015 seconds] -->
+<p></p>
+<h3>Evitar conflictos con otras librerías</h3>
+<p>En caso de trabajar con otras librerías distintas a <a title="Programación jQuery" href="https://www.anerbarrena.com/programacion/jquery/">jQuery</a> os recomiendo en caso de problemas usar <a title="jQuery noConflict(): Como evitar el conflicto y duplicidad del alias $" href="https://www.anerbarrena.com/jquery-noconflict-2630/">jQuery noConflict()</a>.</p>
+<div class='yarpp-related'>
+<h3>Post relacionados:</h3><ol><li><a href="https://www.anerbarrena.com" title="Sintaxis y ejemplos de programación web">Ejemplos de programación PHP, jQuery, HTML5, WordPress, MySQL, AMP y JavaScript</a></li>
+<li><a href="https://www.anerbarrena.com/jquery-get-5049/" rel="bookmark" title="jQuery get(): Envío y carga de datos a una página externa">jQuery get(): Envío y carga de datos a una página externa </a></li>
+<li><a href="https://www.anerbarrena.com/jquery-post-5064/" rel="bookmark" title="jQuery post(): Envío y carga de datos a una página externa">jQuery post(): Envío y carga de datos a una página externa </a></li>
+<li><a href="https://www.anerbarrena.com/jquery-toogle-mostrar-ocultar-divs-1728/" rel="bookmark" title="jQuery toggle(): Mostrar, ocultar y animar elementos en tu web">jQuery toggle(): Mostrar, ocultar y animar elementos en tu web </a></li>
+<li><a href="https://www.anerbarrena.com/lo-mas-visto-programacion-2017-5596/" rel="bookmark" title="Lo más visto en programación PHP, jQuery, HTML5, WordPress, MySQL, AMP y htaccess en 2017 en anerbarrena.com">Lo más visto en programación PHP, jQuery, HTML5, WordPress, MySQL, AMP y htaccess en 2017 en anerbarrena.com </a></li>
+<li><a href="https://www.anerbarrena.com/jquery-html-4697/" rel="bookmark" title="jQuery html(): Obtener o asignar código html en el DOM">jQuery html(): Obtener o asignar código html en el DOM </a></li>
+</ol>
+</div>
+
+                                
+
+							</section> <!-- end article section -->
+
+							<footer class="article-footer">
+
+								                                    <div class="cb-social-sharing cb-post-footer-block cb-beside cb-social-box clearfix">
+                                        <div id="social-media-icons-3" class="cb-sidebar-widget cb-social-media-widget clearfix">
+                                            <h3 class="cb-sidebar-widget-title">Sígueme!</h3>
+                                                <a href="https://twitter.com/anerbarrena" rel="nofollow" target="_blank"     class="cb-social-media-icon cb-twitter icon-1"></a>
+                                                <a href="https://www.facebook.com/Anerbarrenaweb" rel="nofollow" target="_blank" class="cb-social-media-icon cb-facebook icon-2"></a>
+                                               
+                                                <a href="https://www.youtube.com/user/anerbarrena" rel="nofollow" target="_blank" class="cb-social-media-icon cb-youtube icon-4"></a>
+                                                 <a href="https://plus.google.com/+AnerBarrena/posts" rel="nofollow" target="_blank" class="cb-social-media-icon cb-googleplus icon-3"></a>
+                                                <a href="https://www.anerbarrena.com/feed/" rel="nofollow" target="_blank" class="cb-social-media-icon cb-rss icon-1"></a>
+                                        </div>
+                                    </div>
+                                    <div id="cb-previous-next-links" class="cb-post-footer-block clearfix"><div id="cb-previous-link"><a href="https://www.anerbarrena.com/redirect-301-htaccess-204/"><i class="fa fa-long-arrow-left"></i></a><a href="https://www.anerbarrena.com/redirect-301-htaccess-204/" rel="prev">Redirect 301 en .htaccess con &#8216;redirect 301&#8217; y &#8216;redirectmatch 301&#8217;</a></div><div id="cb-next-link"><a href="https://www.anerbarrena.com/desactivar-autoguardado-eliminar-revisiones-wordpress-531/"><i class="fa fa-long-arrow-right"></i></a><a href="https://www.anerbarrena.com/desactivar-autoguardado-eliminar-revisiones-wordpress-531/" rel="next">Desactivar y eliminar las revisiones de post en WordPress</a></div></div>
+							</footer> <!-- end article footer -->
+
+							  
+
+<section id="commentariosss" style="margin-botton:20px;">
+
+<div class="fb-comments" data-href="https://www.anerbarrena.com/jquery-load-html-div-460/" data-width="100%" data-numposts="10" data-order-by="reverse_time"></div>
+
+
+</section><!-- #comments -->
+
+
+						</article> <!-- end article -->
+
+					
+					
+				</div> <!-- end #main -->
+
+				<aside class="cb-sidebar clearfix" role="complementary">
+
+<div id="custom_html-2" class="widget_text cb-sidebar-widget widget_custom_html"><h3 class="cb-sidebar-widget-title">Publicidad</h3><div class="textwidget custom-html-widget"><div style="text-align:center; margin-bottom:0px;">
+<!-- robapaginas adaptable -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5475373752870298"
+     data-ad-slot="7662946456"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div></div></div><div id="cb-recent-posts-2" class="cb-sidebar-widget widget-latest-articles"><h3 class="cb-sidebar-widget-title">Últimos Post</h3>
+    		<ul class="cb-light cb-small">
+    		
+                <li class="cb-article clearfix">
+                	<div class="cb-mask" style="background-color:#3d425a;">
+                	    <a href="https://www.anerbarrena.com/configurar-migrar-wordpress-https-ssl-5660/"><img width="80" height="60" src="https://www.anerbarrena.com/wp-content/uploads/2016/04/wordpress-80x60.jpg" class="attachment-cb-80-60 size-cb-80-60 wp-post-image" alt="" /></a>                	</div>
+                    <div class="cb-meta">
+                        <h4><a href="https://www.anerbarrena.com/configurar-migrar-wordpress-https-ssl-5660/">Cómo configurar o migrar WordPress a HTTPS (SSL)</a></h4>
+                        <div class="cb-byline cb-font-header"> <div class="cb-date cb-byline-element"><i class="fa fa-clock-o"></i> <time datetime="2018-02-22">22 febrero, 2018</time></div> <div class="cb-comments cb-byline-element"><i class="fa fa-comment-o"></i><a href="https://www.anerbarrena.com/configurar-migrar-wordpress-https-ssl-5660/#commentariosss">Comentar</a></div></div>                                           </div>
+                </li>
+    		
+                <li class="cb-article clearfix">
+                	<div class="cb-mask" style="background-color:#3d425a;">
+                	    <a href="https://www.anerbarrena.com/jquery-next-selector-5658/"><img width="80" height="60" src="https://www.anerbarrena.com/wp-content/uploads/2016/04/jquery-80x60.jpg" class="attachment-cb-80-60 size-cb-80-60 wp-post-image" alt="jquery" /></a>                	</div>
+                    <div class="cb-meta">
+                        <h4><a href="https://www.anerbarrena.com/jquery-next-selector-5658/">Selector jQuery next(): Seleccionar el siguiente elemento</a></h4>
+                        <div class="cb-byline cb-font-header"> <div class="cb-date cb-byline-element"><i class="fa fa-clock-o"></i> <time datetime="2018-02-20">20 febrero, 2018</time></div> <div class="cb-comments cb-byline-element"><i class="fa fa-comment-o"></i><a href="https://www.anerbarrena.com/jquery-next-selector-5658/#commentariosss">Comentar</a></div></div>                                           </div>
+                </li>
+    		
+                <li class="cb-article clearfix">
+                	<div class="cb-mask" style="background-color:#3d425a;">
+                	    <a href="https://www.anerbarrena.com/mysql-like-5657/"><img width="80" height="60" src="https://www.anerbarrena.com/wp-content/uploads/2016/05/mysql-80x60.jpg" class="attachment-cb-80-60 size-cb-80-60 wp-post-image" alt="mysql" /></a>                	</div>
+                    <div class="cb-meta">
+                        <h4><a href="https://www.anerbarrena.com/mysql-like-5657/">MySQL LIKE: Búsquedas de patrones en tablas usando comodines</a></h4>
+                        <div class="cb-byline cb-font-header"> <div class="cb-date cb-byline-element"><i class="fa fa-clock-o"></i> <time datetime="2018-02-17">17 febrero, 2018</time></div> <div class="cb-comments cb-byline-element"><i class="fa fa-comment-o"></i><a href="https://www.anerbarrena.com/mysql-like-5657/#commentariosss">Comentar</a></div></div>                                           </div>
+                </li>
+    		
+                <li class="cb-article clearfix">
+                	<div class="cb-mask" style="background-color:#3d425a;">
+                	    <a href="https://www.anerbarrena.com/comparar-fechas-php-5652/"><img width="80" height="60" src="https://www.anerbarrena.com/wp-content/uploads/2016/05/logo-programacion-80x60.jpg" class="attachment-cb-80-60 size-cb-80-60 wp-post-image" alt="Programación PHP" /></a>                	</div>
+                    <div class="cb-meta">
+                        <h4><a href="https://www.anerbarrena.com/comparar-fechas-php-5652/">Cómo comparar fechas en PHP de manera fácil con date() y strtotime()</a></h4>
+                        <div class="cb-byline cb-font-header"> <div class="cb-date cb-byline-element"><i class="fa fa-clock-o"></i> <time datetime="2018-02-12">12 febrero, 2018</time></div> <div class="cb-comments cb-byline-element"><i class="fa fa-comment-o"></i><a href="https://www.anerbarrena.com/comparar-fechas-php-5652/#commentariosss">Comentar</a></div></div>                                           </div>
+                </li>
+    		
+                <li class="cb-article clearfix">
+                	<div class="cb-mask" style="background-color:#3d425a;">
+                	    <a href="https://www.anerbarrena.com/etiqueta-track-html5-subtitulos-video-5619/"><img width="80" height="60" src="https://www.anerbarrena.com/wp-content/uploads/2016/04/html5-80x60.png" class="attachment-cb-80-60 size-cb-80-60 wp-post-image" alt="html5" /></a>                	</div>
+                    <div class="cb-meta">
+                        <h4><a href="https://www.anerbarrena.com/etiqueta-track-html5-subtitulos-video-5619/">Etiqueta track HTML5: Poner subtítulos en vídeos y audios</a></h4>
+                        <div class="cb-byline cb-font-header"> <div class="cb-date cb-byline-element"><i class="fa fa-clock-o"></i> <time datetime="2018-02-06">6 febrero, 2018</time></div> <div class="cb-comments cb-byline-element"><i class="fa fa-comment-o"></i><a href="https://www.anerbarrena.com/etiqueta-track-html5-subtitulos-video-5619/#commentariosss">Comentar</a></div></div>                                           </div>
+                </li>
+    		    		</ul>
+    		</div>    <div id="custom_html-3" class="widget_text cb-sidebar-widget widget_custom_html"><h3 class="cb-sidebar-widget-title">Publicidad</h3><div class="textwidget custom-html-widget"><div style="text-align:center; margin-bottom:0px;">
+<!-- robapaginas doble -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-5475373752870298"
+     data-ad-slot="6746381652"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div></div></div><div id="custom_html-4" class="widget_text cb-sidebar-widget widget_custom_html"><h3 class="cb-sidebar-widget-title">Top post</h3><div class="textwidget custom-html-widget"><ul>
+<li><a href="https://www.anerbarrena.com/jquery-load-html-div-460/" title="jQuery load(): cargar un html externo en un div">jQuery load()</a>,  
+<a href="https://www.anerbarrena.com/jquery-get-5049/" title="jQuery get(): Envío y carga de datos a una página externa">jQuery get()</a>, 
+<a href="https://www.anerbarrena.com/jquery-post-5064/" title="jQuery post(): Envío y carga de datos a una página externa">jQuery post()</a>, 
+<a href="https://www.anerbarrena.com/jquery-each-5297/" title="jQuery each(): Recorrer elementos del DOM">jQuery each()</a>, <a href="https://www.anerbarrena.com/jquery-append-5300/" title="
+IniciojQuery
+jQuery append(): Añadir o insertar contenido al final del elemento seleccionado">jQuery append()</a>
+</li>
+<li><a href="https://www.anerbarrena.com/value-radio-button-jquery-checked-1580/" title="Obtener el valor de un radio button con jQuery, comprobar si está seleccionado y checkearlo">Obtener el valor de un radio button con jQuery, comprobar si está seleccionado y checkearlo</a></li>
+<li><a href="https://www.anerbarrena.com/jquery-change-1879/" title="jQuery change(): Detectar cambios de valor en los elementos de tu web">jQuery change()</a>, 
+<a href="https://www.anerbarrena.com/jquery-toogle-mostrar-ocultar-divs-1728/" title="jQuery toggle(): Mostrar, ocultar y animar elementos en tu web">jQuery toggle()</a>, <a title="jQuery selectors" href="https://www.anerbarrena.com/jquery-selectors-selectores-4768/">Selectores jQuery</a>, <a title="Efectos jQuery" href="https://www.anerbarrena.com/efectos-en-jquery-5026/">Efectos jQuery</a>
+</li>
+<li><a href="https://www.anerbarrena.com/php-date-1018/" title="PHP date(): Obtener día, mes, año y hora actual con PHP">PHP date(): Obtener día, mes, año y hora actual con PHP</a>, <a href="https://www.anerbarrena.com/compresion-gzip-ahorrar-ancho-de-banda-5271/" title="Compresión GZIP: Ahorrar ancho de banda en tu web">Compresión GZIP: Ahorrar ancho de banda en tu web</a></li>
+<li><a href="https://www.anerbarrena.com/date-input-html5-2829/" title="Date input HTML5: Un sencillo datepicker para tu formulario">Date input HTML5: Un sencillo datepicker para tu formulario</a>, 
+<a href="https://www.anerbarrena.com/etiqueta-svg-5174/" title="Gráficos e imágenes SVG vectoriales HTML5">Gráficos SVG</a>, <a href="https://www.anerbarrena.com/html5-video-player-multimedia-5241/" title="Etiqueta HTML5 video: Crear y embeber un player multimedia">video HTML5</a>, <a href="https://www.anerbarrena.com/etiqueta-html5-audio-5259/" title="Etiqueta HTML5 audio: Embeber audios con su propio player">audio HTML5</a>
+, <a href="https://www.anerbarrena.com/amp-optimizar-paginas-moviles-5470/" title="¿Qué es AMP?: Optimizar páginas para móviles">AMP</a>, <a href="https://www.anerbarrena.com/javascript-alert-confirm-prompt-js-5497/">JavaScript alert</a>
+
+</li>
+<li>
+<a title="Arrays en PHP" href="https://www.anerbarrena.com/php-array-tipos-ejemplos-3876/">PHP array(): Tipos y ejemplos para recorrer arrays</a>, <a title="Redirect 301 en .htaccess con ‘redirect 301’ y ‘redirectmatch 301’" href="https://www.anerbarrena.com/redirect-301-htaccess-204/">Redirect 301</a>, <a title="PHP mail(): Enviar emails desde tu página web o servidor" href="https://www.anerbarrena.com/php-mail-enviar-emails-5417/">PHP mail()</a></li>
+<li>
+<a title="jQuery animate(), efectos con CSS" href="https://www.anerbarrena.com/jquery-animate-3787/">jQuery animate()</a>, <a title="jQuery css(): Obtener y cambiar las propiedades CSS" href="https://www.anerbarrena.com/jquery-css-4900/">jQuery css()</a>, <a title="jQuery on() y off()" href="https://www.anerbarrena.com/jquery-on-off-4767/">jQuery on() y off()</a>
+</li>
+<li>
+<a title="Cómo hacer Facebook Live vídeo desde móvil con la app de IOS y Android" href="https://www.anerbarrena.com/facebook-live-video-movil-app-ios-android-5590/">Facebook Live</a>
+</li>
+</ul></div></div>
+</aside>
+
+
+
+
+
+
+
+			</div> <!-- end #cb-content -->
+
+     			<footer id="cb-footer" class=" wrap" role="contentinfo">
+
+    				<div id="cb-widgets" class="cb-footer-e cb-footer-wrap wrap clearfix">
+
+                                                    <div class="cb-one cb-column clearfix">
+                                <div id="text-9" class="cb-footer-widget widget_text"><h3 class="cb-footer-widget-title"><span>Otras webs</span></h3>			<div class="textwidget"><ul class="xoxo blogroll">
+<li>
+<a href="http://www.egocast.es/" rel="met co-worker colleague"  title="Viajes &amp; Internet" target="_blank">Egocast</a>
+</li>
+<li>
+<a href="http://www.carpinteriazaballa.com" rel="met co-worker colleague"  title="Carpintería en bilbao y bizkaia" target="_blank">Carpinteria Zaballa</a>
+</li>
+</ul></div>
+		</div><div id="tag_cloud-4" class="cb-footer-widget widget_tag_cloud"><h3 class="cb-footer-widget-title"><span>Etiquetas</span></h3><div class="tagcloud"><a href="https://www.anerbarrena.com/etiquetas/botones-compartir-en-redes-sociales/" class="tag-cloud-link tag-link-42 tag-link-position-1" style="font-size: 22pt;" aria-label="botones compartir redes sociales (34 elementos)">botones compartir redes sociales</a>
+<a href="https://www.anerbarrena.com/etiquetas/escapar-caracteres-especiales/" class="tag-cloud-link tag-link-44 tag-link-position-2" style="font-size: 12.5161290323pt;" aria-label="escapar caracteres especiales (4 elementos)">escapar caracteres especiales</a>
+<a href="https://www.anerbarrena.com/etiquetas/expresiones-regulares/" class="tag-cloud-link tag-link-31 tag-link-position-3" style="font-size: 15.3387096774pt;" aria-label="expresiones regulares (8 elementos)">expresiones regulares</a>
+<a href="https://www.anerbarrena.com/etiquetas/redirect-301/" class="tag-cloud-link tag-link-30 tag-link-position-4" style="font-size: 11.3870967742pt;" aria-label="redirect 301 (3 elementos)">redirect 301</a>
+<a href="https://www.anerbarrena.com/etiquetas/robots-txt/" class="tag-cloud-link tag-link-26 tag-link-position-5" style="font-size: 8pt;" aria-label="robots.txt (1 elemento)">robots.txt</a>
+<a href="https://www.anerbarrena.com/etiquetas/script/" class="tag-cloud-link tag-link-28 tag-link-position-6" style="font-size: 10.0322580645pt;" aria-label="script (2 elementos)">script</a>
+<a href="https://www.anerbarrena.com/etiquetas/sistema-de-comentarios/" class="tag-cloud-link tag-link-21 tag-link-position-7" style="font-size: 11.3870967742pt;" aria-label="Sistemas de comentarios para tu web o WordPress (3 elementos)">Sistemas de comentarios para tu web o WordPress</a>
+<a href="https://www.anerbarrena.com/etiquetas/sitemap/" class="tag-cloud-link tag-link-27 tag-link-position-8" style="font-size: 11.3870967742pt;" aria-label="Sitemap (3 elementos)">Sitemap</a></div>
+</div>                            </div>
+                                                                            <div class="cb-two cb-column clearfix">
+                                <div id="categories-3" class="cb-footer-widget widget_categories"><h3 class="cb-footer-widget-title"><span>Categorías</span></h3>		<ul>
+	<li class="cat-item cat-item-11"><a href="https://www.anerbarrena.com/programacion/htaccess-apache/" title="Configuraciones de .htaccess para crear urls amigables, contraseñas en directorios, redirect 301 permanentes explicando su sintaxis mediante ejemplos básicos y prácticos">.htaccess Apache</a> (33)
+</li>
+	<li class="cat-item cat-item-59"><a href="https://www.anerbarrena.com/programacion/amp-js-cache-html/" title="Ejemplos y explicación de la programación y maquetación AMP para optimizar las páginas web en dispositivos móviles, AMP JS, AMP Cache, AMP HTML">AMP</a> (7)
+</li>
+	<li class="cat-item cat-item-7"><a href="https://www.anerbarrena.com/programacion/html5/" title="Programación HTML5, nuevas etiquetas, atributos e input de formularios web. Ejemplos, códigos, tutoriales, manuales.">HTML5</a> (86)
+<ul class='children'>
+	<li class="cat-item cat-item-47"><a href="https://www.anerbarrena.com/programacion/html5/device-api-dispositivo/" title="Programación y ejepmplos de la API que ofrece HTML5 para interactivar con los dispositivos móviles, tablets y similares">Ejemplos y programación de la API de HTML5</a> (2)
+</li>
+	<li class="cat-item cat-item-38"><a href="https://www.anerbarrena.com/programacion/html5/form-html5/" title="introducción a los nuevos formularios HTML5, nuevos atributos, nuevas etiquetas e inputs. Conoce las ventajas y simplificaciones de código con todos estos nuevos elementos.">Formularios en HTML5</a> (37)
+</li>
+	<li class="cat-item cat-item-52"><a href="https://www.anerbarrena.com/programacion/html5/graficos-svg/" title="Ejemplos de de gráficos SVG, imágenes vectoriales HTML5">Gráficos SVG</a> (2)
+</li>
+	<li class="cat-item cat-item-41"><a href="https://www.anerbarrena.com/programacion/html5/nuevas-etiquetas-y-atributos/" title="Todos los nuevos input, etiquetas y atributos en HTML5 para formularios y elementos web. Ejemplos, tutoriales y manuales de HTML5
+">Nuevos input, etiquetas y atributos en HTML5</a> (78)
+</li>
+	<li class="cat-item cat-item-55"><a href="https://www.anerbarrena.com/programacion/html5/video-audio/" >Vídeo y audio HTML5</a> (14)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-60"><a href="https://www.anerbarrena.com/programacion/javascript-js/" title="Programación y ejemplos de JavaScript para utlizar en tu página web, script JS sencillos y explicados para su fácil aprendizaje y entendimiento.">JavaScript JS</a> (7)
+</li>
+	<li class="cat-item cat-item-10"><a href="https://www.anerbarrena.com/programacion/jquery/" title="Todo sobre programación en jQuery, aprende a usar los métodos, eventos y funciones de jQuery. Amplios ejemplos prácticos y demos.">jQuery</a> (70)
+</li>
+	<li class="cat-item cat-item-5"><a href="https://www.anerbarrena.com/programacion/php/" title="Programación en PHP con códigos de ejemplo, funciones de PHP date, array, manejo de cadenas y fechas. Creación de bases de datos y tablas en MySQL.">PHP y MySQL</a> (124)
+<ul class='children'>
+	<li class="cat-item cat-item-46"><a href="https://www.anerbarrena.com/programacion/php/cadenas-string/" title="Tutoriales y manuales con códigos de ejemplo sobre operaciones con palabras o string en PHP - anerbarrena.com">Funciones de cadenas en PHP</a> (33)
+</li>
+	<li class="cat-item cat-item-40"><a href="https://www.anerbarrena.com/programacion/php/fechas/" title="Ejemplos y scripts en PHP para trabajar con fechas, conoce la funcion PHP Date. Formateo de fechas y funciones de fechas.">Funciones de fechas en PHP</a> (17)
+</li>
+	<li class="cat-item cat-item-9"><a href="https://www.anerbarrena.com/programacion/php/mysql/" title="Ejemplos de consultas a bases de datos en MySQL con la ayuda de PHP, reportes, listados y demos de los ejemplos. Tutoriales y manuales de MySQL">MySQL</a> (38)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-12"><a href="https://www.anerbarrena.com/programacion/recursos/" title="Configura y usa los plugins y widgets de twitter, facebook, wordpress y google, aprende trucos SEO y otros recursos web">Recursos</a> (141)
+<ul class='children'>
+	<li class="cat-item cat-item-22"><a href="https://www.anerbarrena.com/programacion/recursos/facebook-recursos/" title="Herramientas para tu web de Facebook, fan box, facebook comments, botón compartir en facebook, botón recomendar en facebook, like, compartir">Facebook</a> (16)
+</li>
+	<li class="cat-item cat-item-43"><a href="https://www.anerbarrena.com/programacion/recursos/google/" title="Aprende a usar plugins de google, administra tu cuenta de google+, trucos de youtube, relaciona tu cuenta de google+ con tu web">Google y Youtube</a> (6)
+</li>
+	<li class="cat-item cat-item-25"><a href="https://www.anerbarrena.com/programacion/recursos/seo/" title="Trucos SEO, posicionamiento web, sitemaps, redirect 301">SEO</a> (14)
+</li>
+	<li class="cat-item cat-item-61"><a href="https://www.anerbarrena.com/programacion/recursos/streaming/" title="Cómo hacer streamings de Facebook Live, Youtube, OBS">Streaming</a> (1)
+</li>
+	<li class="cat-item cat-item-45"><a href="https://www.anerbarrena.com/programacion/recursos/twitter/" title="Crea y configura cuentas de twitter, plugins y widgets de twitter, botón de twittear, botón de seguir en twitter. Todo lo que tienes que saber para usar Twitter">Twitter</a> (17)
+</li>
+	<li class="cat-item cat-item-32"><a href="https://www.anerbarrena.com/programacion/recursos/wordpress/" title="Selección de los mejores plugins de WordPress para mejorar el rendimiento de tu blog, programación de API, diseño de plugins y widgets">WordPress</a> (72)
+	<ul class='children'>
+	<li class="cat-item cat-item-58"><a href="https://www.anerbarrena.com/programacion/recursos/wordpress/plugins/" title="Listado de los mejores plugins de WordPress para instalarlos en tu blog o página web">Mejores plugins WordPress</a> (12)
+</li>
+	</ul>
+</li>
+</ul>
+</li>
+		</ul>
+</div>                            </div>
+                                                                        
+                    </div>
+
+                    
+                        <div class="cb-footer-lower clearfix">
+
+                            <div class="wrap clearfix">
+
+                                <div class="cb-copyright">Copyright @ Aner Barrena . Powered by WordPress and Valenti theme. Iconos diseñados por <a href="http://www.freepik.com" rel="nofollow" title="Freepik">Freepik</a></div>
+
+        						<div class="cb-footer-links clearfix"><ul id="menu-menu-legalidades" class="nav cb-footer-nav clearfix"><li id="menu-item-5191" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5191"><a href="https://www.anerbarrena.com/politica-de-cookies/">Política de cookies</a></li>
+<li id="menu-item-5192" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5192"><a href="https://www.anerbarrena.com/mas-informacion-sobre-las-cookies/">Más información sobre las cookies</a></li>
+<li id="menu-item-5193" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5193"><a href="https://www.anerbarrena.com/contactar/">Contactar</a></li>
+</ul></div>
+           					</div>
+
+        				</div>
+    				
+    			</footer> <!-- end footer -->
+
+    		</div> <!-- end #cb-container -->
+
+		</div> <!-- end #cb-outer-container -->
+
+        <span id="cb-overlay"></span>
+
+		<!-- HTML del pié de página -->
+<div class="cdp-cookies-alerta  cdp-solapa-ocultar cdp-cookies-tema-gris">
+	<div class="cdp-cookies-texto">
+		<h4 style="font-size:15px !important;line-height:15px !important">Uso de cookies</h4><p style="font-size:12px !important;line-height:12px !important">Este sitio web utiliza cookies para que usted tenga la mejor experiencia de usuario. Si continúa navegando está dando su consentimiento para la aceptación de las mencionadas cookies y la aceptación de nuestra <a href="https://www.anerbarrena.com/politica-de-cookies/" style="font-size:12px !important;line-height:12px !important">política de cookies</a>, pinche el enlace para mayor información.</p>
+		<a href="javascript:;" class="cdp-cookies-boton-cerrar">ACEPTAR</a> 
+	</div>
+	<a class="cdp-cookies-solapa">Aviso de cookies</a>
+</div>
+ <link rel='stylesheet' id='yarppRelatedCss-css'  href='https://www.anerbarrena.com/wp-content/plugins/yet-another-related-posts-plugin/style/related.css?ver=4.9.4' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.anerbarrena.com/wp-content/plugins/better-wp-security/core/modules/wordpress-tweaks/js/blankshield/blankshield.min.js?ver=4084'></script>
+<script type='text/javascript' src='https://www.anerbarrena.com/wp-content/plugins/better-wp-security/core/modules/wordpress-tweaks/js/block-tabnapping.js?ver=4084'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var cbExt = {"cbSS":"on","cbLb":"off"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.anerbarrena.com/wp-content/themes/valenti/library/js/jquery.ext.js?ver=5.2.2'></script>
+<script type='text/javascript' src='https://www.anerbarrena.com/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://www.anerbarrena.com/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://www.anerbarrena.com/wp-includes/js/jquery/ui/tabs.min.js?ver=1.11.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var cbScripts = {"cbUrl":"https:\/\/www.anerbarrena.com\/wp-admin\/admin-ajax.php","cbPostID":"460","cbSlider":["600",true,"7000"]};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.anerbarrena.com/wp-content/themes/valenti/library/js/cb-scripts.min.js?ver=5.2.2'></script>
+<script type='text/javascript' src='https://www.anerbarrena.com/wp-includes/js/wp-embed.min.js?ver=4.9.4'></script>
+
+	</body>
+
+</html> <!-- The End. what a ride! -->
