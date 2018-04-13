@@ -1,0 +1,50 @@
+
+/* **********************************************************
+   ************************* GENERAL ************************
+   ******************************************************* */
+    html, body{
+        background-image: url("../img/cabecera.jpg");
+        /* Full height */
+        height: 100%; 
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+        position: relative;
+    }
+    h1 {
+      padding: 2em;
+    }
+
+/* **********************************************************
+   ********************* MENU IZQUIERDA *********************
+   ******************************************************* */
+    a {
+      color: orange;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+/* **********************************************************
+   ************************* FOOTER  ************************
+   ******************************************************* */
+    footer{
+      background-color: black;
+      height: 130px;
+      color:white;
+      font-size: 1em;
+
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    .row p{
+      font-size: 1em;
+    }
+    footer h4 {
+      font-size: 1em;
+      color: orange;
+    }
