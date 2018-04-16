@@ -34,10 +34,48 @@
     <script src="js/codigo1.js"></script>
 
 	<title>Estacina</title>
+	<?php 
+		require("libreria/funciones.php");  // incluimos un fichero php con funciones
+	?>
 </head>
 	 
 	<body>
 
+		<!-- Log in -->
+			<!-- Form input -->
+			<form action="" method="post" id="frmLogin">
+					<label for="login">Username</label>
+					<input name="user_name" type="text" id="user_name" >
+					<label for="password">Password</label>
+					<input name="password" type="password" id="password">
+
+					<input type="submit" name="login" value="Login"></span>
+			</form>
+
+			<!-- password control -->
+			<?php 
+
+				// Definiciones iniciales
+				if(isset($_POST["login"])){
+					$str_0	= $_POST["password"];
+
+					// Llamada a funcion control password
+					if(ctr_pasword($str_0) == 1){
+						// Devuelve 1 es OK la password
+			    		// llamada a php de carga de ficheros
+						header('Location: http:upload/upload.php');
+					}else{
+						// Devuelve 0
+						echo 	"<p style='color:white; background-color: red; display:inline;'>
+									INCORRECTO, no cuadra con el codigo almacenado
+								</p>";
+					}
+
+				}
+
+			?>
+
+		<!-- Cabecera -->
 		<h1> ESTACINA - Recetas de Temporada</h1>
 
         <div class="container">
@@ -101,6 +139,8 @@
 							} // FIN bucle para buscar ficheros .TXT
 
                     	?>
+
+
                     </ul>
                 </div>
 
