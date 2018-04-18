@@ -1,0 +1,87 @@
+/* **********************************************************
+   ******************** DEFINICONES GENERALES ***************
+   ******************************************************* */
+    html,
+    body {
+      font-family: 'Open Sans', helvetica, calibri, arial;
+      height: 100%;
+      background-color: #e6ffe6 !important;
+    }
+    a {
+      color: white;
+    }
+    a:hover {
+      color: red !important;
+    }
+    ul li {
+      list-style: none;
+    }
+    .contenedor--div {
+      padding: 0px !important;
+      margin: 0px;
+    }
+
+    .navbar-dark .navbar-nav .active > .nav-link, 
+    .navbar-dark .navbar-nav .nav-link.active, 
+    .navbar-dark .navbar-nav .nav-link.show, 
+    .navbar-dark .navbar-nav .show > .nav-link{
+      color:orange;
+    }
+
+    a.navbar-brand {
+      color: white !important;
+    }
+    .nav-link{
+      color: orange;
+    }
+
+/* **********************************************************
+   ************************* FOOTER  ************************
+   ******************************************************* */
+    footer{
+      background-color: black;
+      height: 130px;
+      color:white;
+      font-size: 1em;
+
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    .row p{
+      font-size: 1em;
+    }
+    footer h4 {
+      font-size: 1em;
+      color: orange;
+    }
+
+/* **********************************************************
+   *************Estilos menu horizontal**********************
+   ******************************************************* */
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #343a40;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        color: orange;
+        text-align: left;
+        padding left: 30px;
+        padding-right: 30px;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        color: red;
+    }

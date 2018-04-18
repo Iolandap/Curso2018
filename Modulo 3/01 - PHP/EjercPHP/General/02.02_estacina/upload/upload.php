@@ -17,7 +17,10 @@
 		$imagen 	= "";
 		$fecha 		= "";
 		$res 		= array(false,false,false);
+		$load_error	= "";
+		$estacion 	= $_GET["estacion"];
 		
+		// Control pulsacion boton "ok"
 		if(isset($_POST["ok"])){
 			// Carga valores introducidos en PHP
 			$producto 	= $_POST["producto"];
@@ -33,7 +36,7 @@
 				// Si se ha subido un fichero....
 
 				// Definiciones generales
-				$nombreDirectorio	= "txt/";
+				$nombreDirectorio	= "../txt/".$estacion."/";
 				$idUnico			= time();
 				$nombreFichero		= $idUnico. "-" . $_FILES['imagen']['name'];
 				$nombreCompleto		= $nombreDirectorio. $nombreFichero;
@@ -43,6 +46,7 @@
 				$filtro = ".txt";
 				$ficheroCargado = $_FILES['imagen']['name'];
 
+				// Condicional segun extension del fichero subido
 				if (strpos($ficheroCargado, $filtro)) {
 					// SI hay extension .txt
 					move_uploaded_file(
@@ -53,42 +57,46 @@
 								Fichero cargado correctamente
 							</h4>";
 
-
 				}else{
 					// NO hay extension .txt
-					echo "	<h4 style='color:white; background-color: red; display:inline;'>
-								ERROR. Cargar un ficherto .txt
-							</h4>";
+					$load_error = "<h4 style='color:white; background-color: red; display:inline;'>
+									ERROR. Cargar un ficherto .txt
+								</h4>";
 				} // FIN if(strpos())
 
+			// Control errores si no se carga el fichero
 			}else{
-				// Muestra codigo de error si se produce alguno
+				// Muestra codigo de error si se produce algun error
 				switch ($_FILES['imagen']['error']) {
 					case '2':
-						echo 	"<h4 style='color:white; background-color: red; display:inline;'>
+						$load_error ="<h4 style='color:white; background-color: red; display:inline;'>
 									Fichero subido demasiado grande
 								</h4>";
 						break;
 					case '3':
-						echo "El fichero fue sólo parcialmente subido.";
+						$load_error ="El fichero fue sólo parcialmente subido.";
 						break;	
 					case '4':
-						echo 	"<h4 style='color:white; background-color: red; display:inline;'>
+						$load_error =	"<h4 style='color:white; background-color: red; display:inline;'>
 									No se subió ningún fichero.
 								</h4>";
 						break;	
 					case '6':
-						echo "Falta la carpeta tempora.";
+						$load_error = "Falta la carpeta tempora.";
 						break;	
 					case '7':
-						echo " No se pudo escribir el fichero en el disco.";
+						$load_error =" No se pudo escribir el fichero en el disco.";
 						break;	
 				}; // FIN switch
+			}  // FIN if(is_uploaded_file())
+		} // FIN if(isset())
 
-			}  // FIN del if(is_uploaded_file())
+		// Control pulsacion "regresar"
+		if(isset($_POST["regresar"])){
+    		// llamada a php de carga de ficheros
+			header("Location: ../index.php");
 
 		} // FIN del if(isset())
-
 	?>
 
 	<!-- Formulario entrada datos -->
@@ -161,7 +169,12 @@
 
 	  		<!-- Envio formulario -->
 	  		<br>
-	  		<input type="submit" name="ok" value="enviar"><br><br>
+	  		<input type="submit" name="ok" value="Enviar">
+			<!-- Impresion mensaje error en PHP -->
+			<?php echo $load_error ?> 
+
+			<!-- Regreso a menu principal -->
+	  		<input type="submit" name="regresar" value="Volver">
 
 	  	</fieldset>
 	</form>

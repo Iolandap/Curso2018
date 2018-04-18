@@ -40,40 +40,68 @@
 </head>
 	 
 	<body>
+		<!-- Calculo estacion -->
+        	<?php
+        		// Definicion variables y arrays iniciales
+        			$mesActual  = 	date ('n');		// Almacena el numero del mes actual
+					$estacion;
+
+					// Arrays con los meses de cada estacion
+					$invierno	=	["1","2","3"];
+					$primavera	=	["4","5","6"];
+					$verano		=	["7","8","9"];
+					$otono		=	["10","11","12"];
+
+				// Condicional para encontrar la estacion
+					if (in_array($mesActual, $invierno)){
+						$estacion = "invierno";
+
+					}elseif (in_array($mesActual, $primavera)){
+						$estacion = "primavera";
+
+					}elseif (in_array($mesActual, $verano)){
+						$estacion = "verano";
+
+					}elseif (in_array($mesActual, $otonyo)){
+						$estacion = "otono";
+					}
+        	?>
 
 		<!-- Log in -->
-			<!-- Form input -->
+			<!-- password control -->
+			<?php 
+				// Definiciones iniciales
+				$log_error ="";
+
+				if(isset($_POST["login"])){
+
+					$str_0	= $_POST["password"];
+
+					// Llamada a funcion control password
+					if(ctr_pasword($str_0) == 1){
+						// Devuelve 1 es OK la password
+			    		// llamada a php de carga de ficheros, enviando la estacion
+						header("Location: http:upload/upload.php?estacion=$estacion");
+					}else{
+						// Devuelve 0
+						$log_error=	"<p style='color:white; background-color: red; display:inline;'>
+									INCORRECTO, no cuadra con el codigo almacenado
+								</p>";
+					}
+				} // FIN if(isset())
+			?>
+
+			<!-- Form input password -->
 			<form action="" method="post" id="frmLogin">
 					<label for="login">Username</label>
 					<input name="user_name" type="text" id="user_name" >
 					<label for="password">Password</label>
 					<input name="password" type="password" id="password">
 
-					<input type="submit" name="login" value="Login"></span>
+					<input type="submit" name="login" value="Login">
+					<!-- Impresion mensaje error en PHP -->
+					<?php echo $log_error ?> 
 			</form>
-
-			<!-- password control -->
-			<?php 
-
-				// Definiciones iniciales
-				if(isset($_POST["login"])){
-					$str_0	= $_POST["password"];
-
-					// Llamada a funcion control password
-					if(ctr_pasword($str_0) == 1){
-						// Devuelve 1 es OK la password
-			    		// llamada a php de carga de ficheros
-						header('Location: http:upload/upload.php');
-					}else{
-						// Devuelve 0
-						echo 	"<p style='color:white; background-color: red; display:inline;'>
-									INCORRECTO, no cuadra con el codigo almacenado
-								</p>";
-					}
-
-				}
-
-			?>
 
 		<!-- Cabecera -->
 		<h1> ESTACINA - Recetas de Temporada</h1>
@@ -83,34 +111,9 @@
                 <div class="col-sm-2">
                     <h4>Recetas</h4>
                     <ul class="menu">
-
+                 	
                     	<!-- Carga menu lateral solo con ficheros .TXT -->
                     	<?php
-
-                    		// Definicion variables y arrays iniciales
-                    			$mesActual  = 	date ('n');		// Almacena el numero del mes actual
-								$estacion;
-
-								// Arrays con los meses de cada estacion
-								$invierno	=	["1","2","3"];
-								$primavera	=	["4","5","6"];
-								$verano		=	["7","8","9"];
-								$otono		=	["10","11","12"];
-
-							// Condicional para encontrar la estacion
-								if (in_array($mesActual, $invierno)){
-									$estacion = "invierno";
-
-								}elseif (in_array($mesActual, $primavera)){
-									$estacion = "primavera";
-
-								}elseif (in_array($mesActual, $verano)){
-									$estacion = "verano";
-
-								}elseif (in_array($mesActual, $otonyo)){
-									$estacion = "otono";
-								}
-
                     		$dir    = "txt/$estacion";
                     		$files1 = scandir($dir);
 
@@ -137,9 +140,7 @@
 									} // FIN condicion .TXT
 								} // FIN Condicion para sacar blancos y puntos
 							} // FIN bucle para buscar ficheros .TXT
-
                     	?>
-
 
                     </ul>
                 </div>
