@@ -21,6 +21,10 @@
       margin: 0px;
     }
 
+    .navbar.navbar-dark.bg-dark{
+      width: 100%;
+      position: fixed;      /*Fija menu en el pie*/
+    }
     .navbar-dark .navbar-nav .active > .nav-link, 
     .navbar-dark .navbar-nav .nav-link.active, 
     .navbar-dark .navbar-nav .nav-link.show, 
@@ -43,8 +47,7 @@
       height: 130px;
       color:white;
       font-size: 1em;
-
-      position: absolute;
+      position: fixed;      /*Fija menu en el pie*/
       right: 0;
       bottom: 0;
       left: 0;
@@ -84,4 +87,42 @@
 
     li a:hover {
         color: red;
+    }
+
+/* menu vertical */
+  div#Menu {
+      border: 1px solid;
+      float:left;
+      width: 20%;
+      height:110%;
+      text-align: center;
+      background-color: #ccffcc;
+      display:table;                              /* convierte el bloque en una tabla para poder centrar el texo */
+  }
+  div#menucontainer{
+      display:table-cell;vertical-align:middle;
+  }
+  div#Menu p{
+      text-align:center;
+  }
+
+/* container */
+  div#container {
+      float:left;
+      width: 80%;
+      height:110%;
+  }
+  /* contenido1 */
+    div#Contenido1 {
+        float:left;
+        width: 100%;
+        height:100%;
+        text-align: center;
+        display:table;                      /* convierte el bloque en una tabla para poder centrar el texo */
+    }
+    div#contcontainer1{
+        display:table-cell;vertical-align:middle;
+    }
+    div#Contenido1 p{
+        text-align:center;
     }

@@ -27,7 +27,7 @@
 	  		case 'A':
 	  			$menu = array( 		'link1' => 'Home 1', 
 	  								'link2' => 'Noticias 1', 
-	  								'link3' => 'Editar 1', 
+	  								'formulario/formulario' => 'Editar 1', 
 	  								'link4' => 'borrar 1');
 	  			break;
 	  		case 'B':
