@@ -1,0 +1,30 @@
+/* **********************************************************
+   *************Estilos menu horizontal**********************
+   ******************************************************* */
+    ul.nav.mr-auto{
+        background-color: #343a40;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #343a40;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        color: orange;
+        text-align: left;
+        padding left: 30px;
+        padding-right: 30px;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        color: red;
+    }

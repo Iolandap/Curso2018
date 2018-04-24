@@ -1,24 +1,31 @@
+<head>
+    <link href="css/head.css" rel="stylesheet" type="text/css" media="screen" />
+</head> 
+
     <!-- Menu cabecera -->
 	<nav class="navbar navbar-dark bg-dark">
-		<a class="navbar-brand"><h3>Menu usuarios</h3></a>
+        <img src="img/logo.png" width="50" height="50" alt="">
+		<a class="navbar-brand"><h3>&nbsp;Relatos literiarios</h3></a>
 
         <!-- Menu cabecera izquierda -->
             <?php 
+
                 //Condicion pulsacion log_in
                 if(isset($_POST["log_in"])){
                     // Definiciones iniciales
-                    $str_0  = $_POST["pasword"];
+                    $username = $_POST["username"];
+                    $pasword  = $_POST["pasword"];
 
                     // Llamada a funcion control password
-                    $user_level = ctr_pasword($str_0);
+                    $user_level = ctr_pasword($username, $pasword);
 
                     // Control nivel passwords
                     if($user_level == '0'){
                         // Devuelve 0. Password incorrecto
                         echo    str_repeat('<br>', 2)
-                                ."<h1 style='color:white; background-color: red; display:inline;'>
+                                ."<h4 style='color:white; background-color: red; display:inline;'>
                                     INCORRECTO, no cuadra con el codigo almacenado
-                                </h1>";
+                                </h4>";
                     }else{
                         // Devuelve un usuario valido
                         // Definicion variable sesion
@@ -48,10 +55,9 @@
                      <!-- Menu por defecto -->
                      <!-- mr-auto : posiciona derecha-->
                      <ul class="nav mr-auto">
-                      <li class="nav-item"><a href="#home">     Home</a></li>
-                      <li class="nav-item"><a href="#news">     News</a></li>
-                      <li class="nav-item"><a href="#contact">  Contact</a></li>
-                      <li class="nav-item"><a href="#about">    About</a></li>
+                      <li class="nav-item"><a href="index.php?selec=1">   Libros</a></li>
+                      <li class="nav-item"><a href="index.php?selec=2">   Peliculas</a></li>
+                      <li class="nav-item"><a href="index.php?selec=3">   Series</a></li>
                     </ul>
             <?php 
                 } // FIN control boton log_in

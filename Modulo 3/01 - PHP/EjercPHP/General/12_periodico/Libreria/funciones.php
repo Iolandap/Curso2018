@@ -1,19 +1,31 @@
 <?php 
 
-// Funcion a funcion control pasword
-	function ctr_pasword($string_0){
-		// Definiciones paswords
-		$pasword_A = sha1("123");
-		$pasword_B = sha1("1234");
-		$pasword_C = sha1("12345");
+// Funcion inicializacion usuarios
+	function initCfg(){
+		// Nivel usuario
+		$cfg['user'] = "";
+		$cfg['pass'] = "";
+		// Nivel admin
+		$cfg['saved_user'] = "pepito";
+		$cfg['saved_pass'] = "1234";
 
-		// Nivel usuario segun pasword
-		if (sha1($string_0) === $pasword_A) {  // '===' :compara contenido y tipo contenido
-			return 'A';
-		}elseif (sha1($string_0) === $pasword_B) {
-			return 'B';
-		}elseif (sha1($string_0) === $pasword_C) {
-			return 'C';
+		$cfg['saved_hash'] = md5($cfg['saved_pass']);
+		$cfg['userlogtipus'] = $_SESSION['tipus']="none";
+
+		return$cfg;
+	}	
+
+
+// Funcion a funcion control pasword
+	function ctr_pasword($username, $pasword){
+
+		// Nivel usuario segun user y pasword. 
+		// Cogemos los datos de la sesion que estan dentro de la array
+		// '===' :compara contenido y tipo contenido
+		if (	$username	 	== $_SESSION['cfg']['saved_user'] && 
+				md5($pasword) 	=== $_SESSION['cfg']['saved_hash']) { 
+			// Nivel Admin
+			return 'admin';
 		};
 		return false;
 	}
@@ -24,25 +36,16 @@
 	 	$menu = array();
 
 	  	switch ($usuario){
-	  		case 'A':
-	  			$menu = array( 		'link1' => 'Home 1', 
-	  								'link2' => 'Noticias 1', 
-	  								'formulario/formulario' => 'Editar 1', 
-	  								'link4' => 'borrar 1');
+	  		case 'admin':
+	  			$menu = array( 		'index.php?selec=1' => 'Libros', 
+	  								'index.php?selec=2' => 'Peliculas', 
+	  								'index.php?selec=3' => 'Series', 
+	  								'link4' => 'Añadir',
+	  				  				'link4' => 'Borrar');
 	  			break;
-	  		case 'B':
-	  			$menu = array( 		'link1' => 'Home 2', 
-	  								'link2' => 'Noticias 2', 
-	  								'link3' => 'Editar 2', 
-	  								'link4' => 'borrar 2');
-	  			break;
-	  		case 'C':
-	  			$menu = array( 		'link1' => 'Home 3', 
-	  								'link2' => 'Noticias 3', 
-	  								'link3' => 'Editar 3', 
-	  								'link4' => 'borrar 3');
 	  	}
 	  	return $menu;
 	}
+
 
 ?>

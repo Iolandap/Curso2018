@@ -1,0 +1,12 @@
+body{
+	background-color: #99ffff;
+}
+
+div {
+  	margin: .4em 0;
+}
+
+div label {
+  	width: 10%;
+  	float: left;
+}

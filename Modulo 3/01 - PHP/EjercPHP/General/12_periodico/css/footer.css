@@ -1,0 +1,20 @@
+/* **********************************************************
+   ************************* FOOTER  ************************
+   ******************************************************* */
+    footer{
+      background-color: black;
+      height: 130px;
+      color:white;
+      font-size: 1em;
+      position: fixed;      /*Fija menu en el pie*/
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    .row p{
+      font-size: 1em;
+    }
+    footer h4 {
+      font-size: 1em;
+      color: orange;
+    }

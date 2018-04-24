@@ -1,0 +1,20 @@
+html, body{
+    background-image: url("../img/cabecera.jpg");
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    color: white;
+}
+div {
+  	margin: .4em 0;
+}
+
+div label {
+  	width: 20%;
+  	float: left;
+}

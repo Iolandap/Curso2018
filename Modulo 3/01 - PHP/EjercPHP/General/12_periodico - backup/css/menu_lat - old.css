@@ -1,0 +1,28 @@
+/* menu vertical */
+  div#Menu {
+      margin-top: 65px;
+      border: 1px solid;
+      float:left;
+      width: 20%;
+      height:110%;
+      text-align: center;
+      background-color: white;
+      background-image: url("../img/background_menu.jpg");
+      background-repeat: no-repeat;
+      background-position: bottom left;
+      display:table;                              /* convierte el bloque en una tabla para poder centrar el texo */
+  }
+  div#menucontainer{
+
+      display:table-cell;vertical-align:top;
+  }
+  div#Menu p{
+      text-align:center;
+  }
+
+  ul{
+    background-color: white;
+  }
+  a.enlace{
+    color: black;
+  }

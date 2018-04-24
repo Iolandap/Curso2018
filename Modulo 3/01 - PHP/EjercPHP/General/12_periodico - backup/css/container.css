@@ -1,0 +1,17 @@
+/* container */
+  div#container {
+      float:left;
+      width: 80%;
+      height:110%;
+  }
+  /* contenido1 */
+    div#Contenido1 {
+        float:left;
+        width: 100%;
+        height:100%;
+        text-align: center;
+        display:table;                      /* convierte el bloque en una tabla para poder centrar el texo */
+    }
+    div#Contenido1 p{
+        text-align:center;
+    }
