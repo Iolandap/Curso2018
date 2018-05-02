@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 02-05-2018 a las 08:09:33
+-- Tiempo de generación: 02-05-2018 a las 11:26:02
 -- Versión del servidor: 5.7.19
 -- Versión de PHP: 5.6.31
 
@@ -30,14 +30,23 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `avion`;
 CREATE TABLE IF NOT EXISTS `avion` (
-  `ID_Avion` int(11) NOT NULL AUTO_INCREMENT,
+  `ID_Avion` int(50) NOT NULL AUTO_INCREMENT,
   `Matricula` int(50) NOT NULL,
   `Fabricante` text NOT NULL,
   `Modelo` text NOT NULL,
   `Capacidad_Pasaj` int(11) NOT NULL,
-  `Autonomia_Vuelo` date NOT NULL,
+  `Autonomia_Vuelo` decimal(10,0) NOT NULL,
   PRIMARY KEY (`ID_Avion`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `avion`
+--
+
+INSERT INTO `avion` (`ID_Avion`, `Matricula`, `Fabricante`, `Modelo`, `Capacidad_Pasaj`, `Autonomia_Vuelo`) VALUES
+(2, 4567, 'Boing', '240', 280, '12'),
+(3, 8910, 'Ford', '120', 80, '6'),
+(123, 1213, 'Boing', '337', 200, '4');
 
 -- --------------------------------------------------------
 
@@ -51,7 +60,16 @@ CREATE TABLE IF NOT EXISTS `pasajeros` (
   `DNI` varchar(10) NOT NULL,
   `Nombre` text NOT NULL,
   PRIMARY KEY (`ID_Pasajero`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `pasajeros`
+--
+
+INSERT INTO `pasajeros` (`ID_Pasajero`, `DNI`, `Nombre`) VALUES
+(1, '47913279A', 'Josep Maria Escofet'),
+(2, '20000011B', 'Felipe Antonio Diaz'),
+(3, '35123458E', 'Maria Enriqueta Gomez');
 
 -- --------------------------------------------------------
 
@@ -80,10 +98,19 @@ CREATE TABLE IF NOT EXISTS `vuelos` (
   `Aeropuerto_Origen` text NOT NULL,
   `Fecha_Destino` date NOT NULL,
   `Aeropuerto_Destino` text NOT NULL,
-  `ID_Avion` int(50) NOT NULL,
+  `ID_Avion` int(50) DEFAULT NULL,
   PRIMARY KEY (`ID_Vuelo`),
-  KEY `FK_ID_Avion` (`ID_Avion`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  KEY `ID_Avion` (`ID_Avion`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `vuelos`
+--
+
+INSERT INTO `vuelos` (`ID_Vuelo`, `Fecha_Origen`, `Aeropuerto_Origen`, `Fecha_Destino`, `Aeropuerto_Destino`, `ID_Avion`) VALUES
+(1, '2018-05-02', 'Barcelona', '2018-05-02', 'Madrid', 123),
+(2, '2018-06-15', 'Madrid', '2018-06-15', 'Mallorca', 2),
+(3, '2018-07-12', 'Mallorca', '2018-07-12', 'Londres', 3);
 
 -- --------------------------------------------------------
 
@@ -101,7 +128,16 @@ CREATE TABLE IF NOT EXISTS `vuelo_pasajero` (
   PRIMARY KEY (`ID_Vuelo_Pasajero`),
   KEY `FK_ID_Vuelo` (`ID_Vuelo`),
   KEY `FK_ID_Pasajero` (`ID_Pasajero`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `vuelo_pasajero`
+--
+
+INSERT INTO `vuelo_pasajero` (`ID_Vuelo_Pasajero`, `ID_Vuelo`, `ID_Pasajero`, `Asiento`, `Clase`) VALUES
+(1, 1, 1, '29A', 'Turista'),
+(2, 2, 3, '1B', 'Superior'),
+(3, 3, 2, '10C', 'Basica');
 
 -- --------------------------------------------------------
 
@@ -128,7 +164,7 @@ CREATE TABLE IF NOT EXISTS `vuelo_personal` (
 -- Filtros para la tabla `vuelos`
 --
 ALTER TABLE `vuelos`
-  ADD CONSTRAINT `vuelos_ibfk_1` FOREIGN KEY (`ID_Avion`) REFERENCES `avion` (`ID_Avion`);
+  ADD CONSTRAINT `vuelos_ibfk_1` FOREIGN KEY (`ID_Avion`) REFERENCES `avion` (`ID_Avion`) ON UPDATE SET NULL;
 
 --
 -- Filtros para la tabla `vuelo_pasajero`
