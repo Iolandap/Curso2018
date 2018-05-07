@@ -1,7 +1,11 @@
--- Base de datos 'empresa'
+--------------------------------------
+-- 		Base de datos 'empresa'
 USE empresa;
+--------------------------------------
 
--- 01 - Empresa
+--------------------------------------
+-- 			01 - Empresa
+--------------------------------------
 	-- a.  Contad cuantos clientes hay en total 
 
 	SELECT COUNT(*) FROM clientes;
@@ -28,7 +32,9 @@ USE empresa;
 
 	UPDATE empleados SET fecha_contrato = NOW();
 
--- 02 - Empresa
+--------------------------------------
+-- 			02 - Empresa
+--------------------------------------
 
 	-- a. Contad cuantos productos hay en total 
 	SELECT COUNT(*) FROM productos;
@@ -47,7 +53,9 @@ USE empresa;
 	-- e.  Calculad la media de precio de todas las ventas 
 	SELECT AVG(`ventas`) FROM oficinas;
 
--- 03 - Empresa
+--------------------------------------
+-- 			03 - Empresa
+--------------------------------------
 
 	-- a.  Listado de vendedores de más de 40 años. 
 	SELECT * FROM empleados WHERE `edad`>40;
@@ -84,3 +92,95 @@ USE empresa;
 		FROM `empleados` 
 		WHERE `nombre` LIKE 'J%' 
 		ORDER BY `nombre` ASC
+
+--------------------------------------
+-- 			04 - Empresa
+--------------------------------------
+
+	-- a.  Cliente que más compras ha realizado (con unión natural e INNER JOIN) 
+		SELECT c.*, COUNT(p.`id_pedido`) as num_pedidos -- Contamos los pedidos
+			-- Asignacion apodos a las tablas
+			FROM clientes c, pedido p 
+			-- Enlace clave primaria y clave foranea
+			WHERE c.`Id_cliente` = p.`fId_Cliente`
+			-- Agrupamos por cliente
+			GROUP by c.`Id_cliente`
+			-- Ordenamos por cantidad pedidos
+			ORDER by COUNT(p.`id_pedido`) DESC
+			-- Mostramos dos registros
+			LIMIT 2;
+
+	-- b.  Dinero total que ha gastado el cliente de la consulta anterior (con unión 
+	-- natural e INNER JOIN). 
+		SELECT c.*, SUM(p.`importe_total`) -- Sumamos los importe compras
+			FROM 
+				clientes c, 
+				pedido p 
+			WHERE 
+				c.`Id_cliente` = p.`fId_Cliente`
+			-- Agrupamos las compras por cliente
+			GROUP by 
+				c.`Id_cliente`
+			-- Ordenamos por cantidad pedidos
+			ORDER by 
+				SUM(p.`importe_total`) DESC
+			-- Mostramos dos registros
+			LIMIT 2;
+
+	-- c.  Listado de clientes que hayan realizado pedidos en 1989.  
+		SELECT c.*, p.* -- Sumamos los importe compras
+			FROM 	
+				clientes c, 
+				pedido p 
+			WHERE 	
+				c.`Id_cliente` = p.`fId_Cliente` AND
+				p.`fecha` LIKE '1989-%' 
+
+	-- d.  Listado de centros situados en el este y de sus vendedores ordenados 
+	-- alfabéticamente. 
+		SELECT * 
+			FROM 
+				oficinas o,
+				empleados e
+			WHERE 
+				o.`Id_Oficina` = e.`fId_Oficina` AND
+				o.`region`="este" 
+			ORDER by 
+				e.`nombre`;
+
+	-- e.  Listado de vendedores cuyo nombre comience por A y de sus pedidos 
+	-- ordenados cronológicamente, pero solo de los pedidos realizados por 
+	-- clientes cuyo nombre empiece por J. 
+		SELECT * 
+			FROM 
+				empleados e,
+				pedido p,
+				clientes c
+			WHERE 
+				e.`Id_empleado` = p.`fid_vendedor` 	AND
+				c.`Id_cliente`	= p.`fid_cliente`	AND
+				e.`nombre` LIKE 'a%'				AND
+				c.`nombre` LIKE 'j%'
+			ORDER by 
+				p.`fecha`;
+
+	-- f.  Listado de los directores de los centros de la región este con un objetivo 
+	-- de ventas inferior a 500.000 €, cuyo salario sea superior a 300.000 €. 
+		SELECT * 
+			FROM 
+				empleados e,
+				oficinas o
+			WHERE 
+				e.`id_empleado` = o.`fid_director`	AND
+				o.`region`		= "este"			AND
+				o.`ventas` 		< 500000			AND
+				e.`salario`		> 300000;
+
+	-- g.  Listado de pedidos de entre 5 y 50 unidades, vendidos por empleados 
+	-- de la oficina de Castellón a clientes cuyo nombre NO empiece por J. 
+
+
+	-- h.  Listado de pedidos realizados en febrero de 1997 realizados por clientes 
+	-- cuyo nombre empiece por J, atendidos por vendedores mayores de 35 
+	-- años y que trabajen en centros de la región oeste, ordenados por 
+	-- nombre de cliente y fecha de pedido descendente. 
