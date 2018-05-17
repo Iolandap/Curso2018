@@ -1,0 +1,41 @@
+/* **********************************************************
+   ******************** DEFINICONES GENERALES ***************
+   ******************************************************* */
+    html,
+    body {
+      font-family: 'Open Sans', helvetica, calibri, arial;
+      height: 100%;
+      background-color: #e6ffe6 !important;
+    }
+    a {
+      color: white;
+    }
+    a:hover {
+      color: red !important;
+    }
+    ul li {
+      list-style: none;
+    }
+    .contenedor--div {
+      padding: 0px !important;
+      margin: 0px;
+    }
+
+    .navbar.navbar-dark.bg-dark{
+      width: 100%;
+      position: fixed;      /*Fija menu en el pie*/
+    }
+    .navbar-dark .navbar-nav .active > .nav-link, 
+    .navbar-dark .navbar-nav .nav-link.active, 
+    .navbar-dark .navbar-nav .nav-link.show, 
+    .navbar-dark .navbar-nav .show > .nav-link{
+      color:orange;
+    }
+
+    a.navbar-brand {
+      color: white !important;
+    }
+    .nav-link{
+      color: orange;
+    }
+
