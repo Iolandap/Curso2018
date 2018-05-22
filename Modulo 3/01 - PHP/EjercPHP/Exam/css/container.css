@@ -3,13 +3,8 @@
       float:left;
       width: 100%;
   }
-  /* contenido1 */
-    div#Contenido1 {
-        float:left;
-        width: 100%;
-    }
 
-    #container ul {
-      margin-top: 70px;
-      background-color: #e6ffe6 !important;
-    }
+  #container ul {
+    margin-top: 70px;
+    background-color: #e6ffe6 !important;
+  }

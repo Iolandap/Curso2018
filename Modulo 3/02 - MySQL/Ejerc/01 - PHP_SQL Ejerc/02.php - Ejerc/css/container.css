@@ -1,0 +1,8 @@
+/* container */
+  div#container {
+      float:left;
+      width: 100%;
+  }
+  table {
+    width: 40% !important;
+  }

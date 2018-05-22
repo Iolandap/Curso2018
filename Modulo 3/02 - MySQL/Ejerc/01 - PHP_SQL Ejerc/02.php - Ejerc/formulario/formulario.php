@@ -2,15 +2,16 @@
 <html>
 <head>
 	<?php 
-		include('funciones/session_check.php');	// Marcadar sesion y control usuario activo o no 
-		require("funciones/control.php");  		// incluimos un fichero php con funciones
+		require("funciones/control.php");  // incluimos un fichero php con funciones
 	?>
    	<link rel="stylesheet" type="text/css" href="css/ejercicio.css" title="style">
 </head>
 <body>
 	<?php
 
-		echo $_SESSION['usuario']." puedes dar de alta codigos<br><br>";
+		// Definiciones iniciales
+		session_start();
+		echo $_SESSION["usuario"]." puedes dar de alta codigos<br><br>";
 
 		$nombre 	= "";
 		$apellido 	= "";
@@ -19,7 +20,6 @@
 		$comentarios= "";
 		$res 		= array(false,false,false);
 		
-		// Condicion pulsacion boton ok
 		if(isset($_POST["ok"])){
 			// Carga valores introducidos en PHP
 			$nombre 	= $_POST["nombre"];
@@ -30,14 +30,14 @@
 
 			// Llamada funcion validacion campos
 			$res = validacion($nombre, $edad, $email);
-
+	
 		} // FIN del if(isset())
 
 		// Condicion pulsacion boton salida
 		if(isset($_POST["out"])){
 			unset( $_SESSION['usuario']);
 			header("Location: ../index.php");
-		} // FIN del if(isset())
+		} // FIN control boton opciones especiales
 
 	?>
 

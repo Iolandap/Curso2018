@@ -1,7 +1,7 @@
 <?php 
 
 // Funcion a funcion control pasword
-	function ctr_pasword($pasword, $user0){
+	function ctr_pasword($string_0){
 
 		// Conexion servidor y conexion base de datos
         include("config.php");
@@ -9,8 +9,7 @@
 		// SQLa mostrar
 		$sql = 	"SELECT *
 					FROM usuarios
-					WHERE 	nombre 	=	'$user0' AND
-							pasword = 	'$pasword'
+					WHERE Pasword = '$string_0'
 				";
 			// si tuvieramos de controlar usuario y pasword
 	 		//			SELECT tipus, CONCAT(nombre,' ', apellidos) as nomc 
@@ -21,7 +20,6 @@
 		// Generamos objeto sql
 		$consulta = mysqli_query($conexion, $sql)
 					or die ("Fallo en la consulta".mysql_error($conexion));
-		echo "$sql";
 
 		// Miramos la longitud de la informacion obtenida
 		$nfila = mysqli_num_rows($consulta);
@@ -34,11 +32,19 @@
 		if ($nfila > 0 ){
 			// Cojemos la informacion y la guardamos en la matriz
 			$fila = mysqli_fetch_assoc($consulta);
-	 		// 	se podria abrir directamente la sesion
-	 		 		$_SESSION['usuario'] = $fila['Nombre'];
-		 		//	y lo enviamos al home
+
 			// Retorno data
-	 		return true;
+	 		return $fila['Nombre'];
+	 		// 	se podria abrir directamente la sesion
+	 		// 		$_SESSION['nom'] = $fila["nombre"]." ".$fila["apellidos"];
+	 		//			NOTA: se puede concatenar en SQL
+	 		//				SELECT tipus, CONCAT(nombre,' ', apellidos) as nomc 
+			//					FROM usuarios
+			//					WHERE Pasword = '$string_0'
+			//				$_SESSION['nom'] = $fila["nomc"]
+	 		// 		$_SESSION['tipo'] = $fila["tipos"];
+	 		//	y lo enviamos al home
+	 		// 		header ("location: home.php");
 
 		}else{
 			// Si no hay data devuelve un "blanco"

@@ -18,11 +18,11 @@
 	<form method="post">
 		<!-- Entrada Usuario -->
 		<label for="user">Usuario: </label>
-  		<input type="text" name="user" id="user"><br>
+  		<input type="text" name="user" id="uer">
 
 		<!-- Entrada Password -->
-		<label for="pasword">Pasword: </label>
-  		<input type="text" name="pasword" id="pasword">
+		<label for="str_0">Pasword: </label>
+  		<input type="text" name="str_0" id="str_0">
 
   		<!-- Submit -->
 		&nbsp; &nbsp; &nbsp;
@@ -36,15 +36,15 @@
 		//Condicion pulsacion boton Verificar
 		if(isset($_POST["verificar"])){
 			// Definiciones iniciales
-			$user		= $_POST["user"];
-			$pasword	= $_POST["pasword"];
+			$str_0	= $_POST["str_0"];
 
 			// Llamada a funcion control password
-			if(ctr_pasword($pasword, $user) != ''){
+			if(ctr_pasword($str_0) != ''){
 				// Devuelve 1. Password correcto
 				// Definicion variable sesion
+				$_SESSION["usuario"] = ctr_pasword($str_0);
 				// Código para usuarios autorizados
-				echo "<br><br>buenos dias ".$_SESSION['usuario']." como estas hoy??  ";
+				echo "<br><br>buenos dias ".$_SESSION["usuario"]." como estas hoy??  ";
 	?>			<!-- Aparicion boton especial del usuario -->
 				<form method="post">
 					<input type="submit" name="opc_especiales" value="Opciones especiales">
@@ -61,7 +61,6 @@
 
 		// Condicion pulsacion boton opciones especiales
 		if(isset($_POST["opc_especiales"])){
-			echo "HOLA!!!!!!!!!!";
 			header("Location: formulario/formulario.php");
 		} // FIN control boton opciones especiales
 

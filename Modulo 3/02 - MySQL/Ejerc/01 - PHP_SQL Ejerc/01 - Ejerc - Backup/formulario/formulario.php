@@ -10,7 +10,7 @@
 <body>
 	<?php
 
-		echo $_SESSION['usuario']." puedes dar de alta codigos<br><br>";
+		echo $_SESSION["usuario"]." puedes dar de alta codigos<br><br>";
 
 		$nombre 	= "";
 		$apellido 	= "";
