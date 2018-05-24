@@ -21,6 +21,7 @@
 			 			include("Insertar.php");
 			 		break;
 			 	case 3:
+			 			include ("Edit_elim.php");
 			 		break;
 			 	case 4:
 			 		break;
