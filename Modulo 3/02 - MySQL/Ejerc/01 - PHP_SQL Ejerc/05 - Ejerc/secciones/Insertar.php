@@ -66,7 +66,7 @@
 
 				// Generamos objeto sql
 				mysqli_query($conexion, $sql)
-							or die ("Fallo en la consulta".mysql_error($conexion));
+							or die ("Fallo en la consulta".mysqli_error($conexion));
 				// Cierre base de datos.
 				mysqli_close($conexion);
 			// -----------------------------
