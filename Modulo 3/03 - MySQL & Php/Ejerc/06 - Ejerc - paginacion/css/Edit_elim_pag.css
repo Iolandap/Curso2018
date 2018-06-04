@@ -1,0 +1,23 @@
+/* Style buttons */
+.nav-link {
+    background-color: 	#99ffff;
+    border: 			none; /* Remove borders */
+    color: 				green;
+    font-size: 			16px; /* Set a font size */
+    cursor: 			pointer; /* Mouse pointer on hover */
+    padding: 			0px;
+    width: 				10px;
+}
+
+/* Darker background on mouse-over */
+.nav-link:hover {
+    color: 				red;
+    background-color: 	#33ffff;
+}
+
+.botonera	{
+	background-color: #99ffff;
+}
+.botonera li a {
+	color: red;
+}
