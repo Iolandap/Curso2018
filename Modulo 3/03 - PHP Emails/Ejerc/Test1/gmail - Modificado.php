@@ -43,11 +43,11 @@ $mail->isSMTP();
     // $mail->Password = "yourpassword";
     $mail->Password = "jamaica16302272";
     //Set who the message is to be sent from
-    $mail->setFrom('from@example.com', 'First Last');
+    $mail->setFrom('iolandapeterson@gmail.com', 'iolandapeterson');
     //Set an alternative reply-to address
     $mail->addReplyTo('replyto@example.com', 'First Last');
     //Set who the message is to be sent to
-    $mail->addAddress('whoto@example.com', 'John Doe');
+    $mail->addAddress('iolandapeterson@gmail.com', 'YO MISMO');
     //Set the subject line
     $mail->Subject = 'PHPMailer GMail SMTP test';
     //Read an HTML message body from an external file, convert referenced images to embedded,
