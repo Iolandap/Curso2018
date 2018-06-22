@@ -1,0 +1,29 @@
+.container{
+    margin-left: 10px;
+}
+.thumbnail{
+    border-style: groove;
+    margin-bottom: 30px;
+}
+.caption2{
+    height: 100px;
+    overflow: hidden; /*Oculta el texto que sobrepasa a al tamaño indicado*/
+    text-align: center;
+}
+.caption0 {
+    color: black;
+    text-align: center;
+}
+img{
+    margin-left: 70px;
+}
+.caption1 p{
+    width: 120px;
+    display: inline-block;  /*Permite que este todo en la misma linea*/
+    margin-right: 70px;
+}
+.btn.nav-link{
+    width: 20px;
+    display: inline-block;  /*Permite que este todo en la misma linea*/
+    color: black;
+}

@@ -1,8 +1,13 @@
 <?php 
+
+	// Definiciones iniciales
+    // Ruta libreria ficheros .php
+    $libreria ="libreria/";
+    
 // **********************************************
 // 			Funcion control pasword
 // **********************************************
-	function ctr_pasword($pasword, $user0){
+	function ctr_pasword($user0, $pasword){
 
 		// Conexion servidor y conexion base de datos
 		include("Config_BD.php");
@@ -11,18 +16,19 @@
 		// SQL a mostrar
 		$sql = 	"SELECT *
 					FROM usuarios
-					WHERE 	nombre 	=	'$user0' AND
-							pasword = 	'$pasword0'
+					WHERE 	Nombre_usuario 	= '$user0' 		AND
+							Contrasenya		= '$pasword0' 	AND
+							Activado		= '1'
 				";
 
 		// Generamos objeto sql
 		$consulta = mysqli_query($conexion, $sql)
 					or die ("Fallo en la consulta".mysqli_error($conexion));
-		// echo "$sql";
+		//echo "$sql";
 
 		// Miramos la longitud de la informacion obtenida
 		$nfila = mysqli_num_rows($consulta);
-		// echo $nfila;
+		//echo $nfila;
 
 		// Cierre base de datos.
 		// La informacion a trabajar posteriormente no esta afectada, ya que esta en la variable $consulta
@@ -36,8 +42,7 @@
 			// Cojemos la informacion y la guardamos en la matriz $_SESSION
 			$fila = mysqli_fetch_assoc($consulta);
 	 		// 	Iniciamos sesion
-	 		 		$_SESSION['usuario'] 	= $fila['Nombre'];
-	 		 		$_SESSION['rol']		= $fila['Rol'];
+	 		 		$_SESSION['usuario'] 	= $fila['Nombre_usuario'];
 	 		 		$_SESSION['Id_usser']	= $fila['Id_usuario'];
 		 		//	y lo enviamos al home
 			// Retorno data
@@ -55,7 +60,7 @@
 // 			Funcion New User
 // **********************************************
 
-	function new_user($username, $email, $pasword1){
+	function new_user($username, $nombre, $email, $pasword1){
 
 		// Proteccion pasword entrada
 		$pasword_save = md5(sha1($pasword1,true)."1");
@@ -68,11 +73,10 @@
 		// *********************************************
 		// Conexion servidor y conexion base de datos
 		include("Config_BD.php");
-		// SQL control no usuario & pasword duplicado
+		// SQL control usuario no duplicado
 		$sql = 	"SELECT *
 					FROM usuarios
-					WHERE 	nombre 	=	'$username' AND
-							pasword = 	'$pasword_save'
+					WHERE Nombre_usuario 	=	'$username'
 				";
 
 		// Generamos objeto sql
@@ -97,15 +101,19 @@
 				// SQL insertar campos
 				$sql = 	"INSERT INTO `usuarios`
 								(`Id_usuario`, 
-								`Nombre`,
-								`Email`, 
-								`Pasword`,
+								`Nombre_usuario`,
+								`Contrasenya`,					
+								`Correo_electronico`, 
+								`Nombre_completo`,
+								`rol`,
 								`Activado`)
 							VALUES 
 								(NULL,
 								'$username',
+								'$pasword_save',								
 								'$email',
-								'$pasword_save',
+								'$nombre',
+								'comprador',
 								'0')
 						";
 				// Generamos objeto sql
@@ -133,8 +141,8 @@
 				// ----------------------------------
 
 				// Envio email confirmacion
-				include("envio_gmail.php");
-				envio_email($username, $email, $code);  // Funcion dentro de envio_gmail.php
+				//include("envio_gmail.php");
+				//envio_email($username, $email, $code);  // Funcion dentro de envio_gmail.php
 
 			// Cierre base de datos.
 			mysqli_close($conexion);
@@ -161,20 +169,9 @@
 	 	$menu = array();
 
 	  	switch ($rol){
-	  		case 'Administrador':
-	  			$menu = array( 		'2' => 'Crear A',
-	  				  				'3' => 'Modificar A',
-	  				  				'4' => 'Eliminar A');
-	  			break;
-	  		case 'Editor':
-	  			$menu = array( 		'2' => 'Crear E',
-	  				  				'3' => 'Modificar E',
-	  				  				'4' => 'Eliminar E');
-	  			break;
-	  		 case 'Colaborador':
-	  			$menu = array( 		'2' => 'Crear C',
-	  				  				'3' => 'Modificar C',
-	  				  				'4' => 'Eliminar C');
+	  		case 'comprador':
+	  			$menu = array( 		'3' => 'Mis Datos',
+	  				  		);
 	  			break;
 	  	}
 	  	return $menu;

@@ -1,0 +1,9 @@
+/* container */
+  div#container {
+      float:left;
+      width: 97%;
+  }
+  #container ul {
+      margin-top: 70px;
+      background-color: #e6ffe6 !important;
+  }
