@@ -11,16 +11,19 @@
     //  $Inicio    : fila inicial a listar
     //  Num_items  : Por defecto se daran 10 lineas
     //  Return de JSON(succes, data)
+    
+    //include("Config_BD.php");
+    //include("cfg.php");
+    //initCfg();
+
     function getlist($seccio, $inici) {
 
         // Conexion servidor y conexion base de datos
         include ("Config_BD.php");
-        initCfg();
-        connectBD();
 
-    	// Opcion acceso por switch *********************************
-    	switch ($seccio) {
-    		case 'List_pv':
+    	// Opcion acceso por switch ****************************
+        switch ($seccio) {
+            case 'List_pv':
     			    $sql =  "SELECT * 
         				FROM proveedor
                         LIMIT $inici, 10";
@@ -38,90 +41,84 @@
             or die ("Fallo en la consulta".mysqli_error($conexion));
 
         if ($consulta){
-            $error = "Registros leídos correctamente";                      
+            $status = "OK";                      
             $datos = array();
             while($fila = mysqli_fetch_assoc($consulta)){                 
                 $datos [] = $fila;
             }                    
         }else{
-            $error = "Error: " .$sql.  "<br>" . $mysqli->error;
+            $status = "Error: " .$sql.  "<br>" . $mysqli->error;
             $datos = "La query no ha funcionado";
         }
         
         echo json_encode([ // codifica datos para enviar de vuelta con json
-                "consulta"  => $datos,
-                "error"     => $error,
-                "resultado" => "Conexión con la base de datos correcta"
-            ]);
+               "status"  => "$status",
+               "data"  => $datos               
+        ]);
 
         // Cierre base de datos.
         mysqli_close($conexion);
     } // FIN funcion
 
+
+
 // ***************************************************
 //             Menus opciones por usuario (NAVBAR)
-// ***************************************************
-    //  Return de JSON(menu)
+// ***************************************************    
     function getnavbar($User) {
 
         // Conexion servidor y conexion base de datos
-        include ("Config_BD.php");
-        initCfg();
-        connectBD();
+        include ("Config_BD.php");       
 
         $sql =  "SELECT Id_usuario, User, seccion FROM navbar 
                     INNER JOIN roles
                     ON Id_navbar = Fid_navbar
-                    INNER JOIN usuarios
+                    INNER JOIN usuario
                     on Id_usuario = Fid_usuario
-                    WHERE User = $User;";
+                    WHERE User = '$User';";
 
-        // Generamos objeto sql
+        // Generamos objeto sql        
         $consulta = mysqli_query($conexion, $sql) or die ("Fallo en la conexion".mysqli_error($conexion));
 
         // Hallamos la longitud del objeto obtenido
         if ($consulta){
-            $error = "Registros leídos correctamente";                      
+            $status = "OK";                      
             $datos = array();
             while($fila = mysqli_fetch_assoc($consulta)){                 
                 $datos [] = $fila;
             }                    
         }else{
-            $error = "Error: " .$sql.  "<br>" . $mysqli->error;
+            $status = "Error: " .$sql.  "<br>" . $mysqli->error;
             $datos = "La query no ha funcionado";
         }
         
         echo json_encode([ // codifica datos para enviar de vuelta con json
-                "consulta"  => $datos,
-                "error"     => $error,
-                "resultado" => "Conexión con la base de datos correcta"
+               "status"  => "$status",
+               "data"  => $datos
+               
             ]);
             
         // Cierre base de datos.
         mysqli_close($conexion);
     } // FIN funcion
 
+
+
 // ***************************************************
 //                  Control usuario
 // ***************************************************
     //  Return de JSON(succes, data)
-    function getuser($pass, $user) {
+    function getuser($pass, $usuario) {
 
         // Conexion servidor y conexion base de datos
-        include ("Config_BD.php");
-        initCfg();
-        connectBD();
+        include ("Config_BD.php");        
+        //$conexion=connectBD();
 
-        // Decodificacion pasword entrada a formato almacenado en BD
-        $pass0 = md5(sha1($pass,true)."1");
-
+        $pass0 = md5($pass); // Decodificacion pasword entrada a formato almacenado en BD
+       
         // SQL a mostrar
-        $sql =  "SELECT *
-                    FROM usuarios
-                    WHERE   Nombre_usuario  = '$user'    AND
-                            Contrasenya     = '$pass0'   AND
-                            Activado        = '1'
-                ";
+        $sql =  "SELECT * FROM usuario WHERE User = '$usuario' AND Password = '$pass0' ";
+        //echo $sql;
 
         // Generamos objeto sql
         $consulta = mysqli_query($conexion, $sql)
@@ -130,24 +127,162 @@
         // ********************************
         //  Condicion carga sesion usuario
         // ********************************
-        if ($consulta){
-            $error = "Registros leídos correctamente";                      
+        if ($consulta){          
+           
+            $status = "OK";                      
             $datos = array();
-            while($fila = mysqli_fetch_assoc($consulta)){                 
-                $datos [] = $fila;
-            }                    
+            $nfilas=mysqli_num_rows($consulta);
+            //echo $nfilas;
+
+            while($fila = mysqli_fetch_assoc($consulta)){                              
+               $datos [] = $fila;
+           }  
+
         }else{
-            $error = "Error: " .$sql.  "<br>" . $mysqli->error;
+            $status = "Error: " .$sql.  "<br>" . $mysqli->error;
             $datos = "La query no ha funcionado";
         }
         
         echo json_encode([ // codifica datos para enviar de vuelta con json
-                "consulta"  => $datos,
-                "error"     => $error,
-                "resultado" => "Conexión con la base de datos correcta"
-            ]);
+            "status"  => "$status",
+            "data"  => $datos
+        ]);
 
         // Cierre base de datos.
         mysqli_close($conexion);
     } // FIN funcion
+
+
+
+// ***************************************************
+//            MODIFICACIÓN DE REGISTROS
+// ***************************************************    
+    function update_reg($tabla, $form_data, $field_id, $id) { //$form_data es un array associativo
+        // Conexion servidor y conexion base de datos
+        include ("Config_BD.php");   
+        
+        // Generamos objeto sql
+
+        $sql = "UPDATE ".$tabla." SET ";
+
+            //$data = array();
+            $data="";
+
+            foreach ($form_data as $key => $value) {
+
+                $data.= $key."='".$value."', ";                
+
+            }                   
+       
+        $sql .= substr("".$data."", 0,-2);
+        $sql .=" WHERE ".$field_id." = ".$id."; ";
+        //echo $sql;
+        
+        
+        $consulta = mysqli_query($conexion, $sql) or die ("Fallo en la conexion".mysqli_error($conexion));
+
+        if ($consulta){
+            $status = "OK";                      
+            $datos = array();
+                                
+        }else{
+            $status = "Error: " .$sql.  "<br>" . $mysqli->error;
+            $datos = "La query no ha funcionado";
+        }
+        
+        echo json_encode([ // codifica datos para enviar de vuelta con json
+                "status"  => "$status",
+                "data"  => $datos
+        ]);
+          
+      // Cierre base de datos.
+      mysqli_close($conexion);
+  } // FIN funcion
+
+
+  
+// ***************************************************
+//            ELIMINAR REGISTROS
+// ***************************************************
+    //  Return de JSON(menu)
+    function delete_reg($tabla, $campo_id, $value_id) {
+      
+        // Conexion servidor y conexion base de datos
+        include ("Config_BD.php");        
+        //$conexion=connectBD();
+
+        // Generamos objeto sql
+        $sql = "DELETE FROM $tabla WHERE $campo_id='$value_id'";
+            
+        $consulta = mysqli_query($conexion, $sql) or die ("Fallo en la conexion".mysqli_error($conexion));
+
+        // Hallamos la longitud del objeto obtenido
+        if ($consulta){
+        $status = "OK";                      
+        $datos = array();
+                                
+        }else{
+            $status = "Error: " .$sql.  "<br>" . $mysqli->error;
+            $datos = "La query no ha funcionado";
+        }
+        
+        echo json_encode([ // codifica datos para enviar de vuelta con json
+                "status"  => "$status",
+                "data"  => $datos
+            ]);
+            
+        // Cierre base de datos.
+        mysqli_close($conexion);
+    } // FIN funcion
+
+
+
+ 
+// ***************************************************
+//            NUEVO REGISTRO
+// ***************************************************
+function crear_reg($tabla, $form_data) { 
+    // Conexion servidor y conexion base de datos
+    include ("Config_BD.php");
+
+    // Generamos objeto sql           
+        $fields="";
+        $values="";
+        foreach ($form_data as $field => $value) {
+
+            $fields.=$field.",";
+            $values.="'$value', ";
+                
+        }    
+            $fields=substr($fields, 0,-1);
+            $values=substr($values, 0,-2);
+                
+
+        $sql = "INSERT INTO ".$tabla." ($fields) VALUES ($values)";
+
+        //echo $sql;  
+        
+    $consulta = mysqli_query($conexion, $sql) or die ("Fallo en la conexion".mysqli_error($conexion));
+
+    if ($consulta){
+        $status = "OK";                      
+        $datos = array();
+                            
+    }else{
+        $status = "Error: " .$sql.  "<br>" . $mysqli->error;
+        $datos = "La query no ha funcionado";
+    }
+    
+    echo json_encode([ // codifica datos para enviar de vuelta con json
+            "status"  => "$status",
+            "data"  => $datos
+        ]);
+      
+  // Cierre base de datos.
+  mysqli_close($conexion);
+} // FIN funcion
+
+  
+
+
 ?>
