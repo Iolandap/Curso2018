@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 21-06-2018 a las 10:49:38
+-- Tiempo de generación: 27-06-2018 a las 11:53:52
 -- Versión del servidor: 5.7.19
--- Versión de PHP: 5.6.31
+-- Versión de PHP: 7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,53 +25,45 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `albaran`
---
-
-DROP TABLE IF EXISTS `albaran`;
-CREATE TABLE IF NOT EXISTS `albaran` (
-  `Id_albaran` int(11) NOT NULL AUTO_INCREMENT,
-  `Fid_factura` int(11) NOT NULL,
-  `Fecha` date NOT NULL,
-  `Comentario` varchar(255) NOT NULL,
-  PRIMARY KEY (`Id_albaran`),
-  KEY `Fid_factura` (`Fid_factura`),
-  KEY `Id_albaran` (`Id_albaran`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `cliente`
 --
 
 DROP TABLE IF EXISTS `cliente`;
 CREATE TABLE IF NOT EXISTS `cliente` (
   `Id_cliente` int(11) NOT NULL AUTO_INCREMENT,
-  `Nombre` varchar(355) CHARACTER SET latin1 NOT NULL,
-  `Direccion` varchar(355) CHARACTER SET latin1 NOT NULL,
-  `Telefono` varchar(355) CHARACTER SET latin1 NOT NULL,
-  `Email` varchar(355) CHARACTER SET latin1 NOT NULL,
-  `NIF` varchar(50) CHARACTER SET latin1 NOT NULL,
-  `Poblacion` varchar(255) CHARACTER SET latin1 NOT NULL,
-  `Provincia` varchar(80) CHARACTER SET latin1 NOT NULL,
+  `Nombre` varchar(355) NOT NULL,
+  `Direccion` varchar(355) NOT NULL,
+  `Telefono` varchar(355) NOT NULL,
+  `Email` varchar(355) NOT NULL,
+  `NIF` varchar(50) NOT NULL,
+  `Poblacion` varchar(255) NOT NULL,
+  `Provincia` varchar(80) NOT NULL,
   `Codigopostal` int(10) NOT NULL,
   `Fax` int(11) NOT NULL,
-  `Web` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `Web` varchar(100) NOT NULL,
   `Fecha_alta` date NOT NULL,
-  `Estado` varchar(3) NOT NULL,
+  `Activo` varchar(32) NOT NULL,
   PRIMARY KEY (`Id_cliente`),
   KEY `Id_cliente` (`Id_cliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `cliente`
+--
+
+INSERT INTO `cliente` (`Id_cliente`, `Nombre`, `Direccion`, `Telefono`, `Email`, `NIF`, `Poblacion`, `Provincia`, `Codigopostal`, `Fax`, `Web`, `Fecha_alta`, `Activo`) VALUES
+(1, 'cliente a', 'direccion a', '123123123', 'sdfsd@gmail.com', '123123123', 'vva bcn', 'bcn', 8800, 322343, 'www.asasd.com', '2018-06-21', ''),
+(2, 'cliente a', 'direccion a', '123123123', 'sdfsd@gmail.com', '123123123', 'vva bcn', 'bcn', 8800, 322343, 'www.asasd.com', '2018-06-21', ''),
+(3, 'Palillos de madera S.L.', 'Bosques de Tarragona, 5', '5559966', 'palillos@gmail.com', '55555123', 'Tarragona', 'Tarragona', 3010, 555123456, 'www.palillosdemadera.com', '2018-06-13', 'activo');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `contactocliente`
+-- Estructura de tabla para la tabla `cliente_contacto`
 --
 
-DROP TABLE IF EXISTS `contactocliente`;
-CREATE TABLE IF NOT EXISTS `contactocliente` (
+DROP TABLE IF EXISTS `cliente_contacto`;
+CREATE TABLE IF NOT EXISTS `cliente_contacto` (
   `Id_cc` int(11) NOT NULL AUTO_INCREMENT,
   `fid_cliente` int(11) NOT NULL,
   `Nombre` varchar(100) NOT NULL,
@@ -81,208 +73,177 @@ CREATE TABLE IF NOT EXISTS `contactocliente` (
   PRIMARY KEY (`Id_cc`),
   KEY `Id_cc` (`Id_cc`),
   KEY `fid_cliente` (`fid_cliente`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `contactocliente`
---
-
-INSERT INTO `contactocliente` (`Id_cc`, `fid_cliente`, `Nombre`, `Cargo`, `Telefono`, `Email`) VALUES
-(1, 0, 'clientea', 'encargado', 666333333, 'clientea@empresaa.com'),
-(2, 0, 'clienteb', 'CMO', 666222222, 'clienteb@empresab.com'),
-(3, 0, 'clientec', 'encargado', 666322233, 'clientec@empresac.com'),
-(4, 0, 'cliented', 'CMO', 666221122, 'cliented@empresad.com');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `contactoproveedor`
---
-
-DROP TABLE IF EXISTS `contactoproveedor`;
-CREATE TABLE IF NOT EXISTS `contactoproveedor` (
-  `Id_cp` int(11) NOT NULL AUTO_INCREMENT,
-  `Fid_proveedor` int(11) NOT NULL,
-  `Nombre` varchar(100) NOT NULL,
-  `Cargo` varchar(100) NOT NULL,
-  `Telefono` int(15) NOT NULL,
-  `Email` varchar(100) NOT NULL,
-  PRIMARY KEY (`Id_cp`),
-  KEY `Id_cp` (`Id_cp`),
-  KEY `Fid_proveedor` (`Fid_proveedor`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `contactoproveedor`
---
-
-INSERT INTO `contactoproveedor` (`Id_cp`, `Fid_proveedor`, `Nombre`, `Cargo`, `Telefono`, `Email`) VALUES
-(1, 0, 'proveedor1', 'encargado', 666123123, 'proveedor1@empresa1.com'),
-(2, 0, 'proveedor2', 'CFO', 666545699, 'proveedor2@empresa2.com'),
-(3, 0, 'proveedor3', 'encargado', 666123123, 'proveedor3@empresa3.com'),
-(4, 0, 'proveedor4', 'CFO', 666545699, 'proveedor4@empresa4.com');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `facturaemitida`
---
-
-DROP TABLE IF EXISTS `facturaemitida`;
-CREATE TABLE IF NOT EXISTS `facturaemitida` (
-  `Id_factura` int(11) NOT NULL AUTO_INCREMENT,
-  `Fid_venta` int(11) NOT NULL,
-  `Fecha` int(11) NOT NULL,
-  `Importe` int(11) NOT NULL,
-  PRIMARY KEY (`Id_factura`),
-  KEY `Id_factura` (`Id_factura`),
-  KEY `Fid_proyecto` (`Fid_venta`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `facturarecibida`
---
-
-DROP TABLE IF EXISTS `facturarecibida`;
-CREATE TABLE IF NOT EXISTS `facturarecibida` (
-  `Id_factura` int(11) NOT NULL AUTO_INCREMENT,
-  `Fid_pedido` int(11) NOT NULL,
-  `Fid_albaran` int(11) NOT NULL,
-  `Fecha` date NOT NULL,
-  `Importetotal` int(11) NOT NULL,
-  `Codepartidaeco` varchar(255) NOT NULL,
-  PRIMARY KEY (`Id_factura`),
-  KEY `Id_factura` (`Id_factura`),
-  KEY `Fid_pedido` (`Fid_pedido`),
-  KEY `Fid_albaran` (`Fid_albaran`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `formulariopreguntas`
---
-
-DROP TABLE IF EXISTS `formulariopreguntas`;
-CREATE TABLE IF NOT EXISTS `formulariopreguntas` (
-  `Id_formulario` int(11) NOT NULL AUTO_INCREMENT,
-  `Fid_formulario` int(11) NOT NULL,
-  `Fecha` date NOT NULL,
-  `Pregunta1` varchar(255) NOT NULL,
-  `Pregunta2` int(255) NOT NULL,
-  `Pregunta3` varchar(255) NOT NULL,
-  `Pregunta4` varchar(255) NOT NULL,
-  `Pregunta5` varchar(255) NOT NULL,
-  PRIMARY KEY (`Id_formulario`),
-  KEY `Id_formulario` (`Id_formulario`),
-  KEY `Fid_formulario` (`Fid_formulario`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `formulariorespuestas`
---
-
-DROP TABLE IF EXISTS `formulariorespuestas`;
-CREATE TABLE IF NOT EXISTS `formulariorespuestas` (
-  `Id_form_resp` int(11) NOT NULL AUTO_INCREMENT,
-  `Fid_clientes` int(11) NOT NULL,
-  `Fecha` date NOT NULL,
-  `Respuesta1` varchar(255) NOT NULL,
-  `Respuesta2` int(255) NOT NULL,
-  `Respuesta3` varchar(255) NOT NULL,
-  `Respuesta4` varchar(255) NOT NULL,
-  `Respuesta5` varchar(255) NOT NULL,
-  PRIMARY KEY (`Id_form_resp`),
-  KEY `Id_formulario` (`Id_form_resp`),
-  KEY `Fid_clientes` (`Fid_clientes`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `home`
---
-
-DROP TABLE IF EXISTS `home`;
-CREATE TABLE IF NOT EXISTS `home` (
-  `Id_home` int(11) NOT NULL AUTO_INCREMENT,
-  `Fecha` date NOT NULL,
-  `Texto` varchar(355) NOT NULL,
-  `Imagen` varchar(355) NOT NULL,
-  `Fid_usuario` int(11) NOT NULL,
-  PRIMARY KEY (`Id_home`),
-  KEY `Id_home` (`Id_home`),
-  KEY `Fid_usuario` (`Fid_usuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `lineapedido`
---
-
-DROP TABLE IF EXISTS `lineapedido`;
-CREATE TABLE IF NOT EXISTS `lineapedido` (
-  `Id_lineapedido` int(11) NOT NULL AUTO_INCREMENT,
-  `Fid_pedido` int(11) NOT NULL,
-  `Artículo` varchar(200) NOT NULL,
-  `Cantidad` int(11) NOT NULL,
-  `Referencia` varchar(255) NOT NULL,
-  `Descripcion` varchar(255) NOT NULL,
-  `Estado` varchar(150) NOT NULL,
-  PRIMARY KEY (`Id_lineapedido`),
-  KEY `Id_lineapedido` (`Id_lineapedido`),
-  KEY `Fid_pedido` (`Fid_pedido`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `navbar`
---
-
-DROP TABLE IF EXISTS `navbar`;
-CREATE TABLE IF NOT EXISTS `navbar` (
-  `Id_navbar` int(11) NOT NULL AUTO_INCREMENT,
-  `seccion` varchar(50) NOT NULL,
-  PRIMARY KEY (`Id_navbar`),
-  KEY `Id_navbar` (`Id_navbar`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `navbar`
+-- Volcado de datos para la tabla `cliente_contacto`
 --
 
-INSERT INTO `navbar` (`Id_navbar`, `seccion`) VALUES
-(1, 'Home'),
-(2, 'Ventas'),
-(3, 'Compras'),
-(4, 'Formularios'),
-(5, 'HHRR');
+INSERT INTO `cliente_contacto` (`Id_cc`, `fid_cliente`, `Nombre`, `Cargo`, `Telefono`, `Email`) VALUES
+(1, 1, 'clientea', 'encargado', 666333333, 'clientea@empresaa.com'),
+(2, 1, 'clienteb', 'CMO', 666222222, 'clienteb@empresab.com'),
+(3, 1, 'clientec', 'encargado', 666322233, 'clientec@empresac.com'),
+(4, 1, 'cliented', 'CMO', 666221122, 'cliented@empresad.com'),
+(5, 3, 'Antonio Felipe de Miguel Collado', 'Encargado de riego por manguera', 555123789, 'palillomanguera@gmail.com');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `pedido`
+-- Estructura de tabla para la tabla `cliente_factura`
 --
 
-DROP TABLE IF EXISTS `pedido`;
-CREATE TABLE IF NOT EXISTS `pedido` (
-  `Id_pedido` int(11) NOT NULL AUTO_INCREMENT,
-  `Fid_proveedor` int(11) NOT NULL,
-  `Fid_usuario` int(11) NOT NULL,
+DROP TABLE IF EXISTS `cliente_factura`;
+CREATE TABLE IF NOT EXISTS `cliente_factura` (
+  `Id_factura` int(11) NOT NULL AUTO_INCREMENT,
+  `fid_cliente` int(11) NOT NULL,
+  `fid_lineaventa` int(11) NOT NULL,
   `Fecha` date NOT NULL,
+  `Importe` int(11) NOT NULL,
+  PRIMARY KEY (`Id_factura`),
+  KEY `Id_factura` (`Id_factura`),
+  KEY `fid_cliente` (`fid_cliente`),
+  KEY `fid_lineaventa` (`fid_lineaventa`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `cliente_factura`
+--
+
+INSERT INTO `cliente_factura` (`Id_factura`, `fid_cliente`, `fid_lineaventa`, `Fecha`, `Importe`) VALUES
+(1, 1, 2, '2018-06-20', 100),
+(2, 2, 4, '2018-06-20', 60),
+(3, 1, 2, '2018-05-01', 3456),
+(4, 3, 1, '2018-06-20', 200),
+(5, 1, 2, '2018-06-22', 100);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cliente_lineaventa`
+--
+
+DROP TABLE IF EXISTS `cliente_lineaventa`;
+CREATE TABLE IF NOT EXISTS `cliente_lineaventa` (
+  `Id_lineapedido` int(11) NOT NULL AUTO_INCREMENT,
+  `Fid_venta` int(11) NOT NULL,
+  `articulo` varchar(100) NOT NULL,
+  PRIMARY KEY (`Id_lineapedido`),
+  KEY `Id_lineapedido` (`Id_lineapedido`),
+  KEY `Fid_venta` (`Fid_venta`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `cliente_lineaventa`
+--
+
+INSERT INTO `cliente_lineaventa` (`Id_lineapedido`, `Fid_venta`, `articulo`) VALUES
+(1, 1, ''),
+(2, 1, ''),
+(3, 3, ''),
+(4, 4, '');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cliente_venta`
+--
+
+DROP TABLE IF EXISTS `cliente_venta`;
+CREATE TABLE IF NOT EXISTS `cliente_venta` (
+  `Id_venta` int(11) NOT NULL AUTO_INCREMENT,
+  `Fid_cliente` int(11) NOT NULL,
+  `Fecha` date NOT NULL,
+  `Articulo` varchar(355) NOT NULL,
+  `Cantidad` int(11) NOT NULL,
+  `Importe` int(11) NOT NULL,
+  `Fichero` varchar(150) NOT NULL,
+  PRIMARY KEY (`Id_venta`),
+  KEY `Id_compra` (`Id_venta`),
+  KEY `Fid_proveedor` (`Fid_cliente`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `cliente_venta`
+--
+
+INSERT INTO `cliente_venta` (`Id_venta`, `Fid_cliente`, `Fecha`, `Articulo`, `Cantidad`, `Importe`, `Fichero`) VALUES
+(1, 2, '2018-06-20', 'webminator', 1, 600, 'pepi_nillo.txt'),
+(2, 1, '2018-06-11', 'hostingator', 2, 400, 'Gri_llo.doc'),
+(3, 3, '2018-06-13', 'paletaminator', 23, 2334, ''),
+(4, 3, '2018-06-13', 'pizarrator', 23, 30, 'pizarra.img');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `formulario`
+--
+
+DROP TABLE IF EXISTS `formulario`;
+CREATE TABLE IF NOT EXISTS `formulario` (
+  `Id_formulario` int(11) NOT NULL AUTO_INCREMENT,
+  `Fid_clientes` int(11) NOT NULL,
+  `Fecha_envio` date NOT NULL,
+  `Fecha_respuesta` date DEFAULT NULL,
   `Comentario` varchar(255) NOT NULL,
-  `Firma` varchar(100) NOT NULL,
-  PRIMARY KEY (`Id_pedido`),
-  KEY `Id_compra` (`Id_pedido`),
-  KEY `Fid_proveedor` (`Fid_proveedor`),
-  KEY `Fid_user` (`Fid_usuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`Id_formulario`),
+  KEY `Id_formulario` (`Id_formulario`),
+  KEY `Fid_clientes` (`Fid_clientes`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `formulario`
+--
+
+INSERT INTO `formulario` (`Id_formulario`, `Fid_clientes`, `Fecha_envio`, `Fecha_respuesta`, `Comentario`) VALUES
+(1, 3, '2018-06-22', NULL, 'comentario ');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `formulario_preguntas`
+--
+
+DROP TABLE IF EXISTS `formulario_preguntas`;
+CREATE TABLE IF NOT EXISTS `formulario_preguntas` (
+  `Id_preguntas` int(11) NOT NULL AUTO_INCREMENT,
+  `Fid_formulario` int(11) NOT NULL,
+  `Pregunta` varchar(255) NOT NULL,
+  PRIMARY KEY (`Id_preguntas`),
+  KEY `Fid_formulario` (`Fid_formulario`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `formulario_preguntas`
+--
+
+INSERT INTO `formulario_preguntas` (`Id_preguntas`, `Fid_formulario`, `Pregunta`) VALUES
+(1, 1, 'Grado satisfaccion?'),
+(2, 1, 'Donde vive?');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `formulario_respuestas`
+--
+
+DROP TABLE IF EXISTS `formulario_respuestas`;
+CREATE TABLE IF NOT EXISTS `formulario_respuestas` (
+  `Id_respuestas` int(11) NOT NULL AUTO_INCREMENT,
+  `Fid_formulario` int(11) NOT NULL,
+  `Fid_pregunta` int(11) NOT NULL,
+  `Respuesta` varchar(255) NOT NULL,
+  PRIMARY KEY (`Id_respuestas`),
+  KEY `Fid_formulario` (`Fid_formulario`),
+  KEY `fid_preguntas` (`Fid_pregunta`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `formulario_respuestas`
+--
+
+INSERT INTO `formulario_respuestas` (`Id_respuestas`, `Fid_formulario`, `Fid_pregunta`, `Respuesta`) VALUES
+(1, 1, 2, 'en mi casa'),
+(2, 1, 1, 'Toy bien');
 
 -- --------------------------------------------------------
 
@@ -294,57 +255,176 @@ DROP TABLE IF EXISTS `proveedor`;
 CREATE TABLE IF NOT EXISTS `proveedor` (
   `Id_proveedor` int(11) NOT NULL AUTO_INCREMENT,
   `Nombre` varchar(355) NOT NULL,
-  `Direccion` varchar(355) NOT NULL,
-  `Telefono` int(50) NOT NULL,
-  `Email` varchar(355) NOT NULL,
+  `Direccion_p` varchar(355) NOT NULL,
+  `Telefono_p` int(50) NOT NULL,
+  `Email_p` varchar(355) NOT NULL,
   `NIF` int(15) NOT NULL,
-  `Poblacion` varchar(100) NOT NULL,
-  `Provincia` varchar(100) NOT NULL,
-  `Codigopostal` int(10) NOT NULL,
+  `Poblacion_p` varchar(100) NOT NULL,
+  `Provincia_p` varchar(100) NOT NULL,
+  `Codigopostal_p` int(10) NOT NULL,
   `Fax` int(15) NOT NULL,
   `Web` varchar(100) NOT NULL,
   `Fechaalta` date NOT NULL,
   PRIMARY KEY (`Id_proveedor`),
   KEY `Id_proveedor` (`Id_proveedor`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `proveedor`
 --
 
-INSERT INTO `proveedor` (`Id_proveedor`, `Nombre`, `Direccion`, `Telefono`, `Email`, `NIF`, `Poblacion`, `Provincia`, `Codigopostal`, `Fax`, `Web`, `Fechaalta`) VALUES
+INSERT INTO `proveedor` (`Id_proveedor`, `Nombre`, `Direccion_p`, `Telefono_p`, `Email_p`, `NIF`, `Poblacion_p`, `Provincia_p`, `Codigopostal_p`, `Fax`, `Web`, `Fechaalta`) VALUES
 (1, 'empresa1', 'calle empresa1, vng', 666456987, 'info@empresa1.com', 34453321, 'vng', 'bcn', 8800, 938154433, 'www.empresa1.com', '2018-06-01'),
 (2, 'empresa2', 'calle empresa2, vng', 666436987, 'info@empresa2.com', 34411321, 'vng', 'bcn', 8800, 938158833, 'www.empresa2.com', '2018-06-03'),
-(3, 'empresa3', 'calle empresa2, vng', 666432287, 'info@empresa3.com', 34419921, 'vng', 'bcn', 8800, 938100833, 'www.empresa3.com', '2018-06-08');
+(3, 'perico de los palotes', 'calle empresa2, vng', 666432287, 'info@empresa3.com', 34419921, 'vng', 'bcn', 8800, 938100833, 'www.empresa3.com', '2018-06-08');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `roles`
+-- Estructura de tabla para la tabla `proveedor_albaran`
 --
 
-DROP TABLE IF EXISTS `roles`;
-CREATE TABLE IF NOT EXISTS `roles` (
-  `Id_rol` int(11) NOT NULL AUTO_INCREMENT,
+DROP TABLE IF EXISTS `proveedor_albaran`;
+CREATE TABLE IF NOT EXISTS `proveedor_albaran` (
+  `Id_albaran` int(11) NOT NULL AUTO_INCREMENT,
+  `Fid_factura` int(11) NOT NULL,
+  `Fecha_alb` date NOT NULL,
+  `cantidad_alb` int(30) NOT NULL,
+  `Comentario_alb` varchar(255) NOT NULL,
+  PRIMARY KEY (`Id_albaran`),
+  KEY `Fid_factura` (`Fid_factura`),
+  KEY `Id_albaran` (`Id_albaran`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `proveedor_albaran`
+--
+
+INSERT INTO `proveedor_albaran` (`Id_albaran`, `Fid_factura`, `Fecha_alb`, `cantidad_alb`, `Comentario_alb`) VALUES
+(1, 1, '2018-06-13', 100, 'lapices'),
+(2, 2, '2018-06-11', 200, 'gomas');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `proveedor_compra`
+--
+
+DROP TABLE IF EXISTS `proveedor_compra`;
+CREATE TABLE IF NOT EXISTS `proveedor_compra` (
+  `Id_pedido` int(11) NOT NULL AUTO_INCREMENT,
+  `Fid_proveedor` int(11) NOT NULL,
   `Fid_usuario` int(11) NOT NULL,
-  `Fid_navbar` int(11) NOT NULL,
-  PRIMARY KEY (`Id_rol`),
-  KEY `Fid_usuario` (`Fid_usuario`),
-  KEY `Fid_nabvar` (`Fid_navbar`),
-  KEY `Id_rol` (`Id_rol`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+  `Fecha` date NOT NULL,
+  `Comentario` varchar(255) NOT NULL,
+  `Firma` varchar(100) NOT NULL,
+  `Estado` varchar(50) NOT NULL,
+  PRIMARY KEY (`Id_pedido`),
+  KEY `Id_compra` (`Id_pedido`),
+  KEY `Fid_proveedor` (`Fid_proveedor`),
+  KEY `Fid_user` (`Fid_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `roles`
+-- Volcado de datos para la tabla `proveedor_compra`
 --
 
-INSERT INTO `roles` (`Id_rol`, `Fid_usuario`, `Fid_navbar`) VALUES
-(1, 13, 2),
-(2, 13, 4),
-(3, 12, 2),
-(4, 12, 3),
-(5, 11, 5),
-(6, 11, 4);
+INSERT INTO `proveedor_compra` (`Id_pedido`, `Fid_proveedor`, `Fid_usuario`, `Fecha`, `Comentario`, `Firma`, `Estado`) VALUES
+(1, 1, 12, '2018-06-12', 'pedido 1', 'lolilla', 'fin'),
+(2, 3, 12, '2018-06-03', 'pedido 2', 'lolo', 'archivada'),
+(3, 1, 11, '2018-05-07', 'otro mas al bote', 'pe pito', 'falta material'),
+(4, 3, 13, '2018-06-07', 'ni fu ni fa', 'fu fu', 'tramitada'),
+(5, 3, 11, '2018-06-07', 'comentario', 'fimado', 'tramitada'),
+(6, 1, 13, '2018-05-01', 'Airbus 900 4e', 'aireado', 'falta material'),
+(7, 2, 11, '2018-06-01', 'varcha', 'varcharte', 'en tramite'),
+(10, 3, 14, '2018-06-13', 'hola Mark como estas', 'Groucho Mark', 'en tramite');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `proveedor_contacto`
+--
+
+DROP TABLE IF EXISTS `proveedor_contacto`;
+CREATE TABLE IF NOT EXISTS `proveedor_contacto` (
+  `Id_cp` int(11) NOT NULL AUTO_INCREMENT,
+  `Fid_proveedor` int(11) NOT NULL,
+  `Nombre` varchar(100) NOT NULL,
+  `Cargo` varchar(100) NOT NULL,
+  `Telefono` int(15) NOT NULL,
+  `Email` varchar(100) NOT NULL,
+  PRIMARY KEY (`Id_cp`),
+  KEY `Id_cp` (`Id_cp`),
+  KEY `Fid_proveedor` (`Fid_proveedor`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `proveedor_contacto`
+--
+
+INSERT INTO `proveedor_contacto` (`Id_cp`, `Fid_proveedor`, `Nombre`, `Cargo`, `Telefono`, `Email`) VALUES
+(1, 1, 'proveedor1', 'encargado', 666123123, 'proveedor1@empresa1.com'),
+(2, 2, 'proveedor2', 'CFO', 666545699, 'proveedor2@empresa2.com'),
+(3, 1, 'proveedor3', 'encargado', 666123123, 'proveedor3@empresa3.com'),
+(4, 3, 'proveedor4', 'CFO', 666545699, 'proveedor4@empresa4.com');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `proveedor_factura`
+--
+
+DROP TABLE IF EXISTS `proveedor_factura`;
+CREATE TABLE IF NOT EXISTS `proveedor_factura` (
+  `Id_factura` int(11) NOT NULL AUTO_INCREMENT,
+  `Fid_pedido` int(11) NOT NULL,
+  `Fecha_fra` date NOT NULL,
+  `Cantidad_fra` int(11) NOT NULL,
+  `Importetotal` int(11) NOT NULL,
+  `Codepartidaeco` varchar(255) NOT NULL,
+  PRIMARY KEY (`Id_factura`),
+  KEY `Id_factura` (`Id_factura`),
+  KEY `Fid_pedido` (`Fid_pedido`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `proveedor_factura`
+--
+
+INSERT INTO `proveedor_factura` (`Id_factura`, `Fid_pedido`, `Fecha_fra`, `Cantidad_fra`, `Importetotal`, `Codepartidaeco`) VALUES
+(1, 5, '2018-05-01', 0, 100, 'Partida estadistica 1'),
+(2, 6, '2018-06-03', 0, 200, 'partida estadistica 2');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `proveedor_lineapedido`
+--
+
+DROP TABLE IF EXISTS `proveedor_lineapedido`;
+CREATE TABLE IF NOT EXISTS `proveedor_lineapedido` (
+  `Id_lineapedido` int(11) NOT NULL AUTO_INCREMENT,
+  `Fid_compra` int(11) NOT NULL,
+  `Articulo` varchar(200) NOT NULL,
+  `Cantidad` int(11) NOT NULL,
+  `Referencia` varchar(255) NOT NULL,
+  `Descripcion` varchar(255) NOT NULL,
+  PRIMARY KEY (`Id_lineapedido`),
+  KEY `Id_lineapedido` (`Id_lineapedido`),
+  KEY `Fid_pedido` (`Fid_compra`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `proveedor_lineapedido`
+--
+
+INSERT INTO `proveedor_lineapedido` (`Id_lineapedido`, `Fid_compra`, `Articulo`, `Cantidad`, `Referencia`, `Descripcion`) VALUES
+(1, 5, 'art 1 ', 1, 'asdfgsadfasdf', 'lorem ipsum'),
+(2, 5, 'art 2', 23, 'vsvzxcvxzcv', 'lorem ipsuma'),
+(3, 4, 'other more 1', 67, 'fdgdfhfdh', 'lorem ipsum B'),
+(4, 3, 'other more 2', 65, 'sfddfghfgh', 'lorem impsum C'),
+(5, 10, 'Articulo 2', 1, 'Ref patatpum', 'San juan'),
+(6, 10, 'Articulo 2', 2, 'Ref 2 de articulo 2', 'San Miguel');
 
 -- --------------------------------------------------------
 
@@ -364,7 +444,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `Direccion` varchar(355) NOT NULL,
   PRIMARY KEY (`Id_usuario`),
   KEY `Id_usuario` (`Id_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `usuario`
@@ -373,87 +453,209 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 INSERT INTO `usuario` (`Id_usuario`, `User`, `Password`, `Nombre`, `Apellidos`, `Telefono`, `Email`, `Direccion`) VALUES
 (11, 'pepito', '81dc9bdb52d04dc20036dbd8313ed055', 'Pepito', 'Grillo', 666666666, 'pepito@proyectofinal.com', 'calle pepito, vng'),
 (12, 'loli', '81dc9bdb52d04dc20036dbd8313ed055', 'Loli', 'Flores', 666555555, 'loli@proyectofinal.com', 'calle loli, vng'),
-(13, 'fulanito', '81dc9bdb52d04dc20036dbd8313ed055', 'Fulanito', 'funeral', 655444444, 'fulanito@proyectofinal.com', 'calle fulanito, vng');
+(13, 'fulanito', '81dc9bdb52d04dc20036dbd8313ed055', 'Fulanito', 'funeral', 655444444, 'fulanito@proyectofinal.com', 'calle fulanito, vng'),
+(14, 'Mark', '81dc9bdb52d04dc20036dbd8313ed055', 'Marco', 'Antonio', 5559345, 'marco@proyectofinal.com', 'Calle Sarti. vilanova. BCN');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `venta`
+-- Estructura de tabla para la tabla `usuario_home`
 --
 
-DROP TABLE IF EXISTS `venta`;
-CREATE TABLE IF NOT EXISTS `venta` (
-  `Id_venta` int(11) NOT NULL AUTO_INCREMENT,
-  `Fid_cliente` int(11) NOT NULL,
+DROP TABLE IF EXISTS `usuario_home`;
+CREATE TABLE IF NOT EXISTS `usuario_home` (
+  `Id_home` int(11) NOT NULL AUTO_INCREMENT,
   `Fecha` date NOT NULL,
-  `Articulo` varchar(355) NOT NULL,
-  `Cantidad` int(11) NOT NULL,
-  `Importe` int(11) NOT NULL,
-  `Fichero` varchar(150) NOT NULL,
-  PRIMARY KEY (`Id_venta`),
-  KEY `Id_compra` (`Id_venta`),
-  KEY `Fid_proveedor` (`Fid_cliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `Contenidor` varchar(355) NOT NULL,
+  `Fid_usuario` int(11) NOT NULL,
+  PRIMARY KEY (`Id_home`),
+  KEY `Id_home` (`Id_home`),
+  KEY `Fid_usuario` (`Fid_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `usuario_home`
+--
+
+INSERT INTO `usuario_home` (`Id_home`, `Fecha`, `Contenidor`, `Fid_usuario`) VALUES
+(1, '2018-06-20', 'pirmera home', 13),
+(2, '2018-06-21', 'segunda home', 11),
+(3, '2018-06-03', 'Home principal de nuestra empresa', 14);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario_navbar`
+--
+
+DROP TABLE IF EXISTS `usuario_navbar`;
+CREATE TABLE IF NOT EXISTS `usuario_navbar` (
+  `Id_navbar` int(11) NOT NULL AUTO_INCREMENT,
+  `seccion` varchar(50) NOT NULL,
+  PRIMARY KEY (`Id_navbar`),
+  KEY `Id_navbar` (`Id_navbar`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `usuario_navbar`
+--
+
+INSERT INTO `usuario_navbar` (`Id_navbar`, `seccion`) VALUES
+(1, 'Home'),
+(2, 'Ventas'),
+(3, 'Compras'),
+(4, 'Formularios'),
+(5, 'HHRR');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario_rol`
+--
+
+DROP TABLE IF EXISTS `usuario_rol`;
+CREATE TABLE IF NOT EXISTS `usuario_rol` (
+  `Id_rol` int(11) NOT NULL AUTO_INCREMENT,
+  `Fid_usuario` int(11) NOT NULL,
+  `Fid_navbar` int(11) NOT NULL,
+  `Fid_data_rol` int(11) NOT NULL,
+  PRIMARY KEY (`Id_rol`),
+  KEY `Fid_usuario` (`Fid_usuario`),
+  KEY `Fid_nabvar` (`Fid_navbar`),
+  KEY `Id_rol` (`Id_rol`),
+  KEY `fid_data_rol` (`Fid_data_rol`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `usuario_rol`
+--
+
+INSERT INTO `usuario_rol` (`Id_rol`, `Fid_usuario`, `Fid_navbar`, `Fid_data_rol`) VALUES
+(1, 13, 2, 1),
+(2, 13, 4, 1),
+(3, 12, 2, 2),
+(4, 12, 3, 2),
+(5, 11, 5, 1),
+(6, 11, 4, 2),
+(7, 14, 1, 1),
+(8, 14, 2, 1),
+(9, 14, 3, 1),
+(10, 14, 4, 1),
+(11, 14, 5, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario_rol_data`
+--
+
+DROP TABLE IF EXISTS `usuario_rol_data`;
+CREATE TABLE IF NOT EXISTS `usuario_rol_data` (
+  `Id_rol` int(11) NOT NULL AUTO_INCREMENT,
+  `Rol` varchar(20) NOT NULL,
+  PRIMARY KEY (`Id_rol`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `usuario_rol_data`
+--
+
+INSERT INTO `usuario_rol_data` (`Id_rol`, `Rol`) VALUES
+(1, 'W'),
+(2, 'R');
 
 --
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla `facturaemitida`
+-- Filtros para la tabla `cliente_contacto`
 --
-ALTER TABLE `facturaemitida`
-  ADD CONSTRAINT `facturaemitida_ibfk_1` FOREIGN KEY (`Fid_venta`) REFERENCES `venta` (`Id_venta`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `cliente_contacto`
+  ADD CONSTRAINT `cliente_contacto_ibfk_1` FOREIGN KEY (`fid_cliente`) REFERENCES `cliente` (`Id_cliente`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `facturarecibida`
+-- Filtros para la tabla `cliente_factura`
 --
-ALTER TABLE `facturarecibida`
-  ADD CONSTRAINT `facturarecibida_ibfk_1` FOREIGN KEY (`Fid_albaran`) REFERENCES `albaran` (`Id_albaran`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `facturarecibida_ibfk_2` FOREIGN KEY (`Fid_pedido`) REFERENCES `lineapedido` (`Id_lineapedido`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `cliente_factura`
+  ADD CONSTRAINT `cliente_factura_ibfk_1` FOREIGN KEY (`fid_cliente`) REFERENCES `cliente` (`Id_cliente`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `cliente_factura_ibfk_2` FOREIGN KEY (`fid_lineaventa`) REFERENCES `cliente_lineaventa` (`Id_lineapedido`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `formulariopreguntas`
+-- Filtros para la tabla `cliente_lineaventa`
 --
-ALTER TABLE `formulariopreguntas`
-  ADD CONSTRAINT `formulariopreguntas_ibfk_1` FOREIGN KEY (`Fid_formulario`) REFERENCES `formulariorespuestas` (`Id_form_resp`);
+ALTER TABLE `cliente_lineaventa`
+  ADD CONSTRAINT `cliente_lineaventa_ibfk_2` FOREIGN KEY (`Fid_venta`) REFERENCES `cliente_venta` (`Id_venta`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `formulariorespuestas`
+-- Filtros para la tabla `cliente_venta`
 --
-ALTER TABLE `formulariorespuestas`
-  ADD CONSTRAINT `formulariorespuestas_ibfk_1` FOREIGN KEY (`Fid_clientes`) REFERENCES `cliente` (`Id_cliente`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `cliente_venta`
+  ADD CONSTRAINT `cliente_venta_ibfk_1` FOREIGN KEY (`Fid_cliente`) REFERENCES `cliente` (`Id_cliente`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `home`
+-- Filtros para la tabla `formulario`
 --
-ALTER TABLE `home`
-  ADD CONSTRAINT `home_ibfk_1` FOREIGN KEY (`Fid_usuario`) REFERENCES `usuario` (`Id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `formulario`
+  ADD CONSTRAINT `formulario_ibfk_1` FOREIGN KEY (`Fid_clientes`) REFERENCES `cliente` (`Id_cliente`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `lineapedido`
+-- Filtros para la tabla `formulario_preguntas`
 --
-ALTER TABLE `lineapedido`
-  ADD CONSTRAINT `lineapedido_ibfk_1` FOREIGN KEY (`Fid_pedido`) REFERENCES `pedido` (`Id_pedido`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `formulario_preguntas`
+  ADD CONSTRAINT `formulario_preguntas_ibfk_1` FOREIGN KEY (`Fid_formulario`) REFERENCES `formulario` (`Id_formulario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `pedido`
+-- Filtros para la tabla `formulario_respuestas`
 --
-ALTER TABLE `pedido`
-  ADD CONSTRAINT `pedido_ibfk_1` FOREIGN KEY (`Fid_proveedor`) REFERENCES `proveedor` (`Id_proveedor`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `formulario_respuestas`
+  ADD CONSTRAINT `formulario_respuestas_ibfk_1` FOREIGN KEY (`Fid_formulario`) REFERENCES `formulario` (`Id_formulario`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `formulario_respuestas_ibfk_2` FOREIGN KEY (`Fid_pregunta`) REFERENCES `formulario_preguntas` (`Id_preguntas`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `roles`
+-- Filtros para la tabla `proveedor_albaran`
 --
-ALTER TABLE `roles`
-  ADD CONSTRAINT `roles_ibfk_1` FOREIGN KEY (`Fid_usuario`) REFERENCES `usuario` (`Id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `roles_ibfk_2` FOREIGN KEY (`Fid_navbar`) REFERENCES `navbar` (`Id_navbar`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `proveedor_albaran`
+  ADD CONSTRAINT `proveedor_albaran_ibfk_1` FOREIGN KEY (`Fid_factura`) REFERENCES `proveedor_factura` (`Id_factura`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `venta`
+-- Filtros para la tabla `proveedor_compra`
 --
-ALTER TABLE `venta`
-  ADD CONSTRAINT `venta_ibfk_1` FOREIGN KEY (`Fid_cliente`) REFERENCES `cliente` (`Id_cliente`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `proveedor_compra`
+  ADD CONSTRAINT `proveedor_compra_ibfk_1` FOREIGN KEY (`Fid_proveedor`) REFERENCES `proveedor` (`Id_proveedor`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `proveedor_compra_ibfk_2` FOREIGN KEY (`Fid_usuario`) REFERENCES `usuario` (`Id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `proveedor_contacto`
+--
+ALTER TABLE `proveedor_contacto`
+  ADD CONSTRAINT `proveedor_contacto_ibfk_1` FOREIGN KEY (`Fid_proveedor`) REFERENCES `proveedor` (`Id_proveedor`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `proveedor_factura`
+--
+ALTER TABLE `proveedor_factura`
+  ADD CONSTRAINT `proveedor_factura_ibfk_2` FOREIGN KEY (`Fid_pedido`) REFERENCES `proveedor_lineapedido` (`Id_lineapedido`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `proveedor_lineapedido`
+--
+ALTER TABLE `proveedor_lineapedido`
+  ADD CONSTRAINT `proveedor_lineapedido_ibfk_1` FOREIGN KEY (`Fid_compra`) REFERENCES `proveedor_compra` (`Id_pedido`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `usuario_home`
+--
+ALTER TABLE `usuario_home`
+  ADD CONSTRAINT `usuario_home_ibfk_1` FOREIGN KEY (`Fid_usuario`) REFERENCES `usuario` (`Id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `usuario_rol`
+--
+ALTER TABLE `usuario_rol`
+  ADD CONSTRAINT `usuario_rol_ibfk_1` FOREIGN KEY (`Fid_usuario`) REFERENCES `usuario` (`Id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `usuario_rol_ibfk_2` FOREIGN KEY (`Fid_navbar`) REFERENCES `usuario_navbar` (`Id_navbar`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `usuario_rol_ibfk_3` FOREIGN KEY (`Fid_data_rol`) REFERENCES `usuario_rol_data` (`Id_rol`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

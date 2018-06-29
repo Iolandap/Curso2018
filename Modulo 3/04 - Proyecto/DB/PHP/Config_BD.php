@@ -7,7 +7,7 @@
     // Definiciones iniciales en array $cfg
     $cfg['server']      = "localhost";
     $cfg['userBD']      = "root";
-    $cfg['passwordBD']  = "";  
+    $cfg['passwordBD']  = "\$lila1630";  
     $cfg['BD']          = "proyectofinal";
 
     // Carga valores en variables conexion BD
